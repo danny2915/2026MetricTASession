@@ -1,0 +1,54 @@
+execute-dir: project
+
+project:
+  type: website
+  render:
+    - index.qmd
+    - slides/*.qmd
+    - practices/*.qmd
+    - answers/*.qmd
+    - example_code/*.qmd
+  resources:
+    - slides/**/*.pdf
+    - example_code/**/*.R
+    - assets/audio/**
+
+website:
+  site-url: https://danny2915.github.io/2026MetricTASession/
+  title: "2026Spring Econometrics TA Session"
+  navbar: false
+  page-navigation: true
+  search: false
+
+  sidebar:
+    style: docked       # or "floating"
+    collapse-level: 1
+    contents:
+      - text: "Home"
+        file: index.qmd
+      - section: "Slides"
+        contents: "slides/*.qmd"
+      - section: "Example R code"
+        contents: "example_code/*.qmd"
+      - section: "Practices"
+        contents: "practices/*.qmd"
+      - section: "Practice Answers"
+        contents: "answers/*.qmd"
+
+format:
+  html:
+    theme: [flatly, darkly]
+    toc: true
+    toc-location: left
+    number-sections: true
+    page-layout: article
+    code-copy: true
+    anchor-sections: true
+    smooth-scroll: true
+    embed-resources: false
+    math: katex
+    include-after-body:
+      - assets/bgm.html
+execute:
+  warning: false
+  message: false
