@@ -1,0 +1,122 @@
+[
+  {
+    "objectID": "example_code/Example_Code_wk01.html",
+    "href": "example_code/Example_Code_wk01.html",
+    "title": "Week 1 Example R Code (0902)",
+    "section": "",
+    "text": "Right click to download:\n\nwk1_example_code.R",
+    "crumbs": [
+      "Example R code",
+      "Week 1 Example R Code (0902)"
+    ]
+  },
+  {
+    "objectID": "practices/wk01.html",
+    "href": "practices/wk01.html",
+    "title": "Week 1 Practices (0902)",
+    "section": "",
+    "text": "Create two variables called x and y, and assign values 20250902 and 1031. Compute x / y.",
+    "crumbs": [
+      "Practices",
+      "Week 1 Practices (0902)"
+    ]
+  },
+  {
+    "objectID": "practices/wk01.html#assign-values",
+    "href": "practices/wk01.html#assign-values",
+    "title": "Week 1 Practices (0902)",
+    "section": "",
+    "text": "Create two variables called x and y, and assign values 20250902 and 1031. Compute x / y.",
+    "crumbs": [
+      "Practices",
+      "Week 1 Practices (0902)"
+    ]
+  },
+  {
+    "objectID": "practices/wk01.html#help",
+    "href": "practices/wk01.html#help",
+    "title": "Week 1 Practices (0902)",
+    "section": "2 Help",
+    "text": "2 Help\nUse the help() function to check docs, e.g. data.frame() or mean().",
+    "crumbs": [
+      "Practices",
+      "Week 1 Practices (0902)"
+    ]
+  },
+  {
+    "objectID": "practices/wk01.html#matrix",
+    "href": "practices/wk01.html#matrix",
+    "title": "Week 1 Practices (0902)",
+    "section": "3 Matrix",
+    "text": "3 Matrix\nCreate the following vectors:\nname_vec &lt;- c(\"James\", \"Noc\", \"Monica\")\n\nage_vec &lt;- c(25, 30, 28)\nand create a 3 × 2 matrix with these two vectors.\nDo you encounter errors? Can you print the matrix out? What’s the data type of the matrix?",
+    "crumbs": [
+      "Practices",
+      "Week 1 Practices (0902)"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "2026 Spring Econometrics TA Session",
+    "section": "",
+    "text": "Welcome! Use the sidebar to open weekly Slides, Practices and Answers\nAnswers to the practice will be published after each TA Session.\nSending email: r13323002@ntu.edu.tw (mail title including [Statistics TA])\nTA Office hours: Tuesday, 3:30-4:20 p.m. at SSB. (社會科學院) Room 645.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk01.html",
+    "href": "slides/Slides_wk01.html",
+    "title": "Week 1 Slides (0902)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 1 Slides (0902)"
+    ]
+  },
+  {
+    "objectID": "answers/wk01_answer.html",
+    "href": "answers/wk01_answer.html",
+    "title": "Week 1 Answers (0902)",
+    "section": "",
+    "text": "Create two variables called x and y, and assign values 20250902 and 1031. Compute x / y.\nx &lt;- 20250902\ny &lt;- 1031\nprint(x / y)",
+    "crumbs": [
+      "Practice Answers",
+      "Week 1 Answers (0902)"
+    ]
+  },
+  {
+    "objectID": "answers/wk01_answer.html#assign-values",
+    "href": "answers/wk01_answer.html#assign-values",
+    "title": "Week 1 Answers (0902)",
+    "section": "",
+    "text": "Create two variables called x and y, and assign values 20250902 and 1031. Compute x / y.\nx &lt;- 20250902\ny &lt;- 1031\nprint(x / y)",
+    "crumbs": [
+      "Practice Answers",
+      "Week 1 Answers (0902)"
+    ]
+  },
+  {
+    "objectID": "answers/wk01_answer.html#help",
+    "href": "answers/wk01_answer.html#help",
+    "title": "Week 1 Answers (0902)",
+    "section": "2 Help",
+    "text": "2 Help\nUse the help() function to check docs, e.g. data.frame() or mean().\nhelp(data.frame)\nhelp(mean)",
+    "crumbs": [
+      "Practice Answers",
+      "Week 1 Answers (0902)"
+    ]
+  },
+  {
+    "objectID": "answers/wk01_answer.html#matrix",
+    "href": "answers/wk01_answer.html#matrix",
+    "title": "Week 1 Answers (0902)",
+    "section": "3 Matrix",
+    "text": "3 Matrix\nCreate the following vectors:\nname_vec &lt;- c(\"James\", \"Noc\", \"Monica\")\n\nage_vec &lt;- c(25, 30, 28)\nand create a 3 × 2 matrix with these two vectors.\nDo you encounter errors? Can you print the matrix out? What’s the data type of the matrix?\nname_vec &lt;- c(\"James\", \"Noc\", \"Monica\")\nage_vec &lt;- c(25, 30, 28)\nmat &lt;- matrix(c(name_vec, age_vec), nrow = 3)\nprint(mat)\nclass(mat)\n\n# `mat[,2]` only select the second column\n# note that the `age_vec` become character type after merging into matrix\nprint(mat[,2])\nclass(mat[,2])",
+    "crumbs": [
+      "Practice Answers",
+      "Week 1 Answers (0902)"
+    ]
+  }
+]
