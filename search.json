@@ -2,56 +2,67 @@
   {
     "objectID": "example_code/Example_Code_wk01.html",
     "href": "example_code/Example_Code_wk01.html",
-    "title": "Week 1 Example R Code (0902)",
+    "title": "Week 1 Example R Code (0224)",
     "section": "",
-    "text": "Right click to download:\n\nwk1_example_code.R",
+    "text": "Right click to download:\n\nwk01_example_code.R",
     "crumbs": [
       "Example R code",
-      "Week 1 Example R Code (0902)"
+      "Week 1 Example R Code (0224)"
     ]
   },
   {
     "objectID": "practices/wk01.html",
     "href": "practices/wk01.html",
-    "title": "Week 1 Practices (0902)",
+    "title": "Week 1 Practices (0224)",
     "section": "",
-    "text": "Create two variables called x and y, and assign values 20250902 and 1031. Compute x / y.",
+    "text": "Create an RStudio project inside a folder with proper names (e.g. TA_Session).\nCreate folders for R scripts and data.\nFor the following questions, your code should follow the coding styles in the slides.\n\n\n\n\n\n\n\nTipHint\n\n\n\nIt is recommended to create a new project different from last semester!",
     "crumbs": [
       "Practices",
-      "Week 1 Practices (0902)"
+      "Week 1 Practices (0224)"
+    ]
+  },
+  {
+    "objectID": "practices/wk01.html#project",
+    "href": "practices/wk01.html#project",
+    "title": "Week 1 Practices (0224)",
+    "section": "",
+    "text": "Create an RStudio project inside a folder with proper names (e.g. TA_Session).\nCreate folders for R scripts and data.\nFor the following questions, your code should follow the coding styles in the slides.\n\n\n\n\n\n\n\nTipHint\n\n\n\nIt is recommended to create a new project different from last semester!",
+    "crumbs": [
+      "Practices",
+      "Week 1 Practices (0224)"
     ]
   },
   {
     "objectID": "practices/wk01.html#assign-values",
     "href": "practices/wk01.html#assign-values",
-    "title": "Week 1 Practices (0902)",
-    "section": "",
-    "text": "Create two variables called x and y, and assign values 20250902 and 1031. Compute x / y.",
+    "title": "Week 1 Practices (0224)",
+    "section": "2 Assign Values",
+    "text": "2 Assign Values\nCreate two variables called x and y, and assign values 20260224 and 409. Compute x / y.",
     "crumbs": [
       "Practices",
-      "Week 1 Practices (0902)"
+      "Week 1 Practices (0224)"
     ]
   },
   {
     "objectID": "practices/wk01.html#help",
     "href": "practices/wk01.html#help",
-    "title": "Week 1 Practices (0902)",
-    "section": "2 Help",
-    "text": "2 Help\nUse the help() function to check docs, e.g. data.frame() or mean().",
+    "title": "Week 1 Practices (0224)",
+    "section": "3 Help",
+    "text": "3 Help\nUse the help() function to check docs, e.g. data.frame() or mean().",
     "crumbs": [
       "Practices",
-      "Week 1 Practices (0902)"
+      "Week 1 Practices (0224)"
     ]
   },
   {
-    "objectID": "practices/wk01.html#matrix",
-    "href": "practices/wk01.html#matrix",
-    "title": "Week 1 Practices (0902)",
-    "section": "3 Matrix",
-    "text": "3 Matrix\nCreate the following vectors:\nname_vec &lt;- c(\"James\", \"Noc\", \"Monica\")\n\nage_vec &lt;- c(25, 30, 28)\nand create a 3 × 2 matrix with these two vectors.\nDo you encounter errors? Can you print the matrix out? What’s the data type of the matrix?",
+    "objectID": "practices/wk01.html#matrix-and-dataframe",
+    "href": "practices/wk01.html#matrix-and-dataframe",
+    "title": "Week 1 Practices (0224)",
+    "section": "4 Matrix and DataFrame",
+    "text": "4 Matrix and DataFrame\n\nCreate a vector name_vec with 3 names James, Noc, and Monica.\nCreate a vector age_vec that stores their age 25, 30, and 28.\nCreate a 3 × 2 matrix name_age_mat with name_vec and age_vec, then print it in the console.\nCreate a dataframe name_age_df using name_vec and age_vec with column names name annd age, then print it in the console.\nWhat’s the data type of name_age_df and age_vec?",
     "crumbs": [
       "Practices",
-      "Week 1 Practices (0902)"
+      "Week 1 Practices (0224)"
     ]
   },
   {
@@ -59,7 +70,7 @@
     "href": "index.html",
     "title": "2026 Spring Econometrics TA Session",
     "section": "",
-    "text": "Welcome! Use the sidebar to open weekly Slides, Practices and Answers\nAnswers to the practice will be published after each TA Session.\nSending email: r13323002@ntu.edu.tw (mail title including [Statistics TA])\nTA Office hours: Tuesday, 3:30-4:20 p.m. at SSB. (社會科學院) Room 645.",
+    "text": "Welcome! Use the sidebar to open weekly Slides, Practices and Answers\n2025 Fall Statistics TA Session Website\nAnswers to the practice will be published after each TA Session.\nSending email: r13323002@ntu.edu.tw (mail title including [Econometrics TA])\nTA Office hours: Tuesday, 3:30-4:20 p.m. at SSB. (社會科學院) Room 645.",
     "crumbs": [
       "Home"
     ]
@@ -67,56 +78,67 @@
   {
     "objectID": "slides/Slides_wk01.html",
     "href": "slides/Slides_wk01.html",
-    "title": "Week 1 Slides (0902)",
+    "title": "Week 1 Slides (0224)",
     "section": "",
     "text": "Open in new tab · Download PDF",
     "crumbs": [
       "Slides",
-      "Week 1 Slides (0902)"
+      "Week 1 Slides (0224)"
     ]
   },
   {
     "objectID": "answers/wk01_answer.html",
     "href": "answers/wk01_answer.html",
-    "title": "Week 1 Answers (0902)",
+    "title": "Week 1 Answers (0224)",
     "section": "",
-    "text": "Create two variables called x and y, and assign values 20250902 and 1031. Compute x / y.\nx &lt;- 20250902\ny &lt;- 1031\nprint(x / y)",
+    "text": "Create an RStudio project inside a folder with proper names (e.g. TA_Session).\nCreate folders for R scripts and data.\nFor the following questions, your code should follow the coding styles in the slides.\n\n\n\n\n\n\n\nTipHint\n\n\n\nIt is recommended to create a new project different from last semester!",
     "crumbs": [
       "Practice Answers",
-      "Week 1 Answers (0902)"
+      "Week 1 Answers (0224)"
+    ]
+  },
+  {
+    "objectID": "answers/wk01_answer.html#project",
+    "href": "answers/wk01_answer.html#project",
+    "title": "Week 1 Answers (0224)",
+    "section": "",
+    "text": "Create an RStudio project inside a folder with proper names (e.g. TA_Session).\nCreate folders for R scripts and data.\nFor the following questions, your code should follow the coding styles in the slides.\n\n\n\n\n\n\n\nTipHint\n\n\n\nIt is recommended to create a new project different from last semester!",
+    "crumbs": [
+      "Practice Answers",
+      "Week 1 Answers (0224)"
     ]
   },
   {
     "objectID": "answers/wk01_answer.html#assign-values",
     "href": "answers/wk01_answer.html#assign-values",
-    "title": "Week 1 Answers (0902)",
-    "section": "",
-    "text": "Create two variables called x and y, and assign values 20250902 and 1031. Compute x / y.\nx &lt;- 20250902\ny &lt;- 1031\nprint(x / y)",
+    "title": "Week 1 Answers (0224)",
+    "section": "2 Assign Values",
+    "text": "2 Assign Values\nCreate two variables called x and y, and assign values 20260224 and 409. Compute x / y.\nx &lt;- 20260224\ny &lt;- 409\nprint(x / y)\n\n\n[1] 49536",
     "crumbs": [
       "Practice Answers",
-      "Week 1 Answers (0902)"
+      "Week 1 Answers (0224)"
     ]
   },
   {
     "objectID": "answers/wk01_answer.html#help",
     "href": "answers/wk01_answer.html#help",
-    "title": "Week 1 Answers (0902)",
-    "section": "2 Help",
-    "text": "2 Help\nUse the help() function to check docs, e.g. data.frame() or mean().\nhelp(data.frame)\nhelp(mean)",
+    "title": "Week 1 Answers (0224)",
+    "section": "3 Help",
+    "text": "3 Help\nUse the help() function to check docs, e.g. data.frame() or mean().\nhelp(data.frame)\nhelp(mean)",
     "crumbs": [
       "Practice Answers",
-      "Week 1 Answers (0902)"
+      "Week 1 Answers (0224)"
     ]
   },
   {
-    "objectID": "answers/wk01_answer.html#matrix",
-    "href": "answers/wk01_answer.html#matrix",
-    "title": "Week 1 Answers (0902)",
-    "section": "3 Matrix",
-    "text": "3 Matrix\nCreate the following vectors:\nname_vec &lt;- c(\"James\", \"Noc\", \"Monica\")\n\nage_vec &lt;- c(25, 30, 28)\nand create a 3 × 2 matrix with these two vectors.\nDo you encounter errors? Can you print the matrix out? What’s the data type of the matrix?\nname_vec &lt;- c(\"James\", \"Noc\", \"Monica\")\nage_vec &lt;- c(25, 30, 28)\nmat &lt;- matrix(c(name_vec, age_vec), nrow = 3)\nprint(mat)\nclass(mat)\n\n# `mat[,2]` only select the second column\n# note that the `age_vec` become character type after merging into matrix\nprint(mat[,2])\nclass(mat[,2])",
+    "objectID": "answers/wk01_answer.html#matrix-and-dataframe",
+    "href": "answers/wk01_answer.html#matrix-and-dataframe",
+    "title": "Week 1 Answers (0224)",
+    "section": "4 Matrix and DataFrame",
+    "text": "4 Matrix and DataFrame\n\nCreate a vector name_vec with 3 names James, Noc, and Monica.\nCreate a vector age_vec that stores their age 25, 30, and 28.\nCreate a 3 × 2 matrix name_age_mat with name_vec and age_vec, then print it in the console.\nCreate a dataframe name_age_df using name_vec and age_vec with column names name annd age, then print it in the console.\nWhat’s the data type of name_age_df and age_vec?\n\nname_vec &lt;- c(\"James\", \"Noc\", \"Monica\")\nage_vec &lt;- c(25, 30, 28)\n\nname_age_mat &lt;- matrix(c(name_vec, age_vec), nrow = 3)\nprint(name_age_mat)\nclass(name_age_mat)\n\nname_age_df &lt;- data.frame(name = name_vec, \n                          age = age_vec)\nprint(name_age_df)\nclass(name_age_df)\n\n\n     [,1]     [,2]\n[1,] \"James\"  \"25\"\n[2,] \"Noc\"    \"30\"\n[3,] \"Monica\" \"28\"\n\n\n[1] \"matrix\" \"array\" \n\n\n    name age\n1  James  25\n2    Noc  30\n3 Monica  28\n\n\n[1] \"data.frame\"",
     "crumbs": [
       "Practice Answers",
-      "Week 1 Answers (0902)"
+      "Week 1 Answers (0224)"
     ]
   }
 ]
