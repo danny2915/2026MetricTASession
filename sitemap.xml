@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://danny2915.github.io/2026MetricTASession/example_code/Example_Code_wk01.html</loc>
-    <lastmod>2026-02-22T14:10:26.052Z</lastmod>
+    <loc>https://danny2915.github.io/2026MetricTASession/homework/hw1_answer.html</loc>
+    <lastmod>2026-02-23T09:19:48.229Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danny2915.github.io/2026MetricTASession/practices/wk01.html</loc>
+    <lastmod>2026-02-22T14:06:03.596Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danny2915.github.io/2026MetricTASession/index.html</loc>
+    <lastmod>2026-02-23T09:13:26.121Z</lastmod>
   </url>
   <url>
     <loc>https://danny2915.github.io/2026MetricTASession/slides/Slides_wk01.html</loc>
     <lastmod>2026-02-22T14:09:50.486Z</lastmod>
   </url>
   <url>
-    <loc>https://danny2915.github.io/2026MetricTASession/index.html</loc>
-    <lastmod>2026-02-22T14:20:34.101Z</lastmod>
-  </url>
-  <url>
-    <loc>https://danny2915.github.io/2026MetricTASession/practices/wk01.html</loc>
-    <lastmod>2026-02-22T14:06:03.596Z</lastmod>
+    <loc>https://danny2915.github.io/2026MetricTASession/example_code/Example_Code_wk01.html</loc>
+    <lastmod>2026-02-22T14:10:26.052Z</lastmod>
   </url>
 </urlset>
