@@ -33,6 +33,82 @@
     ]
   },
   {
+    "objectID": "example_code/Example_Code_wk01.html",
+    "href": "example_code/Example_Code_wk01.html",
+    "title": "Week 1 Example R Code (0224)",
+    "section": "",
+    "text": "Right click to download:\n\nwk01_example_code.R",
+    "crumbs": [
+      "Example R code",
+      "Week 1 Example R Code (0224)"
+    ]
+  },
+  {
+    "objectID": "practices/wk02.html",
+    "href": "practices/wk02.html",
+    "title": "Week 2 Practices (0303)",
+    "section": "",
+    "text": "Remember to open the project you create last week.\nCreate a new script for today’s exercise and save in the script folder.",
+    "crumbs": [
+      "Practices",
+      "Week 2 Practices (0303)"
+    ]
+  },
+  {
+    "objectID": "practices/wk02.html#project",
+    "href": "practices/wk02.html#project",
+    "title": "Week 2 Practices (0303)",
+    "section": "",
+    "text": "Remember to open the project you create last week.\nCreate a new script for today’s exercise and save in the script folder.",
+    "crumbs": [
+      "Practices",
+      "Week 2 Practices (0303)"
+    ]
+  },
+  {
+    "objectID": "practices/wk02.html#chou-kaguya-hime-超時空輝耀姬",
+    "href": "practices/wk02.html#chou-kaguya-hime-超時空輝耀姬",
+    "title": "Week 2 Practices (0303)",
+    "section": "2 Chou Kaguya-hime! (超時空輝耀姬！)",
+    "text": "2 Chou Kaguya-hime! (超時空輝耀姬！)\nKaguya is a new liver in Tsukuyomi. Her roommate, Iroha, also serves as her manager. To improve Kaguya’s streaming performance, Kaguya records data from each stream, including:\n\ndate: The date of the stream.\ncontent: The type of content Kaguya did during the stream.\npaired_with_iroha: Sometimes Iroha joins Kaguya’s stream. If Iroha appeared in the stream on that date, record Yes; otherwise, record No.\nhours: The duration of the stream (in hours).\ndonation: The total amount of donations Kaguya received.\n\nTsukuyomi takes 30% of the donations as a commission. Iroha wants to know which type of content has the highest earnings per hour when Kaguya streams alone.\nFollow the instructions below to help Iroha find the answer:\n\nUse the pipe operator %&gt;% appropriately in the steps below and download the dataset kaguya.csv. (right click here)\nRead kaguya.csv and save it as kaguya_raw.\nFilter the data to keep only the streams where Kaguya streamed alone (i.e., not paired with Iroha).\nWithout modifying kaguya_raw, create a new dataframe called kaguya_solo by adding a new column earning, defined as 70% of donation.\nAdd a new column earning_per_hour to kaguya_solo, calculated as earning / hour.\nKeep only the columns date, content, earning_per_hour in kaguya_solo.\nArrange the rows of kaguya_solo in descending order of earning_per_hour.\nPrint kaguya_solo. Which date’s stream has the highest earnings per hour?\nCreate a new dataframe kaguya_solo_sum that summarizes the average earning_per_hour for each content category, and arranges it in the descending order of average earning_per_hour. Which type of content has the highest average earnings per hour?",
+    "crumbs": [
+      "Practices",
+      "Week 2 Practices (0303)"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk01.html",
+    "href": "slides/Slides_wk01.html",
+    "title": "Week 1 Slides (0224)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 1 Slides (0224)"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "2026 Spring Econometrics TA Session",
+    "section": "",
+    "text": "Welcome! Use the sidebar to open weekly Slides, Practices and Answers\nAnswers to the practice will be published after each TA Session.\nSending email: r13323002@ntu.edu.tw (mail title including [Econometrics TA])\nTA Office hours: Tuesday, 3:30-4:20 p.m. at SSB. (社會科學院) Room 645.\n2025 Fall Statistics TA Session Website\nOpenIntro Website",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk01 - 複製.html",
+    "href": "slides/Slides_wk01 - 複製.html",
+    "title": "Week 2 Slides (0303)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 2 Slides (0303)"
+    ]
+  },
+  {
     "objectID": "practices/wk01.html",
     "href": "practices/wk01.html",
     "title": "Week 1 Practices (0224)",
@@ -88,35 +164,69 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "2026 Spring Econometrics TA Session",
+    "objectID": "answers/wk01_answer.html",
+    "href": "answers/wk01_answer.html",
+    "title": "Week 1 Answers (0224)",
     "section": "",
-    "text": "Welcome! Use the sidebar to open weekly Slides, Practices and Answers\nAnswers to the practice will be published after each TA Session.\nSending email: r13323002@ntu.edu.tw (mail title including [Econometrics TA])\nTA Office hours: Tuesday, 3:30-4:20 p.m. at SSB. (社會科學院) Room 645.\n2025 Fall Statistics TA Session Website",
+    "text": "Create an RStudio project inside a folder with proper names (e.g. TA_Session).\nCreate folders for R scripts and data.\nFor the following questions, your code should follow the coding styles in the slides.\n\n\n\n\n\n\n\nTipHint\n\n\n\nIt is recommended to create a new project different from last semester!",
     "crumbs": [
-      "Home"
+      "Practice Answers",
+      "Week 1 Answers (0224)"
     ]
   },
   {
-    "objectID": "slides/Slides_wk01.html",
-    "href": "slides/Slides_wk01.html",
-    "title": "Week 1 Slides (0224)",
+    "objectID": "answers/wk01_answer.html#project",
+    "href": "answers/wk01_answer.html#project",
+    "title": "Week 1 Answers (0224)",
     "section": "",
-    "text": "Open in new tab · Download PDF",
+    "text": "Create an RStudio project inside a folder with proper names (e.g. TA_Session).\nCreate folders for R scripts and data.\nFor the following questions, your code should follow the coding styles in the slides.\n\n\n\n\n\n\n\nTipHint\n\n\n\nIt is recommended to create a new project different from last semester!",
     "crumbs": [
-      "Slides",
-      "Week 1 Slides (0224)"
+      "Practice Answers",
+      "Week 1 Answers (0224)"
     ]
   },
   {
-    "objectID": "example_code/Example_Code_wk01.html",
-    "href": "example_code/Example_Code_wk01.html",
-    "title": "Week 1 Example R Code (0224)",
+    "objectID": "answers/wk01_answer.html#assign-values",
+    "href": "answers/wk01_answer.html#assign-values",
+    "title": "Week 1 Answers (0224)",
+    "section": "2 Assign Values",
+    "text": "2 Assign Values\nCreate two variables called x and y, and assign values 20260224 and 409. Compute x / y.\nx &lt;- 20260224\ny &lt;- 409\nprint(x / y)\n\n\n[1] 49536",
+    "crumbs": [
+      "Practice Answers",
+      "Week 1 Answers (0224)"
+    ]
+  },
+  {
+    "objectID": "answers/wk01_answer.html#help",
+    "href": "answers/wk01_answer.html#help",
+    "title": "Week 1 Answers (0224)",
+    "section": "3 Help",
+    "text": "3 Help\nUse the help() function to check docs, e.g. data.frame() or mean().\nhelp(data.frame)\nhelp(mean)",
+    "crumbs": [
+      "Practice Answers",
+      "Week 1 Answers (0224)"
+    ]
+  },
+  {
+    "objectID": "answers/wk01_answer.html#matrix-and-dataframe",
+    "href": "answers/wk01_answer.html#matrix-and-dataframe",
+    "title": "Week 1 Answers (0224)",
+    "section": "4 Matrix and DataFrame",
+    "text": "4 Matrix and DataFrame\n\nCreate a vector name_vec with 3 names James, Noc, and Monica.\nCreate a vector age_vec that stores their age 25, 30, and 28.\nCreate a 3 × 2 matrix name_age_mat with name_vec and age_vec, then print it in the console.\nCreate a dataframe name_age_df using name_vec and age_vec with column names name annd age, then print it in the console.\nWhat’s the data type of name_age_df and age_vec?\n\nname_vec &lt;- c(\"James\", \"Noc\", \"Monica\")\nage_vec &lt;- c(25, 30, 28)\n\nname_age_mat &lt;- matrix(c(name_vec, age_vec), nrow = 3)\nprint(name_age_mat)\nclass(name_age_mat)\n\nname_age_df &lt;- data.frame(name = name_vec, \n                          age = age_vec)\nprint(name_age_df)\nclass(name_age_df)\n\n\n     [,1]     [,2]\n[1,] \"James\"  \"25\"\n[2,] \"Noc\"    \"30\"\n[3,] \"Monica\" \"28\"\n\n\n[1] \"matrix\" \"array\" \n\n\n    name age\n1  James  25\n2    Noc  30\n3 Monica  28\n\n\n[1] \"data.frame\"",
+    "crumbs": [
+      "Practice Answers",
+      "Week 1 Answers (0224)"
+    ]
+  },
+  {
+    "objectID": "example_code/Example_Code_wk02.html",
+    "href": "example_code/Example_Code_wk02.html",
+    "title": "Week 2 Example R Code (0303)",
     "section": "",
-    "text": "Right click to download:\n\nwk01_example_code.R",
+    "text": "Right click to download:\n\nwk02_example_code.R",
     "crumbs": [
       "Example R code",
-      "Week 1 Example R Code (0224)"
+      "Week 2 Example R Code (0303)"
     ]
   }
 ]
