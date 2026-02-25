@@ -281,8 +281,8 @@ window.Quarto = {
 <ol start="0" type="1">
 <li><p>Use the pipe operator <code>%&gt;%</code> appropriately in the steps below and download the dataset <code>kaguya.csv</code>. <a href="kaguya.csv" target="_blank" rel="noopener">(right click here)</a></p></li>
 <li><p>Read <code>kaguya.csv</code> and save it as <code>kaguya_raw</code>.</p></li>
-<li><p>Filter the data to keep only the streams where Kaguya streamed alone (i.e., not paired with Iroha).</p></li>
-<li><p>Without modifying <code>kaguya_raw</code>, create a new dataframe called <code>kaguya_solo</code> by adding a new column <code>earning</code>, defined as 70% of <code>donation</code>.</p></li>
+<li><p>Without modifying <code>kaguya_raw</code>, create a new dataframe called <code>kaguya_solo</code> by filtering the data to keep only the streams where Kaguya streamed alone (i.e., not paired with Iroha).</p></li>
+<li><p>Add a new column <code>earning</code> to <code>kaguya_solo</code>, defined as 70% of <code>donation</code>.</p></li>
 <li><p>Add a new column <code>earning_per_hour</code> to <code>kaguya_solo</code>, calculated as <code>earning / hour</code>.</p></li>
 <li><p>Keep only the columns <code>date</code>, <code>content</code>, <code>earning_per_hour</code> in <code>kaguya_solo</code>.</p></li>
 <li><p>Arrange the rows of <code>kaguya_solo</code> in descending order of <code>earning_per_hour</code>.</p></li>
