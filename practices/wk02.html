@@ -268,7 +268,7 @@ window.Quarto = {
 </section>
 <section id="chou-kaguya-hime-超時空輝耀姬" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="chou-kaguya-hime-超時空輝耀姬"><span class="header-section-number">2</span> Chou Kaguya-hime! (超時空輝耀姬！)</h2>
-<p>Kaguya is a new liver in Tsukuyomi. Her roommate, Iroha, also serves as her manager. To improve Kaguya’s streaming performance, Kaguya records data from each stream, including:</p>
+<p>Kaguya is a new liver in Tsukuyomi. Her roommate, Iroha, also serves as her manager. To improve Kaguya’s streaming performance, Iroha records data from each stream, including:</p>
 <ul>
 <li><code>date</code>: The date of the stream.</li>
 <li><code>content</code>: The type of content Kaguya did during the stream.</li>
@@ -283,7 +283,7 @@ window.Quarto = {
 <li><p>Read <code>kaguya.csv</code> and save it as <code>kaguya_raw</code>.</p></li>
 <li><p>Without modifying <code>kaguya_raw</code>, create a new dataframe called <code>kaguya_solo</code> by filtering the data to keep only the streams where Kaguya streamed alone (i.e., not paired with Iroha).</p></li>
 <li><p>Add a new column <code>earning</code> to <code>kaguya_solo</code>, defined as 70% of <code>donation</code>.</p></li>
-<li><p>Add a new column <code>earning_per_hour</code> to <code>kaguya_solo</code>, calculated as <code>earning / hour</code>.</p></li>
+<li><p>Add a new column <code>earning_per_hour</code> to <code>kaguya_solo</code>, calculated as <code>earning / hours</code>.</p></li>
 <li><p>Keep only the columns <code>date</code>, <code>content</code>, <code>earning_per_hour</code> in <code>kaguya_solo</code>.</p></li>
 <li><p>Arrange the rows of <code>kaguya_solo</code> in descending order of <code>earning_per_hour</code>.</p></li>
 <li><p>Print <code>kaguya_solo</code>. Which date’s stream has the highest earnings per hour?</p></li>
