@@ -292,12 +292,12 @@ window.Quarto = {
 </section>
 <section id="gnosia-古諾希亞" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="gnosia-古諾希亞"><span class="header-section-number">2</span> GNOSIA (古諾希亞)</h2>
-<p>Yuri is trapped in a time loop! After repeating the loop many times, he begins to suspect that Yuriko appears more often than the other characters. To investigate this, Yuri decides to record which characters appear in each of the next 50 loops. The dataset contains:</p>
+<p>Yuri is trapped in a time loop! In each loop, there are 15 possible people who may appear. After repeating the loop many times, he begins to suspect that Yuriko appears more often than the other people. To investigate this, Yuri decides to record which people appear in each of the next 50 loops. The dataset contains:</p>
 <ul>
 <li><code>loop</code>: The loop number.</li>
-<li><code>Yuri</code>, <code>Setsu</code>, <code>Gina</code>, <code>SQ</code>, <code>Raqio</code>, <code>Stella</code>, <code>Shigemichi</code>, <code>Chipie</code>, <code>Comet</code>, <code>Jonas</code>, <code>Kukrushka</code>, <code>Otome</code>, <code>Sha-Ming</code>, <code>Remnan</code>, <code>Yuriko</code>: Each of these columns records whether the character appeared in that loop, using <code>1</code> for “appeared” and <code>0</code> for “did not appear”.</li>
+<li><code>Yuri</code>, <code>Setsu</code>, <code>Gina</code>, <code>SQ</code>, <code>Raqio</code>, <code>Stella</code>, <code>Shigemichi</code>, <code>Chipie</code>, <code>Comet</code>, <code>Jonas</code>, <code>Kukrushka</code>, <code>Otome</code>, <code>Sha-Ming</code>, <code>Remnan</code>, <code>Yuriko</code>: Each of these columns records whether the person appeared in that loop, using <code>1</code> for “appeared” and <code>0</code> for “did not appear”.</li>
 </ul>
-<p>Yuri wants to know: after how many loops can he reject the null hypothesis with <code>p &lt; 0.0001</code> that Yuriko has the same appearance rate as the other characters?</p>
+<p>Yuri wants to know: after how many loops can he reject the null hypothesis with <code>p &lt; 0.0001</code> that Yuriko has the same appearance rate as the other people?</p>
 <p>Follow the instructions below to help Yuri find the answer:</p>
 <ol start="0" type="1">
 <li><p>Download the dataset <code>gnosia.csv</code>. <a href="gnosia.csv" target="_blank" rel="noopener">(right click here)</a> Then call the package <code>tidyverse</code>.</p></li>
@@ -320,7 +320,7 @@ window.Quarto = {
 <ol start="3" type="1">
 <li><p>Write a function called <code>t_test_pval()</code> that takes a dataframe <code>data</code> as input.</p></li>
 <li><p>Inside <code>t_test_pval()</code>, create a new column <code>appear_sum</code> to <code>data</code> that calculates the row sum of all columns in the input dataframe.</p></li>
-<li><p>Still inside <code>t_test_pval()</code>, create a new column <code>not_Yuriko_appear_rate</code>, defined as the average appearance rate of the 12 characters other than <code>Yuriko</code>.</p></li>
+<li><p>Still inside <code>t_test_pval()</code>, create a new column <code>not_Yuriko_appear_rate</code>, defined as the average appearance rate of the 12 people other than <code>Yuriko</code>.</p></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled" title="Hint">
 <div class="callout-header d-flex align-content-center">
