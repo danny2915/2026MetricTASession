@@ -3,7 +3,7 @@
 # ==============================================
 # 1. Import dataset: "read.csv()"
 # ==============================================
-county <- read.csv("data/babies.csv")
+babies <- read.csv("data/babies.csv")
 earthquake <- read.csv("data/earthquake.csv")
 
 
