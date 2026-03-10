@@ -44,69 +44,167 @@
     ]
   },
   {
-    "objectID": "answers/wk02_answer.html",
-    "href": "answers/wk02_answer.html",
-    "title": "Week 2 Answers (0303)",
-    "section": "",
-    "text": "Remember to open the project you create last week.\nCreate a new script for today’s exercise and save in the script folder.",
-    "crumbs": [
-      "Practice Answers",
-      "Week 2 Answers (0303)"
-    ]
-  },
-  {
-    "objectID": "answers/wk02_answer.html#project",
-    "href": "answers/wk02_answer.html#project",
-    "title": "Week 2 Answers (0303)",
-    "section": "",
-    "text": "Remember to open the project you create last week.\nCreate a new script for today’s exercise and save in the script folder.",
-    "crumbs": [
-      "Practice Answers",
-      "Week 2 Answers (0303)"
-    ]
-  },
-  {
-    "objectID": "answers/wk02_answer.html#chou-kaguya-hime-超時空輝耀姬",
-    "href": "answers/wk02_answer.html#chou-kaguya-hime-超時空輝耀姬",
-    "title": "Week 2 Answers (0303)",
-    "section": "2 Chou Kaguya-hime! (超時空輝耀姬！)",
-    "text": "2 Chou Kaguya-hime! (超時空輝耀姬！)\nKaguya is a new liver in Tsukuyomi. Her roommate, Iroha, also serves as her manager. To improve Kaguya’s streaming performance, Iroha records data from each stream, including:\n\ndate: The date of the stream.\ncontent: The type of content Kaguya did during the stream.\npaired_with_iroha: Sometimes Iroha joins Kaguya’s stream. If Iroha appeared in the stream on that date, record Yes; otherwise, record No.\nhours: The duration of the stream (in hours).\ndonation: The total amount of donations Kaguya received.\n\nTsukuyomi takes 30% of the donations as a commission. Iroha wants to know which type of content has the highest earnings per hour when Kaguya streams alone.\nFollow the instructions below to help Iroha find the answer:\n\nUse the pipe operator %&gt;% appropriately in the steps below and download the dataset kaguya.csv. (right click here) Then install and call the package tidyverse.\nRead kaguya.csv and save it as kaguya_raw.\nWithout modifying kaguya_raw, create a new dataframe called kaguya_solo by filtering the data to keep only the streams where Kaguya streamed alone (i.e., not paired with Iroha).\nAdd a new column earning to kaguya_solo, defined as 70% of donation.\nAdd a new column earning_per_hour to kaguya_solo, calculated as earning / hours.\nKeep only the columns date, content, earning_per_hour in kaguya_solo.\nArrange the rows of kaguya_solo in descending order of earning_per_hour.\nPrint kaguya_solo. Which date’s stream has the highest earnings per hour?\nCreate a new dataframe kaguya_solo_sum that summarizes the average earning_per_hour for each content category, and arranges it in the descending order of average earning_per_hour. Which type of content has the highest average earnings per hour?\n\nlibrary(tidyverse)\n\nkaguya_raw &lt;- read.csv(\"data/kaguya.csv\")\n\nkaguya_solo &lt;- kaguya_raw %&gt;% \n  filter(paired_with_iroha == \"No\") %&gt;%\n  mutate(earning = donation * 0.7) %&gt;% \n  mutate(earning_per_hour = earning / hours) %&gt;%\n  select(date, content, earning_per_hour) %&gt;%\n  arrange(desc(earning_per_hour))\n\nprint(kaguya_solo[1:5, ])\n\nkaguya_solo_sum &lt;- kaguya_solo %&gt;% \n  group_by(content) %&gt;%\n  summarise(avg_earning_per_hour = mean(earning_per_hour)) %&gt;%\n  arrange(desc(avg_earning_per_hour))\n\nprint(kaguya_solo_sum)\n\n\n        date content earning_per_hour\n1 2050-05-19 Singing         94500.00\n2 2050-03-10 Dancing         87640.00\n3 2050-03-31  Gaming         75425.00\n4 2050-04-14  Gaming         72753.33\n5 2050-05-25  Gaming         71680.00\n\n\n# A tibble: 4 × 2\n  content avg_earning_per_hour\n  &lt;chr&gt;                  &lt;dbl&gt;\n1 Dancing               51129.\n2 Gaming                47637.\n3 Singing               47428.\n4 Chat                  37275.",
-    "crumbs": [
-      "Practice Answers",
-      "Week 2 Answers (0303)"
-    ]
-  },
-  {
-    "objectID": "practices/wk03.html",
-    "href": "practices/wk03.html",
-    "title": "Week 3 Practices (0310)",
+    "objectID": "answers/wk03_answer.html",
+    "href": "answers/wk03_answer.html",
+    "title": "Week 3 Answers (0310)",
     "section": "",
     "text": "Open the project you create in the first week.\nCreate a new script for today’s exercise and save in the script folder.",
     "crumbs": [
-      "Practices",
-      "Week 3 Practices (0310)"
+      "Practice Answers",
+      "Week 3 Answers (0310)"
     ]
   },
   {
-    "objectID": "practices/wk03.html#project",
-    "href": "practices/wk03.html#project",
-    "title": "Week 3 Practices (0310)",
+    "objectID": "answers/wk03_answer.html#project",
+    "href": "answers/wk03_answer.html#project",
+    "title": "Week 3 Answers (0310)",
     "section": "",
     "text": "Open the project you create in the first week.\nCreate a new script for today’s exercise and save in the script folder.",
     "crumbs": [
-      "Practices",
-      "Week 3 Practices (0310)"
+      "Practice Answers",
+      "Week 3 Answers (0310)"
     ]
   },
   {
-    "objectID": "practices/wk03.html#gnosia-古諾希亞",
-    "href": "practices/wk03.html#gnosia-古諾希亞",
-    "title": "Week 3 Practices (0310)",
+    "objectID": "answers/wk03_answer.html#gnosia-古諾希亞",
+    "href": "answers/wk03_answer.html#gnosia-古諾希亞",
+    "title": "Week 3 Answers (0310)",
     "section": "2 GNOSIA (古諾希亞)",
-    "text": "2 GNOSIA (古諾希亞)\nYuri is trapped in a time loop! In each loop, there are 15 possible people who may appear. After repeating the loop many times, he begins to suspect that Yuriko appears more often than the other people. To investigate this, Yuri decides to record which people appear in each of the next 50 loops. The dataset contains:\n\nloop: The loop number.\nYuri, Setsu, Gina, SQ, Raqio, Stella, Shigemichi, Chipie, Comet, Jonas, Kukrushka, Otome, Sha-Ming, Remnan, Yuriko: Each of these columns records whether the person appeared in that loop, using 1 for “appeared” and 0 for “did not appear”.\n\nYuri wants to know: after how many loops can he reject the null hypothesis with p &lt; 0.0001 that Yuriko has the same appearance rate as the other people?\nFollow the instructions below to help Yuri find the answer:\n\nDownload the dataset gnosia.csv. (right click here) Then call the package tidyverse.\nRead gnosia.csv and save it as gnosia_raw.\nBecause Setsu is also a time looper, she will appear in each loop as well. To adjust this, create a new dataframe called gnosia_tidy by removing the columns loop, Yuri, and Setsu in gnosia_raw.\n\n\n\n\n\n\n\nTipNote\n\n\n\nIn steps 3-6, we will create a function t_test_pval() to help us calculate the p-value from the t-test for a given loop data.\n\n\n\nWrite a function called t_test_pval() that takes a dataframe data as input.\nInside t_test_pval(), create a new column appear_sum to data that calculates the row sum of all columns in the input dataframe.\nStill inside t_test_pval(), create a new column not_Yuriko_appear_rate, defined as the average appearance rate of the 12 people other than Yuriko.\n\n\n\n\n\n\n\nTipHint\n\n\n\nSubtract Yuriko from appear_sum, then divide by 12.\n\n\n\nInside t_test_pval(), use an paired sample t.test() to compare Yuriko and not_Yuriko_appear_rate, then extract and return the p-value p.\nBefore the loop starts, create two variables:\n\nminimal_loop, with initial value 0.\nfinish_index, with initial value 0.\n\nUse a for loop from 2 to 50. In each iteration:\n\nKeep only the first i rows of gnosia_tidy and save it as current_loop_data.\nPass current_loop_data into t_test_pval() and save the returned value as pval.\n\nInside the for loop, check whether: pval &lt; 0.0001, and finish_index == 0. If both conditions are true, save i as minimal_loop, and change finish_index to 1.\nPrint the value pval in each loop.\nAfter the for loop ends, print minimal_loop. What is the smallest number of loops needed for Yuri to reject the null hypothesis?",
+    "text": "2 GNOSIA (古諾希亞)\nYuri is trapped in a time loop! In each loop, there are 15 possible people who may appear. After repeating the loop many times, he begins to suspect that Yuriko appears more often than the other people. To investigate this, Yuri decides to record which people appear in each of the next 50 loops. The dataset contains:\n\nloop: The loop number.\nYuri, Setsu, Gina, SQ, Raqio, Stella, Shigemichi, Chipie, Comet, Jonas, Kukrushka, Otome, Sha-Ming, Remnan, Yuriko: Each of these columns records whether the person appeared in that loop, using 1 for “appeared” and 0 for “did not appear”.\n\nYuri wants to know: after how many loops can he reject the null hypothesis with p &lt; 0.0001 that Yuriko has the same appearance rate as the other people?\nFollow the instructions below to help Yuri find the answer:\n\nDownload the dataset gnosia.csv. (right click here) Then call the package tidyverse.\nRead gnosia.csv and save it as gnosia_raw.\nBecause Setsu is also a time looper, she will appear in each loop as well. To adjust this, create a new dataframe called gnosia_tidy by removing the columns loop, Yuri, and Setsu in gnosia_raw.\n\n\n\n\n\n\n\nTipNote\n\n\n\nIn steps 3-6, we will create a function t_test_pval() to help us calculate the p-value from the t-test for a given loop data.\n\n\n\nWrite a function called t_test_pval() that takes a dataframe data as input.\nInside t_test_pval(), create a new column appear_sum to data that calculates the row sum of all columns in the input dataframe.\nStill inside t_test_pval(), create a new column not_Yuriko_appear_rate, defined as the average appearance rate of the 12 people other than Yuriko.\n\n\n\n\n\n\n\nTipHint\n\n\n\nSubtract Yuriko from appear_sum, then divide by 12.\n\n\n\nInside t_test_pval(), use a paired sample t.test() to compare Yuriko and not_Yuriko_appear_rate, then extract and return the p-value p.\nBefore the loop starts, create two variables:\n\nminimal_loop, with initial value 0.\nfinish_index, with initial value 0.\n\nUse a for loop from 2 to 50. In each iteration:\n\nKeep only the first i rows of gnosia_tidy and save it as current_loop_data.\nPass current_loop_data into t_test_pval() and save the returned value as pval.\n\nInside the for loop, check whether: pval &lt; 0.0001, and finish_index == 0. If both conditions are true, save i as minimal_loop, and change finish_index to 1.\nPrint the value pval in each loop.\nAfter the for loop ends, print minimal_loop. What is the smallest number of loops needed for Yuri to reject the null hypothesis?\n\nlibrary(tidyverse)\n\ngnosia_raw &lt;- read.csv(\"data/gnosia_raw.csv\")\n\ngnosia_tidy &lt;- gnosia_raw %&gt;% select(-c(loop, Yuri, Setsu)) \n\nt_test_pval &lt;- function(data){\n  data$appear_sum &lt;- data %&gt;% rowSums()\n  data &lt;- data %&gt;% mutate(not_Yuriko_appear_rate = (appear_sum - Yuriko) / 12)\n  \n  test &lt;- t.test(data$Yuriko, data$not_Yuriko_appear_rate, paired = TRUE)\n  p &lt;- test$p.value\n  \n  return(p)\n}\n\nminimal_loop &lt;- 0\nfinish_index &lt;- 0\n\nfor(i in 2:50){\n  current_loop_data &lt;- gnosia_tidy[1:i, ]\n  pval &lt;- t_test_pval(current_loop_data)\n  \n  if(pval &lt; 0.0001 && finish_index == 0){\n    minimal_loop &lt;- i\n    finish_index &lt;- 1\n  }\n  \n  print(pval)\n}\n\nprint(minimal_loop)\n\n\n[1] 0.05771588\n[1] 0.06905066\n[1] 0.02200605\n[1] 0.02146063\n[1] 0.01722455\n[1] 0.006530017\n[1] 0.002007834\n[1] 0.001052826\n[1] 0.0003124017\n[1] 0.0005872768\n[1] 0.0001889123\n[1] 5.897727e-05\n[1] 3.139074e-05\n[1] 9.440543e-06\n[1] 2.748775e-06\n[1] 9.423538e-07\n[1] 2.608062e-07\n[1] 8.565129e-08\n[1] 2.266742e-08\n[1] 2.499808e-08\n[1] 6.757021e-09\n[1] 7.146597e-09\n[1] 2.306901e-09\n[1] 2.321332e-09\n[1] 7.426037e-10\n[1] 2.054363e-10\n[1] 5.315667e-10\n[1] 1.774188e-10\n[1] 1.67543e-10\n[1] 8.172491e-11\n[1] 2.398059e-11\n[1] 7.99895e-12\n[1] 2.604162e-12\n[1] 7.36772e-13\n[1] 3.673889e-13\n[1] 9.127869e-13\n[1] 8.46921e-13\n[1] 2.851218e-13\n[1] 2.600734e-13\n[1] 2.320208e-13\n[1] 7.837134e-14\n[1] 3.750343e-14\n[1] 3.289652e-14\n[1] 1.00903e-14\n[1] 3.347372e-15\n[1] 2.943182e-15\n[1] 9.728604e-16\n[1] 5.552559e-16\n[1] 2.65444e-16\n\n\n[1] 13",
+    "crumbs": [
+      "Practice Answers",
+      "Week 3 Answers (0310)"
+    ]
+  },
+  {
+    "objectID": "answers/wk01_answer.html",
+    "href": "answers/wk01_answer.html",
+    "title": "Week 1 Answers (0224)",
+    "section": "",
+    "text": "Create an RStudio project inside a folder with proper names (e.g. TA_Session).\nCreate folders for R scripts and data.\nFor the following questions, your code should follow the coding styles in the slides.\n\n\n\n\n\n\n\nTipHint\n\n\n\nIt is recommended to create a new project different from last semester!",
+    "crumbs": [
+      "Practice Answers",
+      "Week 1 Answers (0224)"
+    ]
+  },
+  {
+    "objectID": "answers/wk01_answer.html#project",
+    "href": "answers/wk01_answer.html#project",
+    "title": "Week 1 Answers (0224)",
+    "section": "",
+    "text": "Create an RStudio project inside a folder with proper names (e.g. TA_Session).\nCreate folders for R scripts and data.\nFor the following questions, your code should follow the coding styles in the slides.\n\n\n\n\n\n\n\nTipHint\n\n\n\nIt is recommended to create a new project different from last semester!",
+    "crumbs": [
+      "Practice Answers",
+      "Week 1 Answers (0224)"
+    ]
+  },
+  {
+    "objectID": "answers/wk01_answer.html#assign-values",
+    "href": "answers/wk01_answer.html#assign-values",
+    "title": "Week 1 Answers (0224)",
+    "section": "2 Assign Values",
+    "text": "2 Assign Values\nCreate two variables called x and y, and assign values 20260224 and 409. Compute x / y.\nx &lt;- 20260224\ny &lt;- 409\nprint(x / y)\n\n\n[1] 49536",
+    "crumbs": [
+      "Practice Answers",
+      "Week 1 Answers (0224)"
+    ]
+  },
+  {
+    "objectID": "answers/wk01_answer.html#help",
+    "href": "answers/wk01_answer.html#help",
+    "title": "Week 1 Answers (0224)",
+    "section": "3 Help",
+    "text": "3 Help\nUse the help() function to check docs, e.g. data.frame() or mean().\nhelp(data.frame)\nhelp(mean)",
+    "crumbs": [
+      "Practice Answers",
+      "Week 1 Answers (0224)"
+    ]
+  },
+  {
+    "objectID": "answers/wk01_answer.html#matrix-and-dataframe",
+    "href": "answers/wk01_answer.html#matrix-and-dataframe",
+    "title": "Week 1 Answers (0224)",
+    "section": "4 Matrix and DataFrame",
+    "text": "4 Matrix and DataFrame\n\nCreate a vector name_vec with 3 names James, Noc, and Monica.\nCreate a vector age_vec that stores their age 25, 30, and 28.\nCreate a 3 × 2 matrix name_age_mat with name_vec and age_vec, then print it in the console.\nCreate a dataframe name_age_df using name_vec and age_vec with column names name annd age, then print it in the console.\nWhat’s the data type of name_age_df and age_vec?\n\nname_vec &lt;- c(\"James\", \"Noc\", \"Monica\")\nage_vec &lt;- c(25, 30, 28)\n\nname_age_mat &lt;- matrix(c(name_vec, age_vec), nrow = 3)\nprint(name_age_mat)\nclass(name_age_mat)\n\nname_age_df &lt;- data.frame(name = name_vec, \n                          age = age_vec)\nprint(name_age_df)\nclass(name_age_df)\n\n\n     [,1]     [,2]\n[1,] \"James\"  \"25\"\n[2,] \"Noc\"    \"30\"\n[3,] \"Monica\" \"28\"\n\n\n[1] \"matrix\" \"array\" \n\n\n    name age\n1  James  25\n2    Noc  30\n3 Monica  28\n\n\n[1] \"data.frame\"",
+    "crumbs": [
+      "Practice Answers",
+      "Week 1 Answers (0224)"
+    ]
+  },
+  {
+    "objectID": "practices/wk02.html",
+    "href": "practices/wk02.html",
+    "title": "Week 2 Practices (0303)",
+    "section": "",
+    "text": "Remember to open the project you create last week.\nCreate a new script for today’s exercise and save in the script folder.",
     "crumbs": [
       "Practices",
-      "Week 3 Practices (0310)"
+      "Week 2 Practices (0303)"
+    ]
+  },
+  {
+    "objectID": "practices/wk02.html#project",
+    "href": "practices/wk02.html#project",
+    "title": "Week 2 Practices (0303)",
+    "section": "",
+    "text": "Remember to open the project you create last week.\nCreate a new script for today’s exercise and save in the script folder.",
+    "crumbs": [
+      "Practices",
+      "Week 2 Practices (0303)"
+    ]
+  },
+  {
+    "objectID": "practices/wk02.html#chou-kaguya-hime-超時空輝耀姬",
+    "href": "practices/wk02.html#chou-kaguya-hime-超時空輝耀姬",
+    "title": "Week 2 Practices (0303)",
+    "section": "2 Chou Kaguya-hime! (超時空輝耀姬！)",
+    "text": "2 Chou Kaguya-hime! (超時空輝耀姬！)\nKaguya is a new liver in Tsukuyomi. Her roommate, Iroha, also serves as her manager. To improve Kaguya’s streaming performance, Iroha records data from each stream, including:\n\ndate: The date of the stream.\ncontent: The type of content Kaguya did during the stream.\npaired_with_iroha: Sometimes Iroha joins Kaguya’s stream. If Iroha appeared in the stream on that date, record Yes; otherwise, record No.\nhours: The duration of the stream (in hours).\ndonation: The total amount of donations Kaguya received.\n\nTsukuyomi takes 30% of the donations as a commission. Iroha wants to know which type of content has the highest earnings per hour when Kaguya streams alone.\nFollow the instructions below to help Iroha find the answer:\n\nUse the pipe operator %&gt;% appropriately in the steps below and download the dataset kaguya.csv. (right click here) Then install and call the package tidyverse.\nRead kaguya.csv and save it as kaguya_raw.\nWithout modifying kaguya_raw, create a new dataframe called kaguya_solo by filtering the data to keep only the streams where Kaguya streamed alone (i.e., not paired with Iroha).\nAdd a new column earning to kaguya_solo, defined as 70% of donation.\nAdd a new column earning_per_hour to kaguya_solo, calculated as earning / hours.\nKeep only the columns date, content, earning_per_hour in kaguya_solo.\nArrange the rows of kaguya_solo in descending order of earning_per_hour.\nPrint kaguya_solo. Which date’s stream has the highest earnings per hour?\nCreate a new dataframe kaguya_solo_sum that summarizes the average earning_per_hour for each content category, and arranges it in the descending order of average earning_per_hour. Which type of content has the highest average earnings per hour?",
+    "crumbs": [
+      "Practices",
+      "Week 2 Practices (0303)"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk03.html",
+    "href": "slides/Slides_wk03.html",
+    "title": "Week 3 Slides (0310)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 3 Slides (0310)"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk01.html",
+    "href": "slides/Slides_wk01.html",
+    "title": "Week 1 Slides (0224)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 1 Slides (0224)"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "2026 Spring Econometrics TA Session",
+    "section": "",
+    "text": "Welcome! Use the sidebar to open weekly Slides, Practices and Answers\nAnswers to the practice will be published after each TA Session.\nSending email: r13323002@ntu.edu.tw (mail title including [Econometrics TA])\nTA Office hours: Tuesday, 3:30-4:20 p.m. at SSB. (社會科學院) Room 645.\n2025 Fall Statistics TA Session Website\nOpenIntro Website",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk02.html",
+    "href": "slides/Slides_wk02.html",
+    "title": "Week 2 Slides (0303)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 2 Slides (0303)"
     ]
   },
   {
@@ -165,134 +263,69 @@
     ]
   },
   {
-    "objectID": "slides/Slides_wk02.html",
-    "href": "slides/Slides_wk02.html",
-    "title": "Week 2 Slides (0303)",
+    "objectID": "practices/wk03.html",
+    "href": "practices/wk03.html",
+    "title": "Week 3 Practices (0310)",
     "section": "",
-    "text": "Open in new tab · Download PDF",
+    "text": "Open the project you create in the first week.\nCreate a new script for today’s exercise and save in the script folder.",
     "crumbs": [
-      "Slides",
-      "Week 2 Slides (0303)"
+      "Practices",
+      "Week 3 Practices (0310)"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "2026 Spring Econometrics TA Session",
+    "objectID": "practices/wk03.html#project",
+    "href": "practices/wk03.html#project",
+    "title": "Week 3 Practices (0310)",
     "section": "",
-    "text": "Welcome! Use the sidebar to open weekly Slides, Practices and Answers\nAnswers to the practice will be published after each TA Session.\nSending email: r13323002@ntu.edu.tw (mail title including [Econometrics TA])\nTA Office hours: Tuesday, 3:30-4:20 p.m. at SSB. (社會科學院) Room 645.\n2025 Fall Statistics TA Session Website\nOpenIntro Website",
+    "text": "Open the project you create in the first week.\nCreate a new script for today’s exercise and save in the script folder.",
     "crumbs": [
-      "Home"
+      "Practices",
+      "Week 3 Practices (0310)"
     ]
   },
   {
-    "objectID": "slides/Slides_wk01.html",
-    "href": "slides/Slides_wk01.html",
-    "title": "Week 1 Slides (0224)",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
+    "objectID": "practices/wk03.html#gnosia-古諾希亞",
+    "href": "practices/wk03.html#gnosia-古諾希亞",
+    "title": "Week 3 Practices (0310)",
+    "section": "2 GNOSIA (古諾希亞)",
+    "text": "2 GNOSIA (古諾希亞)\nYuri is trapped in a time loop! In each loop, there are 15 possible people who may appear. After repeating the loop many times, he begins to suspect that Yuriko appears more often than the other people. To investigate this, Yuri decides to record which people appear in each of the next 50 loops. The dataset contains:\n\nloop: The loop number.\nYuri, Setsu, Gina, SQ, Raqio, Stella, Shigemichi, Chipie, Comet, Jonas, Kukrushka, Otome, Sha-Ming, Remnan, Yuriko: Each of these columns records whether the person appeared in that loop, using 1 for “appeared” and 0 for “did not appear”.\n\nYuri wants to know: after how many loops can he reject the null hypothesis with p &lt; 0.0001 that Yuriko has the same appearance rate as the other people?\nFollow the instructions below to help Yuri find the answer:\n\nDownload the dataset gnosia.csv. (right click here) Then call the package tidyverse.\nRead gnosia.csv and save it as gnosia_raw.\nBecause Setsu is also a time looper, she will appear in each loop as well. To adjust this, create a new dataframe called gnosia_tidy by removing the columns loop, Yuri, and Setsu in gnosia_raw.\n\n\n\n\n\n\n\nTipNote\n\n\n\nIn steps 3-6, we will create a function t_test_pval() to help us calculate the p-value from the t-test for a given loop data.\n\n\n\nWrite a function called t_test_pval() that takes a dataframe data as input.\nInside t_test_pval(), create a new column appear_sum to data that calculates the row sum of all columns in the input dataframe.\nStill inside t_test_pval(), create a new column not_Yuriko_appear_rate, defined as the average appearance rate of the 12 people other than Yuriko.\n\n\n\n\n\n\n\nTipHint\n\n\n\nSubtract Yuriko from appear_sum, then divide by 12.\n\n\n\nInside t_test_pval(), use an paired sample t.test() to compare Yuriko and not_Yuriko_appear_rate, then extract and return the p-value p.\nBefore the loop starts, create two variables:\n\nminimal_loop, with initial value 0.\nfinish_index, with initial value 0.\n\nUse a for loop from 2 to 50. In each iteration:\n\nKeep only the first i rows of gnosia_tidy and save it as current_loop_data.\nPass current_loop_data into t_test_pval() and save the returned value as pval.\n\nInside the for loop, check whether: pval &lt; 0.0001, and finish_index == 0. If both conditions are true, save i as minimal_loop, and change finish_index to 1.\nPrint the value pval in each loop.\nAfter the for loop ends, print minimal_loop. What is the smallest number of loops needed for Yuri to reject the null hypothesis?",
     "crumbs": [
-      "Slides",
-      "Week 1 Slides (0224)"
+      "Practices",
+      "Week 3 Practices (0310)"
     ]
   },
   {
-    "objectID": "slides/Slides_wk03.html",
-    "href": "slides/Slides_wk03.html",
-    "title": "Week 3 Slides (0310)",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
-    "crumbs": [
-      "Slides",
-      "Week 3 Slides (0310)"
-    ]
-  },
-  {
-    "objectID": "practices/wk02.html",
-    "href": "practices/wk02.html",
-    "title": "Week 2 Practices (0303)",
+    "objectID": "answers/wk02_answer.html",
+    "href": "answers/wk02_answer.html",
+    "title": "Week 2 Answers (0303)",
     "section": "",
     "text": "Remember to open the project you create last week.\nCreate a new script for today’s exercise and save in the script folder.",
     "crumbs": [
-      "Practices",
-      "Week 2 Practices (0303)"
+      "Practice Answers",
+      "Week 2 Answers (0303)"
     ]
   },
   {
-    "objectID": "practices/wk02.html#project",
-    "href": "practices/wk02.html#project",
-    "title": "Week 2 Practices (0303)",
+    "objectID": "answers/wk02_answer.html#project",
+    "href": "answers/wk02_answer.html#project",
+    "title": "Week 2 Answers (0303)",
     "section": "",
     "text": "Remember to open the project you create last week.\nCreate a new script for today’s exercise and save in the script folder.",
     "crumbs": [
-      "Practices",
-      "Week 2 Practices (0303)"
+      "Practice Answers",
+      "Week 2 Answers (0303)"
     ]
   },
   {
-    "objectID": "practices/wk02.html#chou-kaguya-hime-超時空輝耀姬",
-    "href": "practices/wk02.html#chou-kaguya-hime-超時空輝耀姬",
-    "title": "Week 2 Practices (0303)",
+    "objectID": "answers/wk02_answer.html#chou-kaguya-hime-超時空輝耀姬",
+    "href": "answers/wk02_answer.html#chou-kaguya-hime-超時空輝耀姬",
+    "title": "Week 2 Answers (0303)",
     "section": "2 Chou Kaguya-hime! (超時空輝耀姬！)",
-    "text": "2 Chou Kaguya-hime! (超時空輝耀姬！)\nKaguya is a new liver in Tsukuyomi. Her roommate, Iroha, also serves as her manager. To improve Kaguya’s streaming performance, Iroha records data from each stream, including:\n\ndate: The date of the stream.\ncontent: The type of content Kaguya did during the stream.\npaired_with_iroha: Sometimes Iroha joins Kaguya’s stream. If Iroha appeared in the stream on that date, record Yes; otherwise, record No.\nhours: The duration of the stream (in hours).\ndonation: The total amount of donations Kaguya received.\n\nTsukuyomi takes 30% of the donations as a commission. Iroha wants to know which type of content has the highest earnings per hour when Kaguya streams alone.\nFollow the instructions below to help Iroha find the answer:\n\nUse the pipe operator %&gt;% appropriately in the steps below and download the dataset kaguya.csv. (right click here) Then install and call the package tidyverse.\nRead kaguya.csv and save it as kaguya_raw.\nWithout modifying kaguya_raw, create a new dataframe called kaguya_solo by filtering the data to keep only the streams where Kaguya streamed alone (i.e., not paired with Iroha).\nAdd a new column earning to kaguya_solo, defined as 70% of donation.\nAdd a new column earning_per_hour to kaguya_solo, calculated as earning / hours.\nKeep only the columns date, content, earning_per_hour in kaguya_solo.\nArrange the rows of kaguya_solo in descending order of earning_per_hour.\nPrint kaguya_solo. Which date’s stream has the highest earnings per hour?\nCreate a new dataframe kaguya_solo_sum that summarizes the average earning_per_hour for each content category, and arranges it in the descending order of average earning_per_hour. Which type of content has the highest average earnings per hour?",
-    "crumbs": [
-      "Practices",
-      "Week 2 Practices (0303)"
-    ]
-  },
-  {
-    "objectID": "answers/wk01_answer.html",
-    "href": "answers/wk01_answer.html",
-    "title": "Week 1 Answers (0224)",
-    "section": "",
-    "text": "Create an RStudio project inside a folder with proper names (e.g. TA_Session).\nCreate folders for R scripts and data.\nFor the following questions, your code should follow the coding styles in the slides.\n\n\n\n\n\n\n\nTipHint\n\n\n\nIt is recommended to create a new project different from last semester!",
+    "text": "2 Chou Kaguya-hime! (超時空輝耀姬！)\nKaguya is a new liver in Tsukuyomi. Her roommate, Iroha, also serves as her manager. To improve Kaguya’s streaming performance, Iroha records data from each stream, including:\n\ndate: The date of the stream.\ncontent: The type of content Kaguya did during the stream.\npaired_with_iroha: Sometimes Iroha joins Kaguya’s stream. If Iroha appeared in the stream on that date, record Yes; otherwise, record No.\nhours: The duration of the stream (in hours).\ndonation: The total amount of donations Kaguya received.\n\nTsukuyomi takes 30% of the donations as a commission. Iroha wants to know which type of content has the highest earnings per hour when Kaguya streams alone.\nFollow the instructions below to help Iroha find the answer:\n\nUse the pipe operator %&gt;% appropriately in the steps below and download the dataset kaguya.csv. (right click here) Then install and call the package tidyverse.\nRead kaguya.csv and save it as kaguya_raw.\nWithout modifying kaguya_raw, create a new dataframe called kaguya_solo by filtering the data to keep only the streams where Kaguya streamed alone (i.e., not paired with Iroha).\nAdd a new column earning to kaguya_solo, defined as 70% of donation.\nAdd a new column earning_per_hour to kaguya_solo, calculated as earning / hours.\nKeep only the columns date, content, earning_per_hour in kaguya_solo.\nArrange the rows of kaguya_solo in descending order of earning_per_hour.\nPrint kaguya_solo. Which date’s stream has the highest earnings per hour?\nCreate a new dataframe kaguya_solo_sum that summarizes the average earning_per_hour for each content category, and arranges it in the descending order of average earning_per_hour. Which type of content has the highest average earnings per hour?\n\nlibrary(tidyverse)\n\nkaguya_raw &lt;- read.csv(\"data/kaguya.csv\")\n\nkaguya_solo &lt;- kaguya_raw %&gt;% \n  filter(paired_with_iroha == \"No\") %&gt;%\n  mutate(earning = donation * 0.7) %&gt;% \n  mutate(earning_per_hour = earning / hours) %&gt;%\n  select(date, content, earning_per_hour) %&gt;%\n  arrange(desc(earning_per_hour))\n\nprint(kaguya_solo[1:5, ])\n\nkaguya_solo_sum &lt;- kaguya_solo %&gt;% \n  group_by(content) %&gt;%\n  summarise(avg_earning_per_hour = mean(earning_per_hour)) %&gt;%\n  arrange(desc(avg_earning_per_hour))\n\nprint(kaguya_solo_sum)\n\n\n        date content earning_per_hour\n1 2050-05-19 Singing         94500.00\n2 2050-03-10 Dancing         87640.00\n3 2050-03-31  Gaming         75425.00\n4 2050-04-14  Gaming         72753.33\n5 2050-05-25  Gaming         71680.00\n\n\n# A tibble: 4 × 2\n  content avg_earning_per_hour\n  &lt;chr&gt;                  &lt;dbl&gt;\n1 Dancing               51129.\n2 Gaming                47637.\n3 Singing               47428.\n4 Chat                  37275.",
     "crumbs": [
       "Practice Answers",
-      "Week 1 Answers (0224)"
-    ]
-  },
-  {
-    "objectID": "answers/wk01_answer.html#project",
-    "href": "answers/wk01_answer.html#project",
-    "title": "Week 1 Answers (0224)",
-    "section": "",
-    "text": "Create an RStudio project inside a folder with proper names (e.g. TA_Session).\nCreate folders for R scripts and data.\nFor the following questions, your code should follow the coding styles in the slides.\n\n\n\n\n\n\n\nTipHint\n\n\n\nIt is recommended to create a new project different from last semester!",
-    "crumbs": [
-      "Practice Answers",
-      "Week 1 Answers (0224)"
-    ]
-  },
-  {
-    "objectID": "answers/wk01_answer.html#assign-values",
-    "href": "answers/wk01_answer.html#assign-values",
-    "title": "Week 1 Answers (0224)",
-    "section": "2 Assign Values",
-    "text": "2 Assign Values\nCreate two variables called x and y, and assign values 20260224 and 409. Compute x / y.\nx &lt;- 20260224\ny &lt;- 409\nprint(x / y)\n\n\n[1] 49536",
-    "crumbs": [
-      "Practice Answers",
-      "Week 1 Answers (0224)"
-    ]
-  },
-  {
-    "objectID": "answers/wk01_answer.html#help",
-    "href": "answers/wk01_answer.html#help",
-    "title": "Week 1 Answers (0224)",
-    "section": "3 Help",
-    "text": "3 Help\nUse the help() function to check docs, e.g. data.frame() or mean().\nhelp(data.frame)\nhelp(mean)",
-    "crumbs": [
-      "Practice Answers",
-      "Week 1 Answers (0224)"
-    ]
-  },
-  {
-    "objectID": "answers/wk01_answer.html#matrix-and-dataframe",
-    "href": "answers/wk01_answer.html#matrix-and-dataframe",
-    "title": "Week 1 Answers (0224)",
-    "section": "4 Matrix and DataFrame",
-    "text": "4 Matrix and DataFrame\n\nCreate a vector name_vec with 3 names James, Noc, and Monica.\nCreate a vector age_vec that stores their age 25, 30, and 28.\nCreate a 3 × 2 matrix name_age_mat with name_vec and age_vec, then print it in the console.\nCreate a dataframe name_age_df using name_vec and age_vec with column names name annd age, then print it in the console.\nWhat’s the data type of name_age_df and age_vec?\n\nname_vec &lt;- c(\"James\", \"Noc\", \"Monica\")\nage_vec &lt;- c(25, 30, 28)\n\nname_age_mat &lt;- matrix(c(name_vec, age_vec), nrow = 3)\nprint(name_age_mat)\nclass(name_age_mat)\n\nname_age_df &lt;- data.frame(name = name_vec, \n                          age = age_vec)\nprint(name_age_df)\nclass(name_age_df)\n\n\n     [,1]     [,2]\n[1,] \"James\"  \"25\"\n[2,] \"Noc\"    \"30\"\n[3,] \"Monica\" \"28\"\n\n\n[1] \"matrix\" \"array\" \n\n\n    name age\n1  James  25\n2    Noc  30\n3 Monica  28\n\n\n[1] \"data.frame\"",
-    "crumbs": [
-      "Practice Answers",
-      "Week 1 Answers (0224)"
+      "Week 2 Answers (0303)"
     ]
   },
   {
