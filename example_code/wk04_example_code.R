@@ -66,7 +66,39 @@ print(bar_graph_withlabel)
 
 
 # ==============================================
-# 3. geom_line(), geom_vline(), geom_hline()
+# 3. factor(), as.Date()
+# ==============================================
+
+# 1. Categorical variables in R: `factor()`
+
+## A factor stores categorical values with a set of levels.
+four_seasons <- c("spring", "summer", "autumn", "winter")
+four_seasons_factor <- factor(four_seasons)
+print(four_seasons_factor)
+
+## Use mutate() to convert a character column into a factor.
+df <- data.frame(cat = c("Large","Small","Large"))
+df_factor <- df %>%
+  mutate(cat = factor(cat, levels = c("Small","Large")))
+
+## The order of the x-axis follows the factor levels for many ggplot2 functions.
+df %>%
+  ggplot(aes(x = cat)) +
+  geom_bar()
+
+df_factor %>%
+  ggplot(aes(x = cat)) +
+  geom_bar()
+
+
+## 2. Turn strings into date type: `as.Date()`
+
+as.Date("2025-01-02")
+
+as.Date("01-02-2025", format = "%m-%d-%Y")
+
+# ==============================================
+# 4. geom_line(), geom_vline(), geom_hline()
 # ==============================================
 
 # 1. Line Graph: `geom_line()`
