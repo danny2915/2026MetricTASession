@@ -81,6 +81,8 @@ birth %>%
 lm_model <- lm(data = birth, weight ~ weeks)
 print(lm_model)
 
+lm_model_multiple <- lm(data = birth, weight ~ weeks + gender + visits)
+print(lm_model_multiple)
 
 # 3. Obtain the result of linear regression: `summary()`
 summary(lm_model)
@@ -89,6 +91,8 @@ summary(lm_model)$coefficient[1]
 summary(lm_model)$coefficient[2]
 summary(lm_model)$r.squared
 
+
+summary(lm_model_multiple)
 
 # =====================================================
 # 5. geom_point(), scale_x_continuous(), geom_abline()
