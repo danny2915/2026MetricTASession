@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 2 Practices (0303) – 2026Spring Econometrics TA Session</title>
+<title>Week 5 Answers (0324) – 2026Spring Econometrics TA Session</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,13 +20,48 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<link href="../practices/wk03.html" rel="next">
-<link href="../practices/wk01.html" rel="prev">
+<link href="../homework/hw1_answer.html" rel="next">
+<link href="../answers/wk04_answer.html" rel="prev">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -97,7 +132,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practices/wk01.html">Practices</a></li><li class="breadcrumb-item"><a href="../practices/wk02.html">Week 2 Practices (0303)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../answers/wk01_answer.html">Practice Answers</a></li><li class="breadcrumb-item"><a href="../answers/wk05_answer.html">Week 5 Answers (0324)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -203,13 +238,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Practices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../practices/wk01.html" class="sidebar-item-text sidebar-link">
@@ -218,7 +253,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practices/wk02.html" class="sidebar-item-text sidebar-link active">
+  <a href="../practices/wk02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 2 Practices (0303)</span></a>
   </div>
 </li>
@@ -244,13 +279,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Practice Answers</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../answers/wk01_answer.html" class="sidebar-item-text sidebar-link">
@@ -277,7 +312,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../answers/wk05_answer.html" class="sidebar-item-text sidebar-link">
+  <a href="../answers/wk05_answer.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week 5 Answers (0324)</span></a>
   </div>
 </li>
@@ -347,8 +382,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#project" id="toc-project" class="nav-link active" data-scroll-target="#project"><span class="header-section-number">1</span> Project</a></li>
-  <li><a href="#chou-kaguya-hime-超時空輝耀姬" id="toc-chou-kaguya-hime-超時空輝耀姬" class="nav-link" data-scroll-target="#chou-kaguya-hime-超時空輝耀姬"><span class="header-section-number">2</span> Chou Kaguya-hime! (超時空輝耀姬！)</a></li>
+  <li><a href="#can-your-quiz-score-predict-your-midterm-score" id="toc-can-your-quiz-score-predict-your-midterm-score" class="nav-link active" data-scroll-target="#can-your-quiz-score-predict-your-midterm-score"><span class="header-section-number">1</span> Can your Quiz score predict your Midterm score?</a></li>
   </ul>
 </nav>
 </nav>
@@ -359,9 +393,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practices/wk01.html">Practices</a></li><li class="breadcrumb-item"><a href="../practices/wk02.html">Week 2 Practices (0303)</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../answers/wk01_answer.html">Practice Answers</a></li><li class="breadcrumb-item"><a href="../answers/wk05_answer.html">Week 5 Answers (0324)</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Week 2 Practices (0303)</h1>
+<h1 class="title">Week 5 Answers (0324)</h1>
 </div>
 
 
@@ -378,39 +412,214 @@ window.Quarto = {
 </header>
 
 
-<section id="project" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="project"><span class="header-section-number">1</span> Project</h2>
-<ol type="1">
-<li><p>Remember to open the project you create last week.</p></li>
-<li><p>Create a new script for today’s exercise and save in the script folder.</p></li>
-</ol>
-</section>
-<section id="chou-kaguya-hime-超時空輝耀姬" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="chou-kaguya-hime-超時空輝耀姬"><span class="header-section-number">2</span> Chou Kaguya-hime! (超時空輝耀姬！)</h2>
-<p>Kaguya is a new liver in Tsukuyomi. Her roommate, Iroha, also serves as her manager. To improve Kaguya’s streaming performance, Iroha records data from each stream, including:</p>
+<section id="can-your-quiz-score-predict-your-midterm-score" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="can-your-quiz-score-predict-your-midterm-score"><span class="header-section-number">1</span> Can your Quiz score predict your Midterm score?</h2>
+<p>In this practice, we will use the (simulated) data from the 2025 Statistics with Recitation course to examine whether students’ quiz scores can be good predictors of their midterm scores.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Note">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This dataset is not the raw data from the course. I simulated the data based on the raw data and made sure that the new dataset generates results very similar to those of the original dataset.</p>
+</div>
+</div>
+<p>The dataset contains:</p>
 <ul>
-<li><code>date</code>: The date of the stream.</li>
-<li><code>content</code>: The type of content Kaguya did during the stream.</li>
-<li><code>paired_with_iroha</code>: Sometimes Iroha joins Kaguya’s stream. If Iroha appeared in the stream on that date, record <code>Yes</code>; otherwise, record <code>No</code>.</li>
-<li><code>hours</code>: The duration of the stream (in hours).</li>
-<li><code>donation</code>: The total amount of donations Kaguya received.</li>
+<li><code>ID</code>: The ID number of each student.</li>
+<li><code>section</code>: The section each student belongs to.</li>
+<li><code>midterm</code>, <code>quiz_1</code>, <code>quiz_2</code>, <code>quiz_3</code>: The corresponding midterm and quiz scores, where midterm scores range from 0 to 100 and quiz scores range from 0 to 30.</li>
 </ul>
-<p>Tsukuyomi takes 30% of the donations as a commission. Iroha wants to know which type of content has the highest earnings per hour when Kaguya streams alone.</p>
-<p>Follow the instructions below to help Iroha find the answer:</p>
+<p>Please follow the instructions below to conduct the analysis. (Take a guess before you do it!)</p>
 <ol start="0" type="1">
-<li><p>Use the pipe operator <code>%&gt;%</code> appropriately in the steps below and download the dataset <code>kaguya.csv</code>. <a href="kaguya.csv" target="_blank" rel="noopener">(right click here)</a> Then install and call the package <code>tidyverse</code>.</p></li>
-<li><p>Read <code>kaguya.csv</code> and save it as <code>kaguya_raw</code>.</p></li>
-<li><p>Without modifying <code>kaguya_raw</code>, create a new dataframe called <code>kaguya_solo</code> by filtering the data to keep only the streams where Kaguya streamed alone (i.e., not paired with Iroha).</p></li>
-<li><p>Add a new column <code>earning</code> to <code>kaguya_solo</code>, defined as 70% of <code>donation</code>.</p></li>
-<li><p>Add a new column <code>earning_per_hour</code> to <code>kaguya_solo</code>, calculated as <code>earning / hours</code>.</p></li>
-<li><p>Keep only the columns <code>date</code>, <code>content</code>, <code>earning_per_hour</code> in <code>kaguya_solo</code>.</p></li>
-<li><p>Arrange the rows of <code>kaguya_solo</code> in descending order of <code>earning_per_hour</code>.</p></li>
-<li><p>Print <code>kaguya_solo</code>. Which date’s stream has the highest earnings per hour?</p></li>
-<li><p>Create a new dataframe <code>kaguya_solo_sum</code> that summarizes the average <code>earning_per_hour</code> for each <code>content</code> category, and arranges it in the descending order of average <code>earning_per_hour</code>. Which type of <code>content</code> has the highest average earnings per hour?</p></li>
+<li><p>Before you begin, complete the setup:</p>
+<ul>
+<li>Open the project you created for the TA Session by clicking on <code>.Rproj</code> (if you do not have one, create it).</li>
+<li>Open a new script and save in the script folder.</li>
+<li>Download the dataset <code>grades.csv</code> and save it in the <code>data</code> folder. <a href="grades.csv" target="_blank" rel="noopener">(right click here)</a><br>
+</li>
+<li>Call the package <code>tidyverse</code>.</li>
+<li>Create an <code>output</code> folder inside the project folder if you do not have one.</li>
+<li>(Optional) Remove all objects from the environment using <code>rm(list = ls())</code>.</li>
+</ul></li>
+<li><p>Read <code>grades.csv</code> and save it as <code>grades_raw</code>.</p></li>
+<li><p>Replace all blank cells in <code>grades_raw</code> with <code>NA</code>.</p></li>
 </ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Hint">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use <code>grades_raw[grades_raw == ""] &lt;- NA</code>.</p>
+</div>
+</div>
+<ol start="3" type="1">
+<li><p>Create a new dataframe called <code>grades_tidy</code> from <code>grades_raw</code> with the following steps:</p>
+<ul>
+<li>Keep only the rows where <code>section</code> is <code>"國立臺灣大學修課學生 (ECON2022-03)"</code>.</li>
+<li>Remove the columns <code>ID</code> and <code>section</code>.</li>
+<li>Remove rows with missing values using <code>na.omit()</code>.</li>
+<li>Convert <code>midterm</code>, <code>quiz_1</code>, <code>quiz_2</code>, and <code>quiz_3</code> to numeric type.</li>
+<li>Create a new column <code>avg_quiz_score</code> equal to the average of <code>quiz_1</code>, <code>quiz_2</code>, and <code>quiz_3</code>.</li>
+</ul></li>
+<li><p>Rename the columns of <code>grades_tidy</code> as follows: <code>midterm</code>, <code>quiz_ch_1to2</code>, <code>quiz_ch_3to4</code>, <code>quiz_r</code>, <code>avg_quiz_score</code>.</p></li>
+<li><p>First, let’s see if there’s relationship between students’ midterm scores and their average quiz scores. Make a scatter plot with <code>avg_quiz_score</code> on the x-axis, <code>midterm</code> on the y-axis, and with the settings:</p>
+<ul>
+<li>x-axis: <code>"Average Quiz Score"</code>, ranges from <code>0</code> to <code>30</code></li>
+<li>y-axis: <code>"Midterm Score"</code>, ranges from <code>0</code> to <code>100</code></li>
+<li>color: <code>"steelblue"</code></li>
+<li>size: <code>2.5</code></li>
+<li>Labels: x <code>"Average Quiz Score"</code>, y <code>"Midterm Score"</code></li>
+</ul></li>
+<li><p>Print the correlation between <code>midterm</code> and <code>avg_quiz_score</code>.</p></li>
+<li><p>Fit a linear regression model called <code>reg_midterm_on_avg</code> with <code>midterm</code> as the response variable and <code>avg_quiz_score</code> as the predictor. Save its summary as <code>reg_midterm_on_avg_summary</code>, and print the summary. What is the result? Does it match what you see in the scatter plot?</p></li>
+<li><p>Next, let us investigate further to see which quiz serves as the best predictor of the midterm score. Fit a linear regression model called <code>reg_midterm_on_all_quiz</code> with <code>midterm</code> as the response variable and <code>quiz_ch_1to2</code>, <code>quiz_ch_3to4</code>, and <code>quiz_r</code> as the predictors. Save its summary as <code>reg_midterm_on_all_quiz_summary</code>, and print the summary. <strong>How would you explain the regression result?</strong></p></li>
+<li><p>Creating a plot <code>reg_midterm_on_avg_plot</code> by adding a regression line (in step 6) to the plot you just created in step 5 with the following settings and then print it.</p>
+<ul>
+<li>slope: the coefficient of <code>avg_quiz_score</code> from <code>reg_midterm_on_avg_summary</code></li>
+<li>intercept: the intercept from <code>reg_midterm_on_avg_summary</code></li>
+<li>color: <code>"lightcoral"</code></li>
+<li>linetype: <code>"dashed"</code></li>
+</ul></li>
+<li><p>Save <code>reg_midterm_on_avg_plot</code> into an <code>output</code> folder as a <code>png</code> file named <code>reg_midterm_on_avg_plot.png</code> using <code>ggsave()</code> with the settings: <code>width = 12</code>, <code>height = 8</code>, <code>dpi = 300</code>.</p></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>grades_raw <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/grades.csv"</span>) </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>grades_raw[grades_raw <span class="sc">==</span> <span class="st">""</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>grades_tidy <span class="ot">&lt;-</span> grades_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(section <span class="sc">==</span> <span class="st">"國立臺灣大學修課學生 (ECON2022-03)"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(ID, section)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">midterm =</span> <span class="fu">as.numeric</span>(midterm)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">quiz_1 =</span> <span class="fu">as.numeric</span>(quiz_1)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">quiz_2 =</span> <span class="fu">as.numeric</span>(quiz_2)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">quiz_3 =</span> <span class="fu">as.numeric</span>(quiz_3)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">avg_quiz_score =</span> (quiz_1 <span class="sc">+</span> quiz_2 <span class="sc">+</span> quiz_3) <span class="sc">/</span> <span class="dv">3</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(grades_tidy) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"midterm"</span>, <span class="st">"quiz_ch_1to2"</span>, <span class="st">"quiz_ch_3to4"</span>, <span class="st">"quiz_r"</span>, <span class="st">"avg_quiz_score"</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(grades_tidy, <span class="fu">aes</span>(<span class="at">x =</span> avg_quiz_score, <span class="at">y =</span> midterm)) <span class="sc">+</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"steelblue"</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Average Quiz Score"</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Midterm Score"</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">30</span>)) <span class="sc">+</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(grades_tidy<span class="sc">$</span>midterm, grades_tidy<span class="sc">$</span>avg_quiz_score)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>reg_midterm_on_avg <span class="ot">&lt;-</span> <span class="fu">lm</span>(midterm <span class="sc">~</span> avg_quiz_score, <span class="at">data =</span> grades_tidy)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>reg_midterm_on_avg_summary <span class="ot">&lt;-</span> <span class="fu">summary</span>(reg_midterm_on_avg)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reg_midterm_on_avg_summary)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>reg_midterm_on_all_quiz <span class="ot">&lt;-</span> <span class="fu">lm</span>(midterm <span class="sc">~</span> quiz_ch_1to2 <span class="sc">+</span> quiz_ch_3to4 <span class="sc">+</span> quiz_r, <span class="at">data =</span> grades_tidy)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>reg_midterm_on_all_quiz_summary <span class="ot">&lt;-</span> <span class="fu">summary</span>(reg_midterm_on_all_quiz)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reg_midterm_on_all_quiz_summary)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>reg_midterm_on_avg_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(grades_tidy, <span class="fu">aes</span>(<span class="at">x =</span> avg_quiz_score, <span class="at">y =</span> midterm)) <span class="sc">+</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"steelblue"</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Average Quiz Score"</span>,</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Midterm Score"</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span> </span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">slope =</span> reg_midterm_on_avg_summary<span class="sc">$</span>coefficients[<span class="dv">2</span>],</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">intercept =</span> reg_midterm_on_avg_summary<span class="sc">$</span>coefficients[<span class="dv">1</span>],</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"lightcoral"</span>,</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">"dashed"</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">30</span>)) <span class="sc">+</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(reg_midterm_on_avg_plot)</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="st">"reg_midterm_on_avg_plot.png"</span>,</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>       <span class="at">plot =</span> reg_midterm_on_avg_plot,</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>       <span class="at">path =</span> <span class="st">"output"</span>,</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">12</span>,</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>       <span class="at">height =</span> <span class="dv">8</span>,</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>       <span class="at">dpi =</span> <span class="dv">300</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="wk05_answer_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.6566771</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = midterm ~ avg_quiz_score, data = grades_tidy)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-51.080  -9.891   2.095   8.581  41.526 
+
+Coefficients:
+               Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)     22.7500     8.0296   2.833  0.00636 ** 
+avg_quiz_score   2.7798     0.4229   6.574 1.63e-08 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 16.93 on 57 degrees of freedom
+Multiple R-squared:  0.4312,    Adjusted R-squared:  0.4212 
+F-statistic: 43.22 on 1 and 57 DF,  p-value: 1.627e-08</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = midterm ~ quiz_ch_1to2 + quiz_ch_3to4 + quiz_r, 
+    data = grades_tidy)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-47.154  -5.886   3.435   8.324  30.711 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   34.0965     8.0278   4.247 8.41e-05 ***
+quiz_ch_1to2  -0.8011     0.5094  -1.573   0.1215    
+quiz_ch_3to4   0.7005     0.3003   2.332   0.0234 *  
+quiz_r         2.2357     0.3987   5.608 6.85e-07 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 15.09 on 55 degrees of freedom
+Multiple R-squared:  0.5639,    Adjusted R-squared:  0.5401 
+F-statistic: 23.71 on 3 and 55 DF,  p-value: 5.598e-10</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="wk05_answer_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="kaguya.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Animated welcome" width="960"></p>
+<p><img src="reset.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Animated welcome" width="960"></p>
 </figure>
 </div>
 
@@ -1048,13 +1257,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../practices/wk01.html" class="pagination-link" aria-label="Week 1 Practices (0224)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 1 Practices (0224)</span>
+      <a href="../answers/wk04_answer.html" class="pagination-link" aria-label="Week 4 Answers (0317)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 4 Answers (0317)</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../practices/wk03.html" class="pagination-link" aria-label="Week 3 Practices (0310)">
-        <span class="nav-page-text">Week 3 Practices (0310)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../homework/hw1_answer.html" class="pagination-link" aria-label="Homework 1 Answers">
+        <span class="nav-page-text">Homework 1 Answers</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
