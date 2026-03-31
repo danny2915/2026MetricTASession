@@ -34,7 +34,7 @@ word1 <- "apple"
 nchar(word1)
 
 ## example 2
-words <- nchar(c(15, -3.5, TRUE))
+words <- c(15, -3.5, TRUE)
 nchar(words)
 
 # 3. trim string: `substring()`
