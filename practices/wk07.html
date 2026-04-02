@@ -476,15 +476,12 @@ window.Quarto = {
 <li><p>Create a dataframe called <code>e_card_data</code> that contains <code>game_num</code>, <code>side</code>, <code>kaiji_stress</code>, <code>tonegawa_pressure</code>, and <code>decision_time</code>. Standardize the last three variables using <code>scale()</code>.</p></li>
 <li><p>Source the helper file <code>calc_win.R</code> and combine the output into <code>e_card_data</code> (do not copy and paste the function inside!).</p></li>
 <li><p>Fit a robust linear regression model called <code>reg_win</code> with <code>if_win</code> as the response variable and <code>kaiji_stress</code>, <code>tonegawa_pressure</code>, <code>decision_time</code>, and <code>side</code> as the predictors. Print the regression summary.</p></li>
-<li><p>Test the null hypothesis [ H_0:_1 = _2 ] where:</p>
+<li><p>Test the null hypothesis <span class="math inline">\(H_0:\beta\_1 = \beta\_2\)</span> where:</p>
 <ul>
-<li>(_1) is the coefficient on <code>kaiji_stress</code></li>
-<li>(_2) is the coefficient on <code>tonegawa_pressure</code></li>
+<li><span class="math inline">\(\beta\_1\)</span> is the coefficient on <code>kaiji_stress</code></li>
+<li><span class="math inline">\(\beta\_2\)</span> is the coefficient on <code>tonegawa_pressure</code> Can you reject the null hypothesis that the coefficients on <code>kaiji_stress</code> and <code>tonegawa_pressure</code> are equal?</li>
 </ul></li>
-</ol>
-<p>Can you reject the null hypothesis that the coefficients on <code>kaiji_stress</code> and <code>tonegawa_pressure</code> are equal?</p>
-<ol start="6" type="1">
-<li>Change the number of random seed (to any number you like), does the result stays similar? <code>screenreg()</code>.</li>
+<li><p>Change the number of random seed (to any number you like), does the result stays similar?</p></li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
