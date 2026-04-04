@@ -1,4 +1,4 @@
-cal_win <- function(dat) {
+calc_win <- function(dat) {
   win_prob <- ifelse(dat$side == "emperor_side", 0.36, 0.06) -
     0.42 * dat$kaiji_stress -
     0.02 * dat$tonegawa_pressure -
