@@ -220,8 +220,8 @@
     ]
   },
   {
-    "objectID": "practices/wk08.html#medalist-revisit-金牌得主",
-    "href": "practices/wk08.html#medalist-revisit-金牌得主",
+    "objectID": "practices/wk08.html#medalist-2nd-season-金牌得主-第二季",
+    "href": "practices/wk08.html#medalist-2nd-season-金牌得主-第二季",
     "title": "Week 8 Practices (0414)",
     "section": "",
     "text": "In this practice, we are going to utilize your answer code to the Week 4’s practices.\n\nBefore you begin, complete the setup:\n\nOpen the project you created for the TA Session by clicking on .Rproj (if you do not have one, create it).\nOpen a new R markdown and save in the script folder.\nDownload the dataset medalist.csv and save it in the data folder. (right click here)\n\nFind and open your own Week 4 answer code. (If you do not have one, you can use TA’s)\nAdd a code chunk that imports the package tidyverse, here, and the dataset medalist.csv.\nAdd a code chunk that creates medalist_tidy.\nAdd a code chunk that creates medalist_daily and prints medalist_hist_plot.\nAdd a code chunk that creates and prints medalist_bar_plot and medalist_facet_bar_plot.\nAdd a code chunk that creates and prints medalist_line_plot and medalist_facet_line_plot.",
