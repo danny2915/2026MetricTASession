@@ -44,10 +44,17 @@ $$
 
 ```{r}
 library(here)
+library(tidyverse)
 birth <- read.csv(here("data", "ncbirths.csv"))
 summary(birth$weight)
 ```
 
 ```{r, echo=FALSE}
-hist(birth$weight)
+ggplot(birth, aes(x = weeks, y = weight)) +
+  geom_point(color = "steelblue", size = 2.5) +
+  labs(
+    x = "Birth Weeks",
+    y = "Baby Weight (pounds)"
+  )
+
 ```
