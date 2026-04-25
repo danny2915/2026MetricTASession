@@ -89,8 +89,16 @@ lm_model_poly <- lm_robust(
   data = acs
 )
 
+# 2. Visualizing Regression: geom_smooth()
 
-# 2. Nonlinear Regression: Interaction Terms
+ggplot(acs, aes(x = age, y = income)) +
+  geom_point() +
+  geom_smooth(
+    method = "lm",
+    formula = y ~ x + I(x^2)
+  ) 
+
+# 3. Nonlinear Regression: Interaction Terms
 
 lm_model_interaction_1 <- lm_robust(
   income ~ age * univ,
@@ -106,7 +114,7 @@ lm_model_interaction_2 <- lm_robust(
 
 lm_model_interaction_2
 
-# 3. Prediction: predict()
+# 4. Prediction: predict()
 
 model <- lm_robust(income ~ hrs_work, data = acs)
 
