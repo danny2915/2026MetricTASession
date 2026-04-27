@@ -242,25 +242,25 @@
     ]
   },
   {
-    "objectID": "practices/wk10.html",
-    "href": "practices/wk10.html",
-    "title": "Week 10 Practices (0428)",
+    "objectID": "practices/wk11.html",
+    "href": "practices/wk11.html",
+    "title": "Week 11 Practices (0504)",
     "section": "",
     "text": "Tokai Teio (東海帝王) and Mejiro McQueen (目白麥昆) are preparing for the Emperor’s Prize (天皇賞), one of the highest-level races in horse racing.\nTokai Teio has been outstanding at middle distances and remains undefeated, but she suffered a fracture a few months ago and is now preparing for her comeback. Mejiro McQueen is known for her strength at longer distances and is seeking to defend her title in the Emperor’s Prize. Their showdown in the Emperor’s Prize has become the center of attention for horse racing fans.\nIn this practice, we use the training data of Tokai Teio and Mejiro McQueen to predict the race outcome. The dataset contains:\n\ndate: The date of the training session.\nrunner: The runner’s name (Tokai Teio or Mejiro McQueen).\ndistance_m: The distance in meters.\nfinal_time: The recorded finishing time, stored as a character string in m:ss.s format.\n\nGiven that the Emperor’s Prize is a 3200-meter race, who is predicted to win the Emperor’s Prize based on the training data?\n\nBefore you begin, complete the setup:\n\nOpen the project you created for the TA Session by clicking on .Rproj (if you do not have one, create it).\nOpen a new script and save it in the script folder.\nDownload the dataset pretty_derby.csv and save it in the data folder. (right click here)\nCall the packages tidyverse and estimatr.\n(Optional) Remove all objects from the environment using rm(list = ls()).\n\nRead pretty_derby.csv and save it as pretty_derby_raw. Then create a new dataframe called pretty_derby_tidy by copying pretty_derby_raw.\nClean the data pretty_derby_tidy:\n\nConvert date to Date type.\nCreate a numeric variable race_time_sec that measures final_time in second using sub().\nCreate distance_km = distance_m / 1000.\nCreate after_fracture, equal to 1 for Tokai Teio after 1992-01-10, and 0 otherwise.\n\n\n\n\n\n\n\n\nTipHint. (Try it yourself before you open it!)\n\n\n\n\n\nUse sub(\":.*\", \"\", x) to extract min_part from final_time.\n\n\n\n\nMake a plot called time_distance_plot to show the relationship between distance_m and race_time_sec, colored by runner. Add a second-order polynomial smooth line using geom_smooth() with:\n\nmethod = \"lm\"\nformula = y ~ x + I(x^2)\nse = FALSE\n\nFit a robust linear regression model called model_pretty_derby using lm_robust() with:\n\nresponse variable: race_time_sec\ninteraction term between runner and distance_km\ninteraction term between runner and the square ofdistance_km\nthe control variable after_fracture\n\n\nBased on the context and the results, do you think it is reasonable to include the polynomial terms?\n\nCreate a dataframe called emperor_size_prediction with three rows:\n\nTokai Teio at 3.2 km with after_fracture = 1\nTokai Teio at 3.2 km with after_fracture = 0\nMejiro McQueen at 3.2 km with after_fracture = 0\n\n\nThen use predict() with to add a column predicted_time_sec for these three cases and answer the following questoins:\n\nWho is predicted to be faster in the Emperor Prize?\nIf Tokai Teio had not been injured, would your prediction changed?",
     "crumbs": [
       "Practices",
-      "Week 10 Practices (0428)"
+      "Week 11 Practices (0504)"
     ]
   },
   {
-    "objectID": "practices/wk10.html#pretty-derby-season-2-賽馬娘-第二季",
-    "href": "practices/wk10.html#pretty-derby-season-2-賽馬娘-第二季",
-    "title": "Week 10 Practices (0428)",
+    "objectID": "practices/wk11.html#pretty-derby-season-2-賽馬娘-第二季",
+    "href": "practices/wk11.html#pretty-derby-season-2-賽馬娘-第二季",
+    "title": "Week 11 Practices (0504)",
     "section": "",
     "text": "Tokai Teio (東海帝王) and Mejiro McQueen (目白麥昆) are preparing for the Emperor’s Prize (天皇賞), one of the highest-level races in horse racing.\nTokai Teio has been outstanding at middle distances and remains undefeated, but she suffered a fracture a few months ago and is now preparing for her comeback. Mejiro McQueen is known for her strength at longer distances and is seeking to defend her title in the Emperor’s Prize. Their showdown in the Emperor’s Prize has become the center of attention for horse racing fans.\nIn this practice, we use the training data of Tokai Teio and Mejiro McQueen to predict the race outcome. The dataset contains:\n\ndate: The date of the training session.\nrunner: The runner’s name (Tokai Teio or Mejiro McQueen).\ndistance_m: The distance in meters.\nfinal_time: The recorded finishing time, stored as a character string in m:ss.s format.\n\nGiven that the Emperor’s Prize is a 3200-meter race, who is predicted to win the Emperor’s Prize based on the training data?\n\nBefore you begin, complete the setup:\n\nOpen the project you created for the TA Session by clicking on .Rproj (if you do not have one, create it).\nOpen a new script and save it in the script folder.\nDownload the dataset pretty_derby.csv and save it in the data folder. (right click here)\nCall the packages tidyverse and estimatr.\n(Optional) Remove all objects from the environment using rm(list = ls()).\n\nRead pretty_derby.csv and save it as pretty_derby_raw. Then create a new dataframe called pretty_derby_tidy by copying pretty_derby_raw.\nClean the data pretty_derby_tidy:\n\nConvert date to Date type.\nCreate a numeric variable race_time_sec that measures final_time in second using sub().\nCreate distance_km = distance_m / 1000.\nCreate after_fracture, equal to 1 for Tokai Teio after 1992-01-10, and 0 otherwise.\n\n\n\n\n\n\n\n\nTipHint. (Try it yourself before you open it!)\n\n\n\n\n\nUse sub(\":.*\", \"\", x) to extract min_part from final_time.\n\n\n\n\nMake a plot called time_distance_plot to show the relationship between distance_m and race_time_sec, colored by runner. Add a second-order polynomial smooth line using geom_smooth() with:\n\nmethod = \"lm\"\nformula = y ~ x + I(x^2)\nse = FALSE\n\nFit a robust linear regression model called model_pretty_derby using lm_robust() with:\n\nresponse variable: race_time_sec\ninteraction term between runner and distance_km\ninteraction term between runner and the square ofdistance_km\nthe control variable after_fracture\n\n\nBased on the context and the results, do you think it is reasonable to include the polynomial terms?\n\nCreate a dataframe called emperor_size_prediction with three rows:\n\nTokai Teio at 3.2 km with after_fracture = 1\nTokai Teio at 3.2 km with after_fracture = 0\nMejiro McQueen at 3.2 km with after_fracture = 0\n\n\nThen use predict() with to add a column predicted_time_sec for these three cases and answer the following questoins:\n\nWho is predicted to be faster in the Emperor Prize?\nIf Tokai Teio had not been injured, would your prediction changed?",
     "crumbs": [
       "Practices",
-      "Week 10 Practices (0428)"
+      "Week 11 Practices (0504)"
     ]
   },
   {
@@ -396,101 +396,14 @@
     ]
   },
   {
-    "objectID": "slides/Slides_wk08.html",
-    "href": "slides/Slides_wk08.html",
-    "title": "Week 8 Slides (0414)",
+    "objectID": "slides/Slides_wk10.html",
+    "href": "slides/Slides_wk10.html",
+    "title": "Week 10 Slides (0428)",
     "section": "",
     "text": "Open in new tab · Download PDF",
     "crumbs": [
       "Slides",
-      "Week 8 Slides (0414)"
-    ]
-  },
-  {
-    "objectID": "slides/Slides_wk06.html",
-    "href": "slides/Slides_wk06.html",
-    "title": "Week 6 Slides (0331)",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
-    "crumbs": [
-      "Slides",
-      "Week 6 Slides (0331)"
-    ]
-  },
-  {
-    "objectID": "slides/Slides_wk04.html",
-    "href": "slides/Slides_wk04.html",
-    "title": "Week 4 Slides (0317)",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
-    "crumbs": [
-      "Slides",
-      "Week 4 Slides (0317)"
-    ]
-  },
-  {
-    "objectID": "slides/Slides_wk02.html",
-    "href": "slides/Slides_wk02.html",
-    "title": "Week 2 Slides (0303)",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
-    "crumbs": [
-      "Slides",
-      "Week 2 Slides (0303)"
-    ]
-  },
-  {
-    "objectID": "slides/How to Prepare for an R Quiz.html",
-    "href": "slides/How to Prepare for an R Quiz.html",
-    "title": "How to Prepare for an R Quiz",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
-    "crumbs": [
-      "Slides",
-      "How to Prepare for an R Quiz"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "2026 Spring Econometrics TA Session",
-    "section": "",
-    "text": "Welcome! Use the sidebar to open weekly Slides, Practices and Answers\nAnswers to the practice will be published after each TA Session.\nSending email: r13323002@ntu.edu.tw (mail title including [Econometrics TA])\nTA Office hours: Tuesday, 3:30-4:20 p.m. at SSB. (社會科學院) Room 645.\n2025 Fall Statistics TA Session Website\nOpenIntro Website",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "slides/Slides_wk01.html",
-    "href": "slides/Slides_wk01.html",
-    "title": "Week 1 Slides (0224)",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
-    "crumbs": [
-      "Slides",
-      "Week 1 Slides (0224)"
-    ]
-  },
-  {
-    "objectID": "slides/Slides_wk03.html",
-    "href": "slides/Slides_wk03.html",
-    "title": "Week 3 Slides (0310)",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
-    "crumbs": [
-      "Slides",
-      "Week 3 Slides (0310)"
-    ]
-  },
-  {
-    "objectID": "slides/Slides_wk05.html",
-    "href": "slides/Slides_wk05.html",
-    "title": "Week 5 Slides (0324)",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
-    "crumbs": [
-      "Slides",
-      "Week 5 Slides (0324)"
+      "Week 10 Slides (0428)"
     ]
   },
   {
@@ -505,14 +418,112 @@
     ]
   },
   {
-    "objectID": "slides/Slides_wk10.html",
-    "href": "slides/Slides_wk10.html",
-    "title": "Week 10 Slides (0428)",
+    "objectID": "slides/Slides_wk05.html",
+    "href": "slides/Slides_wk05.html",
+    "title": "Week 5 Slides (0324)",
     "section": "",
     "text": "Open in new tab · Download PDF",
     "crumbs": [
       "Slides",
-      "Week 10 Slides (0428)"
+      "Week 5 Slides (0324)"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk03.html",
+    "href": "slides/Slides_wk03.html",
+    "title": "Week 3 Slides (0310)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 3 Slides (0310)"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk01.html",
+    "href": "slides/Slides_wk01.html",
+    "title": "Week 1 Slides (0224)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 1 Slides (0224)"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "2026 Spring Econometrics TA Session",
+    "section": "",
+    "text": "Welcome! Use the sidebar to open weekly Slides, Practices and Answers\nAnswers to the practice will be published after each TA Session.\nSending email: r13323002@ntu.edu.tw (mail title including [Econometrics TA])\nTA Office hours: Tuesday, 3:30-4:20 p.m. at SSB. (社會科學院) Room 645.\n2025 Fall Statistics TA Session Website\nOpenIntro Website",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "slides/How to Prepare for an R Quiz.html",
+    "href": "slides/How to Prepare for an R Quiz.html",
+    "title": "How to Prepare for an R Quiz",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "How to Prepare for an R Quiz"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk02.html",
+    "href": "slides/Slides_wk02.html",
+    "title": "Week 2 Slides (0303)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 2 Slides (0303)"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk04.html",
+    "href": "slides/Slides_wk04.html",
+    "title": "Week 4 Slides (0317)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 4 Slides (0317)"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk06.html",
+    "href": "slides/Slides_wk06.html",
+    "title": "Week 6 Slides (0331)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 6 Slides (0331)"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk08.html",
+    "href": "slides/Slides_wk08.html",
+    "title": "Week 8 Slides (0414)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 8 Slides (0414)"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk11.html",
+    "href": "slides/Slides_wk11.html",
+    "title": "Week 11 Slides (0504)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 11 Slides (0504)"
     ]
   },
   {
@@ -791,14 +802,14 @@
     ]
   },
   {
-    "objectID": "example_code/Example_Code_wk10.html",
-    "href": "example_code/Example_Code_wk10.html",
-    "title": "Week 10 Example R Code (0428)",
+    "objectID": "example_code/Example_Code_wk11.html",
+    "href": "example_code/Example_Code_wk11.html",
+    "title": "Week 11 Example R Code (0504)",
     "section": "",
-    "text": "Right click to download:\n\nwk10_example_code.Rmd",
+    "text": "Right click to download:\n\nwk11_example_code.Rmd",
     "crumbs": [
       "Example R code",
-      "Week 10 Example R Code (0428)"
+      "Week 11 Example R Code (0504)"
     ]
   },
   {
