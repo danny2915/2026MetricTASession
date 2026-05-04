@@ -126,4 +126,8 @@ high_hr <- data.frame(
   hrs_work = 42
 )
 
+predict(model, low_hr)
+
+predict(model, high_hr)
+
 predict(model, high_hr) - predict(model, low_hr)
