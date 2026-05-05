@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 10 Practices (0428) – 2026Spring Econometrics TA Session</title>
+<title>Homework 5 Answers – 2026Spring Econometrics TA Session</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,13 +20,48 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<link href="../answers/wk01_answer.html" rel="next">
-<link href="../practices/wk08.html" rel="prev">
+<link href="../homework/hw6_answer.html" rel="next">
+<link href="../homework/hw4_answer.html" rel="prev">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -98,7 +133,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practices/wk01.html">Practices</a></li><li class="breadcrumb-item"><a href="../practices/wk10.html">Week 10 Practices (0428)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../homework/hw1_answer.html">Homework Solutions</a></li><li class="breadcrumb-item"><a href="../homework/hw5_answer.html">Homework 5 Answers</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -189,6 +224,12 @@ window.Quarto = {
  <span class="menu-text">Week 10 Slides (0428)</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/Slides_wk11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11 Slides (0505)</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -250,21 +291,21 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../example_code/Example_Code_wk10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 10 Example R Code (0428)</span></a>
+  <a href="../example_code/Example_Code_wk11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11 Example R Code (0505)</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Practices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../practices/wk01.html" class="sidebar-item-text sidebar-link">
@@ -315,8 +356,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practices/wk10.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 10 Practices (0428)</span></a>
+  <a href="../practices/wk11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11 Practices (0505)</span></a>
   </div>
 </li>
       </ul>
@@ -378,17 +419,23 @@ window.Quarto = {
  <span class="menu-text">Week 8 Answers (0414)</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../answers/wk11_answer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11 Answers (0505)</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Homework Solutions</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../homework/hw1_answer.html" class="sidebar-item-text sidebar-link">
@@ -405,6 +452,24 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../homework/hw3_answer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Homework 3 Answers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../homework/hw4_answer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework 4 Answers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../homework/hw5_answer.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Homework 5 Answers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../homework/hw6_answer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Homework 6 Answers</span></a>
   </div>
 </li>
       </ul>
@@ -454,6 +519,18 @@ window.Quarto = {
  <span class="menu-text">Quiz 3 Answers</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quiz/Quiz_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quiz/Quiz_4_Answer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 4 Answers</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -462,7 +539,22 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pretty-derby-season-2-賽馬娘-第二季" id="toc-pretty-derby-season-2-賽馬娘-第二季" class="nav-link active" data-scroll-target="#pretty-derby-season-2-賽馬娘-第二季"><span class="header-section-number">1</span> Pretty Derby Season 2 (賽馬娘 第二季)</a></li>
+  <li><a href="#textbook-exercises" id="toc-textbook-exercises" class="nav-link active" data-scroll-target="#textbook-exercises"><span class="header-section-number">1</span> Textbook Exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-10.1" id="toc-exercise-10.1" class="nav-link" data-scroll-target="#exercise-10.1"><span class="header-section-number">1.1</span> Exercise 10.1</a></li>
+  <li><a href="#exercise-10.5" id="toc-exercise-10.5" class="nav-link" data-scroll-target="#exercise-10.5"><span class="header-section-number">1.2</span> Exercise 10.5</a></li>
+  <li><a href="#exercise-11.1" id="toc-exercise-11.1" class="nav-link" data-scroll-target="#exercise-11.1"><span class="header-section-number">1.3</span> Exercise 11.1</a></li>
+  <li><a href="#exercise-11.4" id="toc-exercise-11.4" class="nav-link" data-scroll-target="#exercise-11.4"><span class="header-section-number">1.4</span> Exercise 11.4</a></li>
+  <li><a href="#exercise-11.5" id="toc-exercise-11.5" class="nav-link" data-scroll-target="#exercise-11.5"><span class="header-section-number">1.5</span> Exercise 11.5</a></li>
+  </ul></li>
+  <li><a href="#computer-exercises" id="toc-computer-exercises" class="nav-link" data-scroll-target="#computer-exercises"><span class="header-section-number">2</span> Computer Exercises</a>
+  <ul class="collapse">
+  <li><a href="#linear-model" id="toc-linear-model" class="nav-link" data-scroll-target="#linear-model"><span class="header-section-number">2.1</span> Linear Model</a></li>
+  <li><a href="#non-linear-models-comparison" id="toc-non-linear-models-comparison" class="nav-link" data-scroll-target="#non-linear-models-comparison"><span class="header-section-number">2.2</span> Non-Linear Models Comparison</a></li>
+  <li><a href="#prediction-lpm" id="toc-prediction-lpm" class="nav-link" data-scroll-target="#prediction-lpm"><span class="header-section-number">2.3</span> Prediction: LPM</a></li>
+  <li><a href="#prediction-logit-probit" id="toc-prediction-logit-probit" class="nav-link" data-scroll-target="#prediction-logit-probit"><span class="header-section-number">2.4</span> Prediction: Logit &amp; Probit</a></li>
+  <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing"><span class="header-section-number">2.5</span> Hypothesis Testing</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -473,9 +565,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practices/wk01.html">Practices</a></li><li class="breadcrumb-item"><a href="../practices/wk10.html">Week 10 Practices (0428)</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../homework/hw1_answer.html">Homework Solutions</a></li><li class="breadcrumb-item"><a href="../homework/hw5_answer.html">Homework 5 Answers</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Week 10 Practices (0428)</h1>
+<h1 class="title">Homework 5 Answers</h1>
 </div>
 
 
@@ -492,89 +584,411 @@ window.Quarto = {
 </header>
 
 
-<section id="pretty-derby-season-2-賽馬娘-第二季" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="pretty-derby-season-2-賽馬娘-第二季"><span class="header-section-number">1</span> Pretty Derby Season 2 (賽馬娘 第二季)</h2>
-<p><code>Tokai Teio</code> (東海帝王) and <code>Mejiro McQueen</code> (目白麥昆) are preparing for the <strong>Emperor’s Prize</strong> (天皇賞), one of the highest-level races in horse racing.</p>
-<p><code>Tokai Teio</code> has been outstanding at middle distances and remains undefeated, but she suffered a fracture a few months ago and is now preparing for her comeback. <code>Mejiro McQueen</code> is known for her strength at longer distances and is seeking to defend her title in the Emperor’s Prize. Their showdown in the Emperor’s Prize has become the center of attention for horse racing fans.</p>
-<p>In this practice, we use the training data of <code>Tokai Teio</code> and <code>Mejiro McQueen</code> to predict the race outcome. The dataset contains:</p>
 <ul>
-<li><code>date</code>: The date of the training session.</li>
-<li><code>runner</code>: The runner’s name (<code>Tokai Teio</code> or <code>Mejiro McQueen</code>).</li>
-<li><code>distance_m</code>: The distance in meters.</li>
-<li><code>final_time</code>: The recorded finishing time, stored as a character string in <code>m:ss.s</code> format.</li>
+<li><p>If you find any typos or errors, please feel free to contact me via email at r13323002@ntu.edu.tw. I would appreciate it and will correct the solution to prevent any misunderstandings.</p></li>
+<li><p>For some R commands marked with ‘OPTIONAL,’ you don’t need to learn them. You will be completely fine on the computer quiz even if you choose to ignore them.</p></li>
+<li><p>If you’re having trouble understanding the code, don’t hesitate to ask me for help. I’ll do my best to assist you during office hours or after the TA session.</p></li>
 </ul>
-<p>Given that the Emperor’s Prize is a 3200-meter race, who is predicted to win the Emperor’s Prize based on the training data?</p>
-<ol start="0" type="1">
-<li><p>Before you begin, complete the setup:</p>
-<ul>
-<li>Open the project you created for the TA Session by clicking on <code>.Rproj</code> (if you do not have one, create it).</li>
-<li>Open a new script and save it in the <code>script</code> folder.</li>
-<li>Download the dataset <code>pretty_derby.csv</code> and save it in the <code>data</code> folder. <a href="pretty_derby.csv" target="_blank" rel="noopener">(right click here)</a></li>
-<li>Call the packages <code>tidyverse</code> and <code>estimatr</code>.</li>
-<li>(Optional) Remove all objects from the environment using <code>rm(list = ls())</code>.</li>
-</ul></li>
-<li><p>Read <code>pretty_derby.csv</code> and save it as <code>pretty_derby_raw</code>. Then create a new dataframe called <code>pretty_derby_tidy</code> by copying <code>pretty_derby_raw</code>.</p></li>
-<li><p>Clean the data <code>pretty_derby_tidy</code>:</p>
-<ul>
-<li>Convert <code>date</code> to <code>Date</code> type.</li>
-<li>Create a numeric variable <code>race_time_sec</code> that measures <code>final_time</code> in second using <code>sub()</code>.</li>
-<li>Create <code>distance_km = distance_m / 1000</code>.</li>
-<li>Create <code>after_fracture</code>, equal to <code>1</code> for <code>Tokai Teio</code> after <code>1992-01-10</code>, and <code>0</code> otherwise.</li>
-</ul></li>
+<section id="textbook-exercises" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="textbook-exercises"><span class="header-section-number">1</span> Textbook Exercises</h2>
+<section id="exercise-10.1" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="exercise-10.1"><span class="header-section-number">1.1</span> Exercise 10.1</h3>
+<ol type="a">
+<li>Other things being equal, if the tax on a case of beer increases by $2, the number of lives saved is:</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Hint. (Try it yourself before you open it!)">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hint. (Try it yourself before you open it!)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Use <code>sub(":.*", "", x)</code> to extract <code>min_part</code> from <code>final_time</code>.</p>
-</div>
-</div>
-</div>
-<ol start="3" type="1">
-<li><p>Make a plot called <code>time_distance_plot</code> to show the relationship between <code>distance_m</code> and <code>race_time_sec</code>, colored by <code>runner</code>. Add a second-order polynomial smooth line using <code>geom_smooth()</code> with:</p>
-<ul>
-<li><code>method = "lm"</code></li>
-<li><code>formula = y ~ x + I(x^2)</code></li>
-<li><code>se = FALSE</code></li>
-</ul></li>
-<li><p>Fit a robust linear regression model called <code>model_pretty_derby</code> using <code>lm_robust()</code> with:</p>
-<ul>
-<li>response variable: <code>race_time_sec</code></li>
-<li>interaction term between <code>runner</code> and <code>distance_km</code></li>
-<li>interaction term between <code>runner</code> and the square of<code>distance_km</code></li>
-<li>the control variable <code>after_fracture</code></li>
-</ul></li>
+<p><span class="math display">\[
+2 \times 0.69 \times 885 = 1221.3
+\]</span></p>
+<p>and the 99% confidence interval for the number of lives saved is:</p>
+<p><span class="math display">\[
+[0.69 \pm Z_{0.005} \times 0.35] \times 2 \times 885 = [-374.53, 2817.13]
+\]</span></p>
+<ol start="2" type="a">
+<li>If New Jersey lowers its drinking age to 19, the predicted decrease in traffic fatalities is:</li>
 </ol>
-<p>Based on the context and the results, do you think it is reasonable to include the polynomial terms?</p>
-<ol start="5" type="1">
-<li><p>Create a dataframe called <code>emperor_size_prediction</code> with three rows:</p>
-<ul>
-<li><code>Tokai Teio</code> at <code>3.2</code> km with <code>after_fracture = 1</code></li>
-<li><code>Tokai Teio</code> at <code>3.2</code> km with <code>after_fracture = 0</code></li>
-<li><code>Mejiro McQueen</code> at <code>3.2</code> km with <code>after_fracture = 0</code></li>
-</ul></li>
+<p><span class="math display">\[
+0.08 \times 885 = 70.8
+\]</span></p>
+<p>and the 95% confidence interval for the number of traffic fatalities is:</p>
+<p><span class="math display">\[
+[0.08 \pm Z_{0.025} \times 0.07] \times 885 = [-50.62, 192.22]
+\]</span></p>
+<ol start="3" type="a">
+<li>If real income per capita in New Jersey increases by 3%, the predicted increase in traffic fatalities is:</li>
 </ol>
-<p>Then use <code>predict()</code> with to add a column <code>predicted_time_sec</code> for these three cases and answer the following questoins:</p>
+<p><span class="math display">\[
+3 \times 0.01 \times 1.79 \times 885 = 47.52
+\]</span></p>
+<p>and the 95% confidence interval for the number of traffic fatalities is:</p>
+<p><span class="math display">\[
+[1.79 \pm Z_{0.025} \times 0.64] \times 0.01 \times 3 \times 885 = [14.22, 80.83]
+\]</span></p>
+<ol start="4" type="a">
+<li><p>Standard errors should be clustered into groups within which the values of the dependent variable are likely to be correlated with one another. In this case, the natural candidate group is to cluster by state.</p></li>
+<li><p>If we believe that drinking age affects the number of fatalities due to alcohol through a linear function, then age should be entered as a continuous variable. If we allow for nonlinearities in this relationship, we should allow for separate intercepts for each age.</p></li>
+</ol>
+</section>
+<section id="exercise-10.5" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="exercise-10.5"><span class="header-section-number">1.2</span> Exercise 10.5</h3>
+<p><span class="math display">\[
+\begin{aligned}
+Y_{11} &amp;= \beta_1 X_{11} + \alpha_1 + \lambda_1 + u_{11} \\
+&amp;= \beta_0 + \beta_1 X_{11} + u_{11} \\
+Y_{i1} &amp;= \beta_1 X_{i1} + \alpha_i + \lambda_1 + u_{i1} \\
+&amp;= \beta_0 + \beta_1 X_{1i} + \gamma_i + u_{i1}, \quad i = 2, \dots, n \\
+Y_{1t} &amp;= \beta_1 X_{1t} + \alpha_1 + \lambda_t + u_{1t} \\
+&amp;= \beta_0 + \beta_1 X_{1t} + \delta_t + u_{1t}, \quad t = 2, \dots, T
+\end{aligned}
+\]</span></p>
+<p>We have</p>
+<p><span class="math display">\[
+\begin{aligned}
+\beta_0 &amp;= \alpha_1 + \lambda_1 \\
+\gamma_i &amp;= \alpha_i + \lambda_1 - \beta_0 \\
+&amp;= \alpha_i - \alpha_1, \quad i = 2, \dots, n \\
+\delta_t &amp;= \alpha_1 + \lambda_t - \beta_0 \\
+&amp;= \lambda_t - \lambda_1, \quad t = 2, \dots, T.
+\end{aligned}
+\]</span></p>
+</section>
+<section id="exercise-11.1" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="exercise-11.1"><span class="header-section-number">1.3</span> Exercise 11.1</h3>
+<ol type="a">
+<li><strong>Prepare</strong>:</li>
+</ol>
+<p><span class="math display">\[
+\left\{\begin{aligned}
+    &amp;H_0: \beta_{\text{schooling}} = 0 \\
+    &amp;H_1: \beta_{\text{schooling}} \neq 0
+    \end{aligned}\right.
+\]</span></p>
+<p>Let the significance level be <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+<p><strong>Calculate</strong>:</p>
+<p><span class="math display">\[
+t^* = \frac{0.272 - 0}{0.029} \approx 9.379
+\]</span></p>
+<p><strong>Conclude</strong>:</p>
+<p>Since <span class="math inline">\(|t^*| &gt; Z_{0.05} = 1.96\)</span>, we reject <span class="math inline">\(H_0\)</span>. There is significant evidence that schooling affects the probability of working for the government.</p>
+<ol start="2" type="a">
+<li>The predicted probability that Friedrich will be employed by the government is:</li>
+</ol>
+<p><span class="math display">\[
+\Phi(-4.107 + 0.272 \times 16) \approx 0.5968
+\]</span></p>
+<ol start="3" type="a">
+<li>The predicted probability that Hans will get a government job:</li>
+</ol>
+<p><span class="math display">\[
+\Phi(-4.107 + 0.272 \times 12) \approx 0.1996
+\]</span></p>
+<ol start="4" type="a">
+<li>The predicted probability that Günter will be employed by the government:</li>
+</ol>
+<p><span class="math display">\[
+\Phi(-4.107 + 0.272 \times 24) \approx 0.9923
+\]</span></p>
+<p>This prediction is likely inaccurate, as the sample did not include individuals with more than 24 years of schooling.</p>
+</section>
+<section id="exercise-11.4" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="exercise-11.4"><span class="header-section-number">1.4</span> Exercise 11.4</h3>
+<ol type="a">
+<li>In column (4), the estimated probability of being employed by the government:</li>
+</ol>
 <ul>
-<li>Who is predicted to be faster in the Emperor Prize?</li>
-<li>If <code>Tokai Teio</code> had not been injured, would your prediction changed?</li>
+<li>For men:</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="pretty_derby.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Animated welcome" width="960"></p>
-</figure>
+<p><span class="math display">\[
+\Phi(-1.027 - 0.242) \approx 0.1022
+\]</span></p>
+<ul>
+<li>For women:</li>
+</ul>
+<p><span class="math display">\[
+\Phi(-1.027) \approx 0.1522
+\]</span></p>
+<p>In column (5), the estimated probability:</p>
+<ul>
+<li>For men:</li>
+</ul>
+<p><span class="math display">\[
+\frac{1}{1 + \exp[-(-1.717 - 0.455)]} \approx 0.1023
+\]</span></p>
+<ul>
+<li>For women:</li>
+</ul>
+<p><span class="math display">\[
+\frac{1}{1 + \exp[-(-1.717)]} \approx 0.1523
+\]</span></p>
+<p>In column (6), the estimated probability:</p>
+<ul>
+<li>For men:</li>
+</ul>
+<p><span class="math display">\[
+0.152 - 0.050 = 0.102
+\]</span></p>
+<ul>
+<li>For women:</li>
+</ul>
+<p><span class="math display">\[
+0.152
+\]</span></p>
+<ol start="2" type="a">
+<li>Because there is only a regressor and it is binary (<span class="math inline">\(\textit{Male}\)</span>), estimates for each model show the fraction of males and females who get employed by the government. Hence the results are close to each other.</li>
+</ol>
+</section>
+<section id="exercise-11.5" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="exercise-11.5"><span class="header-section-number">1.5</span> Exercise 11.5</h3>
+<ol type="a">
+<li>The predicted probability that Liam will be employed by the government is:</li>
+</ol>
+<p><span class="math display">\[
+\Phi(-7.702 + 0.548 \times 10 + 4.352 - 0.344 \times 10) \approx 0.0951
+\]</span></p>
+<ol start="2" type="a">
+<li>The predicted probability that Anneli will be employed by the government is:</li>
+</ol>
+<p><span class="math display">\[
+\Phi(-7.702 + 0.548 \times 12) \approx 0.1301
+\]</span></p>
+<ol start="3" type="a">
+<li><strong>Prepare</strong>:</li>
+</ol>
+<p><span class="math display">\[
+\left\{\begin{aligned}
+    &amp;H_0: \beta_{\textit{male} \times \textit{schooling}} = 0 \\
+    &amp;H_1: \beta_{\textit{male} \times \textit{schooling}} \neq 0
+    \end{aligned}\right.
+\]</span></p>
+<p>Let the significance level be <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+<p><strong>Calculate</strong>:</p>
+<p><span class="math display">\[
+t^* = \frac{-0.344 - 0}{0.096} \approx -3.583
+\]</span></p>
+<p><strong>Conclude</strong>:</p>
+<p>Since <span class="math inline">\(|t^*| &gt; Z_{0.05} = 1.96\)</span>, we reject <span class="math inline">\(H_0\)</span>. There is significant evidence that the effect of schooling on government employment depends on gender.</p>
+</section>
+</section>
+<section id="computer-exercises" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="computer-exercises"><span class="header-section-number">2</span> Computer Exercises</h2>
+<p><a href="insurance.csv" target="_blank" rel="noopener">(insurance.csv)</a></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove pre-load data, and import package</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(estimatr) <span class="co"># for robust SE</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(texreg) <span class="co"># compile regression result into one table</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sandwich) <span class="co"># Heteroskedasticity-Robust Standard Errors in testing (vcovHC)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car) <span class="co"># short for "Companion to Applied Regression", used for hypothesis testing</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>insurance <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/insurance.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="linear-model" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="linear-model"><span class="header-section-number">2.1</span> Linear Model</h3>
+<p>Consider the following specification:</p>
+<p><span class="math display">\[
+\textit{insured}_i = \beta_0 + \beta_1 \textit{selfemp}_i + u_i
+\]</span></p>
+<p>we propose the hypothesis:</p>
+<p><span class="math display">\[
+\left\{\begin{aligned}
+&amp;H_0: \beta_1 = 0 \\
+&amp;H_1: \beta_1 \neq 0
+\end{aligned}\right.
+\]</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>reg_1a <span class="ot">&lt;-</span> <span class="fu">lm_robust</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> insured <span class="sc">~</span> selfemp,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> insurance,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">se_type =</span> <span class="st">"HC1"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg_1a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm_robust(formula = insured ~ selfemp, data = insurance, se_type = "HC1")
+
+Standard error type:  HC1 
+
+Coefficients:
+            Estimate Std. Error t value  Pr(&gt;|t|) CI Lower CI Upper   DF
+(Intercept)   0.8167   0.004401 185.582 0.000e+00   0.8081   0.8253 8800
+selfemp      -0.1276   0.014814  -8.616 8.148e-18  -0.1567  -0.0986 8800
+
+Multiple R-squared:  0.01093 ,  Adjusted R-squared:  0.01082 
+F-statistic: 74.23 on 1 and 8800 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
+</div>
+<p>From the testing result, we have its <span class="math inline">\(p\)</span>-value is very small (<span class="math inline">\(&lt;5\%\)</span>). There is significant evidence that the self-employed are less likely to have health insurance than wage earners.</p>
+</section>
+<section id="non-linear-models-comparison" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="non-linear-models-comparison"><span class="header-section-number">2.2</span> Non-Linear Models Comparison</h3>
+<p>Consider the following specification:</p>
+<p><span class="math display">\[
+\textit{insured}_i = \beta_0 + \beta_1 \textit{selfemp}_i + \sum_{k\in\mathcal{I}}\beta_k x_k + u_i
+\]</span></p>
+<p>where <span class="math inline">\(\mathcal{I}\)</span> denotes the set of control variables. We propose the hypothesis:</p>
+<p><span class="math display">\[
+\left\{\begin{aligned}
+&amp;H_0: \beta_1 = 0 \\
+&amp;H_1: \beta_1 \neq 0
+\end{aligned}\right.
+\]</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># complete specification</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>formula_1b <span class="ot">&lt;-</span> insured <span class="sc">~</span> selfemp <span class="sc">+</span> age <span class="sc">+</span> deg_nd <span class="sc">+</span> deg_ged <span class="sc">+</span> deg_hs <span class="sc">+</span> deg_ba <span class="sc">+</span> deg_ma <span class="sc">+</span> deg_phd <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  familysz <span class="sc">+</span> race_bl <span class="sc">+</span> race_wht <span class="sc">+</span> male <span class="sc">+</span> married</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># estimations</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>LPM_1b <span class="ot">&lt;-</span> <span class="fu">lm_robust</span>(</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> formula_1b,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> insurance,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">se_type =</span> <span class="st">"HC1"</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>Logit_1b <span class="ot">&lt;-</span> <span class="fu">glm</span>(</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> formula_1b,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> insurance,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>Probit_1b <span class="ot">&lt;-</span> <span class="fu">glm</span>(</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> formula_1b,</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> insurance,</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"probit"</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co"># compile into one result table</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="fu">screenreg</span>(</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(LPM_1b, Logit_1b, Probit_1b),</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">include.ci =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">4</span>,</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">"LPM"</span>, <span class="st">"Logit"</span>, <span class="st">"Probit"</span>)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+=============================================================
+                LPM            Logit           Probit        
+-------------------------------------------------------------
+(Intercept)        0.6684 ***      0.6065 **       0.3464 ** 
+                  (0.0317)        (0.2176)        (0.1224)   
+selfemp           -0.1749 ***     -1.1801 ***     -0.6770 ***
+                  (0.0139)        (0.0822)        (0.0475)   
+age                0.0037 ***      0.0257 ***      0.0149 ***
+                  (0.0004)        (0.0029)        (0.0016)   
+deg_nd            -0.3004 ***     -1.6775 ***     -0.9691 ***
+                  (0.0196)        (0.1354)        (0.0750)   
+deg_ged           -0.1459 ***     -0.9746 ***     -0.5441 ***
+                  (0.0263)        (0.1679)        (0.0949)   
+deg_hs            -0.0378 **      -0.2992 *       -0.1504 *  
+                  (0.0141)        (0.1251)        (0.0675)   
+deg_ba             0.0266          0.2563          0.1556 *  
+                  (0.0151)        (0.1452)        (0.0775)   
+deg_ma             0.0471 **       0.6710 **       0.3650 ***
+                  (0.0168)        (0.2177)        (0.1102)   
+deg_phd            0.0749 **       0.9492 *        0.5009 ** 
+                  (0.0248)        (0.3890)        (0.1913)   
+familysz          -0.0167 ***     -0.0971 ***     -0.0561 ***
+                  (0.0032)        (0.0187)        (0.0109)   
+race_bl            0.0269          0.1845          0.1119    
+                  (0.0252)        (0.1542)        (0.0888)   
+race_wht           0.0558 *        0.4004 **       0.2374 ** 
+                  (0.0223)        (0.1367)        (0.0786)   
+male              -0.0375 ***     -0.2769 ***     -0.1480 ***
+                  (0.0080)        (0.0591)        (0.0333)   
+married            0.1399 ***      0.9385 ***      0.5335 ***
+                  (0.0099)        (0.0666)        (0.0375)   
+-------------------------------------------------------------
+R^2                0.1422                                    
+Adj. R^2           0.1409                                    
+Num. obs.       8802            8802            8802         
+RMSE               0.3699                                    
+AIC                             7586.2640       7580.4476    
+BIC                             7685.4223       7679.6059    
+Log Likelihood                 -3779.1320      -3776.2238    
+Deviance                        7558.2640       7552.4476    
+=============================================================
+*** p &lt; 0.001; ** p &lt; 0.01; * p &lt; 0.05</code></pre>
+</div>
+</div>
+<p>From the testing result, we have the <span class="math inline">\(p\)</span>-value is very small (<span class="math inline">\(&lt;5\%\)</span>) and reject the null hypothesis. There is significant evidence that the self-employed are less likely to have health insurance than wage earners.</p>
+</section>
+<section id="prediction-lpm" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="prediction-lpm"><span class="header-section-number">2.3</span> Prediction: LPM</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>person <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="dv">50</span>, <span class="co"># 50 year-old</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">race_bl =</span> <span class="dv">0</span>, <span class="at">race_wht =</span> <span class="dv">1</span>, <span class="co"># white</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">male =</span> <span class="dv">0</span>, <span class="co"># female</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">deg_nd =</span> <span class="dv">0</span>, <span class="at">deg_ged =</span> <span class="dv">0</span>, <span class="at">deg_hs =</span> <span class="dv">0</span>, <span class="at">deg_ba =</span> <span class="dv">0</span>, <span class="at">deg_ma =</span> <span class="dv">0</span>, <span class="at">deg_phd =</span> <span class="dv">1</span>, <span class="co"># phd</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">familysz =</span> <span class="dv">1</span>, <span class="co"># family size 1</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">married =</span> <span class="dv">1</span>, <span class="co"># married</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">selfemp =</span> <span class="dv">0</span> <span class="co"># wage earner</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(LPM_1b, person)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>       1 
+1.107059 </code></pre>
+</div>
+</div>
+<p>From LPM, the predicted probability of having health insurance for a 50 year old white female, with a phd degree, family size of 1, married and wage earner is <span class="math inline">\(1.107\)</span>, which does not make sense because the probability must be between 0 and 1 by definition.</p>
+</section>
+<section id="prediction-logit-probit" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="prediction-logit-probit"><span class="header-section-number">2.4</span> Prediction: Logit &amp; Probit</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(Logit_1b, person, <span class="at">type =</span> <span class="st">"response"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>        1 
+0.9834294 </code></pre>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(Probit_1b, person, <span class="at">type =</span> <span class="st">"response"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>        1 
+0.9894154 </code></pre>
+</div>
+</div>
+<p>The predicted probability of having health insurance for the same person is 0.983 for the logit model, and 0.989 for the probit model. These estimates make sense and differ from LPM since we use the link function to transfer suitable function form to evaluate.</p>
+</section>
+<section id="hypothesis-testing" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="hypothesis-testing"><span class="header-section-number">2.5</span> Hypothesis Testing</h3>
+<p>We propose the following hypothesis:</p>
+<p><span class="math display">\[
+\left\{\begin{aligned}
+&amp;H_0: \beta_{\textit{race\_bl}} = \beta_{\textit{race\_wht}} = 0 \\
+&amp;H_1: \text{Not all coefficients are zero}
+\end{aligned}\right.
+\]</span></p>
+<p>and perform the F-test:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">linearHypothesis</span>(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  Logit_1b,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"race_bl = 0"</span>, <span class="st">"race_wht = 0"</span>),</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">vcov =</span> vcovHC,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"HC1"</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">test =</span> <span class="st">"F"</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Linear hypothesis test:
+race_bl = 0
+race_wht = 0
+
+Model 1: restricted model
+Model 2: insured ~ selfemp + age + deg_nd + deg_ged + deg_hs + deg_ba + 
+    deg_ma + deg_phd + familysz + race_bl + race_wht + male + 
+    married
+
+Note: Coefficient covariance matrix supplied.
+
+  Res.Df Df      F   Pr(&gt;F)   
+1   8790                      
+2   8788  2 6.4974 0.001515 **
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>From the testing result, we have the <span class="math inline">\(p\)</span>-value is very small (<span class="math inline">\(&lt;5\%\)</span>) and reject the null hypothesis. There is significant evidence that black, white and others are not equally likely to be insured.</p>
 
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1207,13 +1621,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../practices/wk08.html" class="pagination-link" aria-label="Week 8 Practices (0414)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 8 Practices (0414)</span>
+      <a href="../homework/hw4_answer.html" class="pagination-link" aria-label="Homework 4 Answers">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Homework 4 Answers</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../answers/wk01_answer.html" class="pagination-link" aria-label="Week 1 Answers (0224)">
-        <span class="nav-page-text">Week 1 Answers (0224)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../homework/hw6_answer.html" class="pagination-link" aria-label="Homework 6 Answers">
+        <span class="nav-page-text">Homework 6 Answers</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
