@@ -98,6 +98,13 @@ ggplot(acs, aes(x = age, y = income)) +
     formula = y ~ x + I(x^2)
   ) 
 
+ggplot(acs, aes(x = age, y = income, color = citizen)) +
+  geom_point() +
+  geom_smooth(
+    method = "lm",
+    formula = y ~ x + I(x^2)
+  ) 
+
 # 3. Nonlinear Regression: Interaction Terms
 
 lm_model_interaction_1 <- lm_robust(
