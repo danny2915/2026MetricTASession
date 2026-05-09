@@ -572,7 +572,7 @@ window.Quarto = {
 <li><p>Create a new variable called <code>high_yield_field</code>. Let <code>high_yield_field</code> be equal to <code>1</code> if <code>harvest_result</code> is larger than <code>50</code>, and <code>0</code> otherwise.</p></li>
 <li><p>Fit a logarithmic regression model called <code>reg_log_harvest</code> using <code>lm_robust()</code>. The response variable is <code>log(harvest_result)</code>, and the predictors are <code>field_size_m2</code>, <code>almighty_farming_tool</code>, and <code>crop</code>. Print the regression summary.</p></li>
 <li><p>Fit a logistic regression model called <code>logit_high_yield</code> using <code>glm()</code>. The response variable is <code>high_yield_field</code>, and the predictors are <code>field_size_m2</code>, <code>almighty_farming_tool</code>, and <code>crop</code>. Print the regression summary, and use <code>pR2()</code> to calculate the pseudo-<span class="math inline">\(R^2\)</span> of the logistic regression model.</p></li>
-<li><p>Create a new dataframe called <code>new_tomato_fields</code> with two <code>tomato</code> fields of <code>3000</code> square meters: one cultivated with the Almighty Farming Tool and one cultivated without it.</p></li>
+<li><p>Create a new dataframe called <code>new_tomato_fields</code> with two <code>tomato</code> fields of <code>3000</code> square meters: one cultivated with the Almighty Farming Tool and one cultivated without it. Use <code>logit_high_yield</code> and <code>predict()</code> to calculate the probability of each field to be a <code>high_yield_field</code>.</p></li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
