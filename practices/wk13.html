@@ -629,7 +629,7 @@ window.Quarto = {
 <li>(Optional) Remove all objects from the environment using <code>rm(list = ls())</code>.</li>
 </ul></li>
 <li><p>Read <code>death_note.csv</code> and save it as <code>death_note_raw</code>. Then create a new dataframe called <code>death_note_tidy</code> by converting <code>date</code> into a Date variable.</p></li>
-<li><p>Create a vector called <code>death_dates</code> that stores the four death dates. Then use <code>geom_line()</code> to draw the stock price trends over time and add red dashed vertical lines for the four deaths, and facet the plot by <code>company</code>. Which of the company looks the most suspicious?</p></li>
+<li><p>Create a vector called <code>death_dates</code> that stores the four death dates. Then use <code>geom_line()</code> to draw the stock price trends over time and add red dashed vertical lines for the four deaths, and facet the plot by <code>company</code> with setting <code>scales = "free_y"</code>. Which of the company looks the most suspicious?</p></li>
 <li><p>Create four post-death dummy variables: <code>after_kamei_death</code>, <code>after_ogawa_death</code>, <code>after_arima_death</code>, and <code>after_takeda_death</code>. Each variable should be equal to <code>1</code> if the date is on or after the corresponding death date, and <code>0</code> otherwise.</p></li>
 <li><p>Create a vector called <code>companies</code> that stores the company names. Then create an empty dataframe called <code>suspect_results</code>.</p></li>
 <li><p>Use a <code>for</code> loop to run one TWFE regression for each company. For each loop, create a dummy variable called <code>target_company</code>, which equals <code>1</code> for the company currently being checked and <code>0</code> otherwise. Estimate the following model using <code>feols()</code>:</p></li>
@@ -653,22 +653,7 @@ u_{it}.
 \]</span></p>
 <p>After each regression, extract the four estimated coefficients and save the company name, event date, and coefficient estimate into <code>suspect_results</code>.</p>
 <ol start="6" type="1">
-<li>Add a column called <code>mean_increase</code> to <code>suspect_results</code> that calculates the average estimated stock price increase for each company. Then use <code>arrange()</code> to sort the companies in decreasing order of <code>mean_increase</code> (after arranging, there should be 12 rows in total). Create a variable called <code>most_suspicious_company</code> that stores the company with the highest value of <code>mean_increase</code>.</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Note">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>There are different ways to create <code>suspect_results</code> in this step, depending on how you merge the data in Step 5.</p>
-</div>
-</div>
-<ol start="7" type="1">
+<li><p>Add a column called <code>mean_increase</code> to <code>suspect_results</code> that calculates the average estimated stock price increase for each company. Then use <code>arrange()</code> to sort the companies in decreasing order of <code>mean_increase</code>. Create a variable called <code>most_suspicious_company</code> that stores the company with the highest value of <code>mean_increase</code>.</p></li>
 <li><p>For <code>most_suspicious_company</code>, print the TWFE regression summary above twice:</p>
 <ul>
 <li>once without clustered standard errors,</li>
