@@ -1,5 +1,16 @@
 [
   {
+    "objectID": "quiz/Quiz_5_Answer.html",
+    "href": "quiz/Quiz_5_Answer.html",
+    "title": "Quiz 5 Answers",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Quizzes",
+      "Quiz 5 Answers"
+    ]
+  },
+  {
     "objectID": "quiz/Quiz_4_Answer.html",
     "href": "quiz/Quiz_4_Answer.html",
     "title": "Quiz 4 Answers",
@@ -1184,6 +1195,17 @@
     "crumbs": [
       "Quizzes",
       "Quiz 4"
+    ]
+  },
+  {
+    "objectID": "quiz/Quiz_5.html",
+    "href": "quiz/Quiz_5.html",
+    "title": "Quiz 5",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Quizzes",
+      "Quiz 5"
     ]
   }
 ]

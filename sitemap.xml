@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://danny2915.github.io/2026MetricTASession/quiz/Quiz_5_Answer.html</loc>
+    <lastmod>2026-05-19T16:51:35.321Z</lastmod>
+  </url>
+  <url>
     <loc>https://danny2915.github.io/2026MetricTASession/quiz/Quiz_4_Answer.html</loc>
     <lastmod>2026-05-05T14:08:24.494Z</lastmod>
   </url>
@@ -58,7 +62,7 @@
   </url>
   <url>
     <loc>https://danny2915.github.io/2026MetricTASession/answers/wk11_answer.html</loc>
-    <lastmod>2026-05-05T13:56:35.660Z</lastmod>
+    <lastmod>2026-05-19T15:05:26.565Z</lastmod>
   </url>
   <url>
     <loc>https://danny2915.github.io/2026MetricTASession/answers/wk07_answer.html</loc>
@@ -198,7 +202,7 @@
   </url>
   <url>
     <loc>https://danny2915.github.io/2026MetricTASession/answers/wk12_answer.html</loc>
-    <lastmod>2026-05-12T15:34:42.461Z</lastmod>
+    <lastmod>2026-05-19T16:47:18.173Z</lastmod>
   </url>
   <url>
     <loc>https://danny2915.github.io/2026MetricTASession/example_code/Example_Code_wk01.html</loc>
@@ -251,5 +255,9 @@
   <url>
     <loc>https://danny2915.github.io/2026MetricTASession/quiz/Quiz_4.html</loc>
     <lastmod>2026-05-05T14:08:07.775Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danny2915.github.io/2026MetricTASession/quiz/Quiz_5.html</loc>
+    <lastmod>2026-05-19T16:51:24.528Z</lastmod>
   </url>
 </urlset>
