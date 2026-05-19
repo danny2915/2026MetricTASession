@@ -65,3 +65,13 @@ first <- lm_robust(
 # 2. Check the F-statistic
 
 summary(first)
+
+# 3. Perform a J-test
+
+iv_overid <- ivreg(
+  lincome ~ cigs + educ + age + agesq |
+    restaurn + cigpric + educ + age + agesq,
+  data = smoke
+)
+
+summary(iv_overid, diagnostics = TRUE)

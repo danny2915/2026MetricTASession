@@ -143,69 +143,102 @@
     ]
   },
   {
-    "objectID": "example_code/Example_Code_wk13.html",
-    "href": "example_code/Example_Code_wk13.html",
-    "title": "Week 13 Example R Code (0519)",
+    "objectID": "example_code/Example_Code_wk14.html",
+    "href": "example_code/Example_Code_wk14.html",
+    "title": "Week 14 Example R Code (0526)",
     "section": "",
-    "text": "Right click to download:\n\nwk13_example_code.Rmd",
+    "text": "Right click to download:\n\nwk14_example_code.Rmd",
     "crumbs": [
       "Example R code",
-      "Week 13 Example R Code (0519)"
+      "Week 14 Example R Code (0526)"
     ]
   },
   {
-    "objectID": "example_code/Example_Code_wk11.html",
-    "href": "example_code/Example_Code_wk11.html",
-    "title": "Week 11 Example R Code (0505)",
+    "objectID": "example_code/Example_Code_wk12.html",
+    "href": "example_code/Example_Code_wk12.html",
+    "title": "Week 12 Example R Code (0512)",
     "section": "",
-    "text": "Right click to download:\n\nwk11_example_code.Rmd",
+    "text": "Right click to download:\n\nwk12_example_code.Rmd",
     "crumbs": [
       "Example R code",
-      "Week 11 Example R Code (0505)"
+      "Week 12 Example R Code (0512)"
     ]
   },
   {
-    "objectID": "example_code/Example_Code_wk07.html",
-    "href": "example_code/Example_Code_wk07.html",
-    "title": "Week 7 Example Code (0407)",
+    "objectID": "example_code/Example_Code_wk08.html",
+    "href": "example_code/Example_Code_wk08.html",
+    "title": "Week 8 Example R Code (0414)",
     "section": "",
-    "text": "Right click to download:\n\nwk07_example_code.R",
+    "text": "Right click to download:\n\nwk08_example_code.Rmd",
     "crumbs": [
       "Example R code",
-      "Week 7 Example Code (0407)"
+      "Week 8 Example R Code (0414)"
     ]
   },
   {
-    "objectID": "example_code/Example_Code_wk05.html",
-    "href": "example_code/Example_Code_wk05.html",
-    "title": "Week 5 Example R Code (0324)",
+    "objectID": "example_code/Example_Code_wk06.html",
+    "href": "example_code/Example_Code_wk06.html",
+    "title": "Week 6 Example R Code (0331)",
     "section": "",
-    "text": "Right click to download:\n\nwk05_example_code.R",
+    "text": "Right click to download:\n\nwk06_example_code.R",
     "crumbs": [
       "Example R code",
-      "Week 5 Example R Code (0324)"
+      "Week 6 Example R Code (0331)"
     ]
   },
   {
-    "objectID": "example_code/Example_Code_wk03.html",
-    "href": "example_code/Example_Code_wk03.html",
-    "title": "Week 3 Example R Code (0310)",
+    "objectID": "example_code/Example_Code_wk04.html",
+    "href": "example_code/Example_Code_wk04.html",
+    "title": "Week 4 Example R Code (0310)",
     "section": "",
-    "text": "Right click to download:\n\nwk03_example_code.R",
+    "text": "Right click to download:\n\nwk04_example_code.R",
     "crumbs": [
       "Example R code",
-      "Week 3 Example R Code (0310)"
+      "Week 4 Example R Code (0310)"
     ]
   },
   {
-    "objectID": "example_code/Example_Code_wk01.html",
-    "href": "example_code/Example_Code_wk01.html",
-    "title": "Week 1 Example R Code (0224)",
+    "objectID": "example_code/Example_Code_wk02.html",
+    "href": "example_code/Example_Code_wk02.html",
+    "title": "Week 2 Example R Code (0303)",
     "section": "",
-    "text": "Right click to download:\n\nwk01_example_code.R",
+    "text": "Right click to download:\n\nwk02_example_code.R",
     "crumbs": [
       "Example R code",
-      "Week 1 Example R Code (0224)"
+      "Week 2 Example R Code (0303)"
+    ]
+  },
+  {
+    "objectID": "answers/wk13_answer.html",
+    "href": "answers/wk13_answer.html",
+    "title": "Week 13 Answers (0519)",
+    "section": "",
+    "text": "Light and L are tracking a new Killer, a person who owns a Death Note and can cause people to die of cardiac arrest by writing their names in it. After this new Killer appears, Light notices something unusual. The Killer does not only write the names of criminals, but also writes the names of top managers from large companies. Light begins to suspect that the new Killer may belong to a large company and may be using the Death Note for private profit. If this hypothesis is correct, then the stock price of the Killer’s company should increase after each suspicious death.\nTo investigate this possibility, Light collects daily stock prices for several companies and tracks how their prices change after each death. The dataset contains:\n\ncompany: The company’s name.\ndate: The date.\nprice: The stock price.\ntype: The type of company.\n\nThe suspicious deaths happened once per week:\n\n\n\nEvent\nDate\nTop manager killed\n\n\n\n\n1\n2026-04-06\nRyo Kamei\n\n\n2\n2026-04-13\nNaomi Ogawa\n\n\n3\n2026-04-20\nKeiko Arima\n\n\n4\n2026-04-27\nShun Takeda\n\n\n\nIf Light’s hypothesis is correct, then there should be repeated stock price surges in the Killer’s company. Follow the instructions below to help Light test this hypothesis.\n\nBefore you begin, complete the setup:\n\nOpen the project you created for the TA Session by clicking on .Rproj.\nOpen a new script and save it in the script folder.\nDownload the dataset death_note.csv and save it in the data folder. (right click here)\nInstall and call the packages tidyverse, fixest.\n(Optional) Remove all objects from the environment using rm(list = ls()).\n\nRead death_note.csv and save it as death_note_raw. Then create a new dataframe called death_note_tidy by converting date into a Date variable.\nCreate a vector called death_dates that stores the four death dates. Then use geom_line() to draw the stock price trends over time and add red dashed vertical lines for the four deaths, and facet the plot by company with the setting scales = \"free_y\". Which of the company looks the most suspicious?\nCreate four post-death dummy variables: after_kamei_death, after_ogawa_death, after_arima_death, and after_takeda_death. Each variable should be equal to 1 if the date is on or after the corresponding death date, and 0 otherwise.\nCreate a vector called companies that stores the company names. Then create an empty dataframe called suspect_results.\nUse a for loop to run one TWFE regression for each company. For each loop, create a dummy variable called target_company, which equals 1 for the company currently being checked and 0 otherwise. Estimate the following model using feols():\n\n\\[\n\\begin{align*}\nprice_{it}\n=\n\\alpha_i\n+\n\\lambda_t &+\\beta_1 target_i \\times after\\_kamei\\_death_t\n+\n\\beta_2 target_i \\times after\\_ogawa\\_death_t  \\\\\n&+\n\\beta_3 target_i \\times after\\_arima\\_death_t\n+\n\\beta_4 target_i \\times after\\_takeda\\_death_t\n+\nu_{it}.\n\\end{align*}\n\\]\nAfter each regression, extract the four estimated coefficients and save the company name, event date, and coefficient estimate into suspect_results.\n\nAdd a column called mean_increase to suspect_results that calculates the average estimated stock price increase for each company. Then use arrange() to sort the companies in decreasing order of mean_increase. Create a variable called most_suspicious_company that stores the company with the highest value of mean_increase.\nFor most_suspicious_company, print the TWFE regression summary above twice:\n\nonce with homoscedastic errors,\nonce with standard errors clustered by company.\n\n\nDo the regression results match your observation in Step 2? Which method gives smaller standard errors overall?",
+    "crumbs": [
+      "Practice Answers",
+      "Week 13 Answers (0519)"
+    ]
+  },
+  {
+    "objectID": "answers/wk13_answer.html#death-note-死亡筆記本",
+    "href": "answers/wk13_answer.html#death-note-死亡筆記本",
+    "title": "Week 13 Answers (0519)",
+    "section": "",
+    "text": "Light and L are tracking a new Killer, a person who owns a Death Note and can cause people to die of cardiac arrest by writing their names in it. After this new Killer appears, Light notices something unusual. The Killer does not only write the names of criminals, but also writes the names of top managers from large companies. Light begins to suspect that the new Killer may belong to a large company and may be using the Death Note for private profit. If this hypothesis is correct, then the stock price of the Killer’s company should increase after each suspicious death.\nTo investigate this possibility, Light collects daily stock prices for several companies and tracks how their prices change after each death. The dataset contains:\n\ncompany: The company’s name.\ndate: The date.\nprice: The stock price.\ntype: The type of company.\n\nThe suspicious deaths happened once per week:\n\n\n\nEvent\nDate\nTop manager killed\n\n\n\n\n1\n2026-04-06\nRyo Kamei\n\n\n2\n2026-04-13\nNaomi Ogawa\n\n\n3\n2026-04-20\nKeiko Arima\n\n\n4\n2026-04-27\nShun Takeda\n\n\n\nIf Light’s hypothesis is correct, then there should be repeated stock price surges in the Killer’s company. Follow the instructions below to help Light test this hypothesis.\n\nBefore you begin, complete the setup:\n\nOpen the project you created for the TA Session by clicking on .Rproj.\nOpen a new script and save it in the script folder.\nDownload the dataset death_note.csv and save it in the data folder. (right click here)\nInstall and call the packages tidyverse, fixest.\n(Optional) Remove all objects from the environment using rm(list = ls()).\n\nRead death_note.csv and save it as death_note_raw. Then create a new dataframe called death_note_tidy by converting date into a Date variable.\nCreate a vector called death_dates that stores the four death dates. Then use geom_line() to draw the stock price trends over time and add red dashed vertical lines for the four deaths, and facet the plot by company with the setting scales = \"free_y\". Which of the company looks the most suspicious?\nCreate four post-death dummy variables: after_kamei_death, after_ogawa_death, after_arima_death, and after_takeda_death. Each variable should be equal to 1 if the date is on or after the corresponding death date, and 0 otherwise.\nCreate a vector called companies that stores the company names. Then create an empty dataframe called suspect_results.\nUse a for loop to run one TWFE regression for each company. For each loop, create a dummy variable called target_company, which equals 1 for the company currently being checked and 0 otherwise. Estimate the following model using feols():\n\n\\[\n\\begin{align*}\nprice_{it}\n=\n\\alpha_i\n+\n\\lambda_t &+\\beta_1 target_i \\times after\\_kamei\\_death_t\n+\n\\beta_2 target_i \\times after\\_ogawa\\_death_t  \\\\\n&+\n\\beta_3 target_i \\times after\\_arima\\_death_t\n+\n\\beta_4 target_i \\times after\\_takeda\\_death_t\n+\nu_{it}.\n\\end{align*}\n\\]\nAfter each regression, extract the four estimated coefficients and save the company name, event date, and coefficient estimate into suspect_results.\n\nAdd a column called mean_increase to suspect_results that calculates the average estimated stock price increase for each company. Then use arrange() to sort the companies in decreasing order of mean_increase. Create a variable called most_suspicious_company that stores the company with the highest value of mean_increase.\nFor most_suspicious_company, print the TWFE regression summary above twice:\n\nonce with homoscedastic errors,\nonce with standard errors clustered by company.\n\n\nDo the regression results match your observation in Step 2? Which method gives smaller standard errors overall?",
+    "crumbs": [
+      "Practice Answers",
+      "Week 13 Answers (0519)"
+    ]
+  },
+  {
+    "objectID": "answers/wk13_answer.html#ta-answer-code-po-hsien-kang",
+    "href": "answers/wk13_answer.html#ta-answer-code-po-hsien-kang",
+    "title": "Week 13 Answers (0519)",
+    "section": "2 TA Answer Code: Po-Hsien Kang",
+    "text": "2 TA Answer Code: Po-Hsien Kang\nrm(list = ls())\n\nlibrary(tidyverse)\nlibrary(fixest)\nlibrary(here)\n\ndeath_note_raw &lt;- read.csv(\"data/death_note.csv\")\n\ndeath_note_tidy &lt;- death_note_raw %&gt;%\n  mutate(date = as.Date(date))\n\ndeath_dates &lt;- as.Date(c(\"2026-04-06\", \"2026-04-13\", \"2026-04-20\", \"2026-04-27\"))\n\nggplot(death_note_tidy, aes(x = date, y = price, group = company)) +\n  geom_line() +\n  geom_vline(\n    xintercept = death_dates,\n    color = \"red\",\n    linetype = \"dashed\"\n  ) +\n  facet_wrap(~ company, scales = \"free_y\")\n\ndeath_note_tidy &lt;- death_note_tidy %&gt;%\n  mutate(\n    after_kamei_death = ifelse(date &gt;= as.Date(\"2026-04-06\"), 1, 0),\n    after_ogawa_death = ifelse(date &gt;= as.Date(\"2026-04-13\"), 1, 0),\n    after_arima_death = ifelse(date &gt;= as.Date(\"2026-04-20\"), 1, 0),\n    after_takeda_death = ifelse(date &gt;= as.Date(\"2026-04-27\"), 1, 0)\n  )\n\ncompanies &lt;- unique(death_note_tidy$company)\n\nsuspect_results &lt;- data.frame()\n\nfor (c in companies) {\n  temp &lt;- death_note_tidy %&gt;%\n    mutate(target_company = ifelse(company == c, 1, 0))\n\n  reg_twfe &lt;- feols(\n    price ~ target_company:after_kamei_death +\n      target_company:after_ogawa_death +\n      target_company:after_arima_death +\n      target_company:after_takeda_death |\n      company + date,\n    data = temp\n  )\n\n  temp_result &lt;- data.frame(\n    company = c,\n    event = death_dates,\n    estimate = as.numeric(reg_twfe$coefficients)\n  )\n\n  suspect_results &lt;- rbind(suspect_results, temp_result)\n}\n\nsuspect_results &lt;- suspect_results %&gt;% \n  group_by(company) %&gt;%\n  mutate(\n    mean_increase = mean(estimate)\n  ) %&gt;%\n  pivot_wider(\n    names_from = event,\n    values_from = estimate\n  ) %&gt;%\n  arrange(desc(mean_increase))\n\nmost_suspicious_company &lt;- suspect_results$company[1]\n\ndeath_note_suspicious &lt;- death_note_tidy %&gt;%\n  mutate(target_company = ifelse(company == most_suspicious_company, 1, 0))\n\nreg_suspicious &lt;- feols(\n  price ~ target_company:after_kamei_death +\n    target_company:after_ogawa_death +\n    target_company:after_arima_death +\n    target_company:after_takeda_death |\n    company + date,\n  data = death_note_suspicious\n)\n\nsummary(reg_suspicious, vcov = \"iid\")\n\nsummary(reg_suspicious, vcov = ~ company)\n\n2.1 TA Answer Code: Shuhan Chen\nlibrary(tidyverse)\nlibrary(fixest)\n\nrm(list = ls())\n\n# 1 clean\ndeath_note_raw &lt;- read.csv(\"data/death_note.csv\")\n\ndeath_note_tidy &lt;- death_note_raw %&gt;%\n  mutate(date = as.Date(date))\n\n# plot\ndeath_dates &lt;- as.Date(c(\"2026-04-06\", \"2026-04-13\", \"2026-04-20\", \"2026-04-27\"))\n\nggplot(death_note_tidy, aes(x = date, y = price)) +\n  geom_line() +\n  geom_vline(xintercept = death_dates, color = \"red\", linetype = \"dashed\") +\n  facet_wrap(~company, scales = \"free_y\") +\n  theme_minimal() +\n  labs(title = \"Stock Price Trends Around Death Events\")\n\n\ndeath_note_tidy &lt;- death_note_tidy %&gt;%\n  mutate(\n    after_kamei_death = ifelse(date &gt;= as.Date(\"2026-04-06\"), 1, 0),\n    after_ogawa_death = ifelse(date &gt;= as.Date(\"2026-04-13\"), 1, 0),\n    after_arima_death = ifelse(date &gt;= as.Date(\"2026-04-20\"), 1, 0),\n    after_takeda_death = ifelse(date &gt;= as.Date(\"2026-04-27\"), 1, 0)\n  )\n\n\ncompanies &lt;- unique(death_note_tidy$company)\nsuspect_results &lt;- data.frame()\n\n\n\n# reg\nfor (comp in companies) {\n\n  temp_data &lt;- death_note_tidy %&gt;%\n    mutate(target_company = ifelse(company == comp, 1, 0))\n  \n  reg_model &lt;- feols(\n    price ~ target_company:after_kamei_death + \n      target_company:after_ogawa_death + \n      target_company:after_arima_death + \n      target_company:after_takeda_death | company + date,\n    data = temp_data\n  )\n  \n\n  res &lt;- data.frame(\n    company = comp,\n    event_date = c(\"2026-04-06\", \"2026-04-13\", \"2026-04-20\", \"2026-04-27\"),\n    estimate = as.numeric(reg_model$coefficients)\n  )\n  \n  suspect_results &lt;- rbind(suspect_results, res)\n}\n\n\nsuspect_results &lt;- suspect_results %&gt;%\n  group_by(company) %&gt;%\n  mutate(mean_increase = mean(estimate)) %&gt;%\n  ungroup() %&gt;%\n  arrange(desc(mean_increase))\n\nmost_suspicious_company &lt;- suspect_results$company[1]\n\n\nfinal_check_data &lt;- death_note_tidy %&gt;%\n  mutate(target_company = ifelse(company == most_suspicious_company, 1, 0))\n\nfinal_reg &lt;- feols(\n  price ~ target_company:after_kamei_death + \n    target_company:after_ogawa_death + \n    target_company:after_arima_death + \n    target_company:after_takeda_death | company + date,\n  data = final_check_data\n)\n\nsummary(final_reg)\n\nsummary(final_reg, cluster = ~company)\n\n\n2.2 TA Answer Code: Tom\nrm(list = ls())\n\nlibrary(tidyverse)\nlibrary(fixest)\n\ndeath_note_raw &lt;- read.csv(\"data/death_note.csv\")\n\ndeath_note_tidy &lt;- death_note_raw %&gt;%\n  mutate(date = as.Date(date))\n\ndeath_dates &lt;- as.Date(c(\n  \"2026-04-06\",\n  \"2026-04-13\",\n  \"2026-04-20\",\n  \"2026-04-27\"\n))\n\nggplot(death_note_tidy, aes(x = date, y = price)) +\n  geom_line() +\n  geom_vline(\n    xintercept = death_dates,\n    color = \"red\",\n    linetype = \"dashed\"\n  ) +\n  facet_wrap(~ company, scales = \"free_y\")\n\ndeath_note_tidy &lt;- death_note_tidy %&gt;%\n  mutate(\n    after_kamei_death = ifelse(date &gt;= as.Date(\"2026-04-06\"), 1, 0),\n    after_ogawa_death = ifelse(date &gt;= as.Date(\"2026-04-13\"), 1, 0),\n    after_arima_death = ifelse(date &gt;= as.Date(\"2026-04-20\"), 1, 0),\n    after_takeda_death = ifelse(date &gt;= as.Date(\"2026-04-27\"), 1, 0)\n  )\n\ncompanies &lt;- unique(death_note_tidy$company)\n\nsuspect_results &lt;- data.frame()\n\nfor (i in 1:length(companies)) {\n  \n  this_company &lt;- companies[i]\n  \n  death_note_loop &lt;- death_note_tidy %&gt;%\n    mutate(\n      target_company = ifelse(company == this_company, 1, 0),\n      \n      target_after_kamei = target_company * after_kamei_death,\n      target_after_ogawa = target_company * after_ogawa_death,\n      target_after_arima = target_company * after_arima_death,\n      target_after_takeda = target_company * after_takeda_death\n    )\n  \n  model &lt;- feols(\n    price ~ target_after_kamei +\n      target_after_ogawa +\n      target_after_arima +\n      target_after_takeda |\n      company + date,\n    data = death_note_loop\n  )\n  \n  result_this_company &lt;- data.frame(\n    company = c(this_company, this_company, this_company, this_company),\n    event_date = death_dates,\n    estimate = c(\n      coef(model)[\"target_after_kamei\"],\n      coef(model)[\"target_after_ogawa\"],\n      coef(model)[\"target_after_arima\"],\n      coef(model)[\"target_after_takeda\"]\n    )\n  )\n  \n  suspect_results &lt;- rbind(suspect_results, result_this_company)\n}\n\nmean_results &lt;- suspect_results %&gt;%\n  group_by(company) %&gt;%\n  mutate(mean_increase = mean(estimate)) %&gt;%\n  arrange(desc(mean_increase))\n\nprint(mean_results)\n\nmost_suspicious_company &lt;- mean_results$company[1]\n\nprint(most_suspicious_company)\n\ndeath_note_final &lt;- death_note_tidy %&gt;%\n  mutate(\n    target_company = ifelse(company == most_suspicious_company, 1, 0),\n    \n    target_after_kamei = target_company * after_kamei_death,\n    target_after_ogawa = target_company * after_ogawa_death,\n    target_after_arima = target_company * after_arima_death,\n    target_after_takeda = target_company * after_takeda_death\n  )\n\nfinal_model &lt;- feols(\n  price ~ target_after_kamei +\n    target_after_ogawa +\n    target_after_arima +\n    target_after_takeda |\n    company + date,\n  data = death_note_final\n)\n\nsummary(final_model, vcov = \"iid\")\n\nsummary(final_model, vcov = ~ company)\n\n\n\n\n\n\n\n\n\nOLS estimation, Dep. Var.: price\nObservations: 360\nFixed-effects: company: 12,  date: 30\nStandard-errors: IID \n                                  Estimate Std. Error t value   Pr(&gt;|t|)    \ntarget_company:after_kamei_death   2.84686   0.322783 8.81972  &lt; 2.2e-16 ***\ntarget_company:after_ogawa_death   2.50312   0.294659 8.49495 7.9775e-16 ***\ntarget_company:after_arima_death   2.87571   0.294659 9.75945  &lt; 2.2e-16 ***\ntarget_company:after_takeda_death  2.45695   0.345519 7.11090 7.7779e-12 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\nRMSE: 0.493701     Adj. R2: 0.999414\n                 Within R2: 0.789186\n\n\nOLS estimation, Dep. Var.: price\nObservations: 360\nFixed-effects: company: 12,  date: 30\nStandard-errors: Clustered (company) \n                                  Estimate Std. Error t value   Pr(&gt;|t|)    \ntarget_company:after_kamei_death   2.84686   0.229209 12.4204 8.1591e-08 ***\ntarget_company:after_ogawa_death   2.50312   0.204504 12.2400 9.4882e-08 ***\ntarget_company:after_arima_death   2.87571   0.197849 14.5349 1.5870e-08 ***\ntarget_company:after_takeda_death  2.45695   0.185115 13.2726 4.1016e-08 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\nRMSE: 0.493701     Adj. R2: 0.999414\n                 Within R2: 0.789186",
+    "crumbs": [
+      "Practice Answers",
+      "Week 13 Answers (0519)"
     ]
   },
   {
@@ -484,134 +517,25 @@
     ]
   },
   {
-    "objectID": "slides/Slides_wk13.html",
-    "href": "slides/Slides_wk13.html",
-    "title": "Week 13 Slides (0519)",
+    "objectID": "slides/Slides_wk14.html",
+    "href": "slides/Slides_wk14.html",
+    "title": "Week 14 Slides (0526)",
     "section": "",
     "text": "Open in new tab · Download PDF",
     "crumbs": [
       "Slides",
-      "Week 13 Slides (0519)"
+      "Week 14 Slides (0526)"
     ]
   },
   {
-    "objectID": "slides/Slides_wk11.html",
-    "href": "slides/Slides_wk11.html",
-    "title": "Week 11 Slides (0505)",
+    "objectID": "slides/Slides_wk12.html",
+    "href": "slides/Slides_wk12.html",
+    "title": "Week 12 Slides (0512)",
     "section": "",
     "text": "Open in new tab · Download PDF",
     "crumbs": [
       "Slides",
-      "Week 11 Slides (0505)"
-    ]
-  },
-  {
-    "objectID": "slides/Slides_wk08.html",
-    "href": "slides/Slides_wk08.html",
-    "title": "Week 8 Slides (0414)",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
-    "crumbs": [
-      "Slides",
-      "Week 8 Slides (0414)"
-    ]
-  },
-  {
-    "objectID": "slides/Slides_wk06.html",
-    "href": "slides/Slides_wk06.html",
-    "title": "Week 6 Slides (0331)",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
-    "crumbs": [
-      "Slides",
-      "Week 6 Slides (0331)"
-    ]
-  },
-  {
-    "objectID": "slides/Slides_wk04.html",
-    "href": "slides/Slides_wk04.html",
-    "title": "Week 4 Slides (0317)",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
-    "crumbs": [
-      "Slides",
-      "Week 4 Slides (0317)"
-    ]
-  },
-  {
-    "objectID": "slides/Slides_wk02.html",
-    "href": "slides/Slides_wk02.html",
-    "title": "Week 2 Slides (0303)",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
-    "crumbs": [
-      "Slides",
-      "Week 2 Slides (0303)"
-    ]
-  },
-  {
-    "objectID": "slides/How to Prepare for an R Quiz.html",
-    "href": "slides/How to Prepare for an R Quiz.html",
-    "title": "How to Prepare for an R Quiz",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
-    "crumbs": [
-      "Slides",
-      "How to Prepare for an R Quiz"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "2026 Spring Econometrics TA Session",
-    "section": "",
-    "text": "Welcome! Use the sidebar to open weekly Slides, Practices and Answers\nAnswers to the practice will be published after each TA Session.\nSending email: r13323002@ntu.edu.tw (mail title including [Econometrics TA])\nTA Office hours: Tuesday, 3:30-4:20 p.m. at SSB. (社會科學院) Room 645.\n2025 Fall Statistics TA Session Website\nOpenIntro Website",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "slides/Slides_wk01.html",
-    "href": "slides/Slides_wk01.html",
-    "title": "Week 1 Slides (0224)",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
-    "crumbs": [
-      "Slides",
-      "Week 1 Slides (0224)"
-    ]
-  },
-  {
-    "objectID": "slides/Slides_wk03.html",
-    "href": "slides/Slides_wk03.html",
-    "title": "Week 3 Slides (0310)",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
-    "crumbs": [
-      "Slides",
-      "Week 3 Slides (0310)"
-    ]
-  },
-  {
-    "objectID": "slides/Slides_wk05.html",
-    "href": "slides/Slides_wk05.html",
-    "title": "Week 5 Slides (0324)",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
-    "crumbs": [
-      "Slides",
-      "Week 5 Slides (0324)"
-    ]
-  },
-  {
-    "objectID": "slides/Slides_wk07.html",
-    "href": "slides/Slides_wk07.html",
-    "title": "Week 7 Slides (0407)",
-    "section": "",
-    "text": "Open in new tab · Download PDF",
-    "crumbs": [
-      "Slides",
-      "Week 7 Slides (0407)"
+      "Week 12 Slides (0512)"
     ]
   },
   {
@@ -626,14 +550,134 @@
     ]
   },
   {
-    "objectID": "slides/Slides_wk12.html",
-    "href": "slides/Slides_wk12.html",
-    "title": "Week 12 Slides (0512)",
+    "objectID": "slides/Slides_wk07.html",
+    "href": "slides/Slides_wk07.html",
+    "title": "Week 7 Slides (0407)",
     "section": "",
     "text": "Open in new tab · Download PDF",
     "crumbs": [
       "Slides",
-      "Week 12 Slides (0512)"
+      "Week 7 Slides (0407)"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk05.html",
+    "href": "slides/Slides_wk05.html",
+    "title": "Week 5 Slides (0324)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 5 Slides (0324)"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk03.html",
+    "href": "slides/Slides_wk03.html",
+    "title": "Week 3 Slides (0310)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 3 Slides (0310)"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk01.html",
+    "href": "slides/Slides_wk01.html",
+    "title": "Week 1 Slides (0224)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 1 Slides (0224)"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "2026 Spring Econometrics TA Session",
+    "section": "",
+    "text": "Welcome! Use the sidebar to open weekly Slides, Practices and Answers\nAnswers to the practice will be published after each TA Session.\nSending email: r13323002@ntu.edu.tw (mail title including [Econometrics TA])\nTA Office hours: Tuesday, 3:30-4:20 p.m. at SSB. (社會科學院) Room 645.\n2025 Fall Statistics TA Session Website\nOpenIntro Website",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "slides/How to Prepare for an R Quiz.html",
+    "href": "slides/How to Prepare for an R Quiz.html",
+    "title": "How to Prepare for an R Quiz",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "How to Prepare for an R Quiz"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk02.html",
+    "href": "slides/Slides_wk02.html",
+    "title": "Week 2 Slides (0303)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 2 Slides (0303)"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk04.html",
+    "href": "slides/Slides_wk04.html",
+    "title": "Week 4 Slides (0317)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 4 Slides (0317)"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk06.html",
+    "href": "slides/Slides_wk06.html",
+    "title": "Week 6 Slides (0331)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 6 Slides (0331)"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk08.html",
+    "href": "slides/Slides_wk08.html",
+    "title": "Week 8 Slides (0414)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 8 Slides (0414)"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk11.html",
+    "href": "slides/Slides_wk11.html",
+    "title": "Week 11 Slides (0505)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 11 Slides (0505)"
+    ]
+  },
+  {
+    "objectID": "slides/Slides_wk13.html",
+    "href": "slides/Slides_wk13.html",
+    "title": "Week 13 Slides (0519)",
+    "section": "",
+    "text": "Open in new tab · Download PDF",
+    "crumbs": [
+      "Slides",
+      "Week 13 Slides (0519)"
     ]
   },
   {
@@ -934,58 +978,69 @@
     ]
   },
   {
-    "objectID": "example_code/Example_Code_wk02.html",
-    "href": "example_code/Example_Code_wk02.html",
-    "title": "Week 2 Example R Code (0303)",
+    "objectID": "example_code/Example_Code_wk01.html",
+    "href": "example_code/Example_Code_wk01.html",
+    "title": "Week 1 Example R Code (0224)",
     "section": "",
-    "text": "Right click to download:\n\nwk02_example_code.R",
+    "text": "Right click to download:\n\nwk01_example_code.R",
     "crumbs": [
       "Example R code",
-      "Week 2 Example R Code (0303)"
+      "Week 1 Example R Code (0224)"
     ]
   },
   {
-    "objectID": "example_code/Example_Code_wk04.html",
-    "href": "example_code/Example_Code_wk04.html",
-    "title": "Week 4 Example R Code (0310)",
+    "objectID": "example_code/Example_Code_wk03.html",
+    "href": "example_code/Example_Code_wk03.html",
+    "title": "Week 3 Example R Code (0310)",
     "section": "",
-    "text": "Right click to download:\n\nwk04_example_code.R",
+    "text": "Right click to download:\n\nwk03_example_code.R",
     "crumbs": [
       "Example R code",
-      "Week 4 Example R Code (0310)"
+      "Week 3 Example R Code (0310)"
     ]
   },
   {
-    "objectID": "example_code/Example_Code_wk06.html",
-    "href": "example_code/Example_Code_wk06.html",
-    "title": "Week 6 Example R Code (0331)",
+    "objectID": "example_code/Example_Code_wk05.html",
+    "href": "example_code/Example_Code_wk05.html",
+    "title": "Week 5 Example R Code (0324)",
     "section": "",
-    "text": "Right click to download:\n\nwk06_example_code.R",
+    "text": "Right click to download:\n\nwk05_example_code.R",
     "crumbs": [
       "Example R code",
-      "Week 6 Example R Code (0331)"
+      "Week 5 Example R Code (0324)"
     ]
   },
   {
-    "objectID": "example_code/Example_Code_wk08.html",
-    "href": "example_code/Example_Code_wk08.html",
-    "title": "Week 8 Example R Code (0414)",
+    "objectID": "example_code/Example_Code_wk07.html",
+    "href": "example_code/Example_Code_wk07.html",
+    "title": "Week 7 Example Code (0407)",
     "section": "",
-    "text": "Right click to download:\n\nwk08_example_code.Rmd",
+    "text": "Right click to download:\n\nwk07_example_code.R",
     "crumbs": [
       "Example R code",
-      "Week 8 Example R Code (0414)"
+      "Week 7 Example Code (0407)"
     ]
   },
   {
-    "objectID": "example_code/Example_Code_wk12.html",
-    "href": "example_code/Example_Code_wk12.html",
-    "title": "Week 12 Example R Code (0512)",
+    "objectID": "example_code/Example_Code_wk11.html",
+    "href": "example_code/Example_Code_wk11.html",
+    "title": "Week 11 Example R Code (0505)",
     "section": "",
-    "text": "Right click to download:\n\nwk12_example_code.Rmd",
+    "text": "Right click to download:\n\nwk11_example_code.Rmd",
     "crumbs": [
       "Example R code",
-      "Week 12 Example R Code (0512)"
+      "Week 11 Example R Code (0505)"
+    ]
+  },
+  {
+    "objectID": "example_code/Example_Code_wk13.html",
+    "href": "example_code/Example_Code_wk13.html",
+    "title": "Week 13 Example R Code (0519)",
+    "section": "",
+    "text": "Right click to download:\n\nwk13_example_code.Rmd",
+    "crumbs": [
+      "Example R code",
+      "Week 13 Example R Code (0519)"
     ]
   },
   {

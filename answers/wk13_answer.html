@@ -236,6 +236,18 @@ window.Quarto = {
  <span class="menu-text">Week 12 Slides (0512)</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/Slides_wk13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 13 Slides (0519)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/Slides_wk14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 14 Slides (0526)</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -305,6 +317,18 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../example_code/Example_Code_wk12.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 12 Example R Code (0512)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../example_code/Example_Code_wk13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 13 Example R Code (0519)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../example_code/Example_Code_wk14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 14 Example R Code (0526)</span></a>
   </div>
 </li>
       </ul>
@@ -612,8 +636,7 @@ window.Quarto = {
 
 <section id="death-note-死亡筆記本" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="death-note-死亡筆記本"><span class="header-section-number">1</span> Death Note (死亡筆記本)</h2>
-<p>Light and L are tracking a new Killer, a person who owns a Death Note and can cause people to die of cardiac arrest by writing their names in it. After this new Killer appears, Light notices something unusual. The Killer does not only write the names of criminals, but also writes the names of top managers from large companies.</p>
-<p>Light begins to suspect that the new Killer may belong to a large company and may be using the Death Note for private profit. If this hypothesis is correct, then the stock price of the Killer’s company should increase after each suspicious death.</p>
+<p>Light and L are tracking a new Killer, a person who owns a Death Note and can cause people to die of cardiac arrest by writing their names in it. After this new Killer appears, Light notices something unusual. The Killer does not only write the names of criminals, but also writes the names of top managers from large companies. Light begins to suspect that the new Killer may belong to a large company and may be using the Death Note for private profit. If this hypothesis is correct, then the stock price of the Killer’s company should increase after each suspicious death.</p>
 <p>To investigate this possibility, Light collects daily stock prices for several companies and tracks how their prices change after each death. The dataset contains:</p>
 <ul>
 <li><code>company</code>: The company’s name.</li>
@@ -660,11 +683,11 @@ window.Quarto = {
 <li>Open the project you created for the TA Session by clicking on <code>.Rproj</code>.</li>
 <li>Open a new script and save it in the <code>script</code> folder.</li>
 <li>Download the dataset <code>death_note.csv</code> and save it in the <code>data</code> folder. <a href="death_note.csv" target="_blank" rel="noopener">(right click here)</a></li>
-<li>Install and call the packages <code>tidyverse</code>, <code>fixest</code>, and <code>here</code>.</li>
+<li>Install and call the packages <code>tidyverse</code>, <code>fixest</code>.</li>
 <li>(Optional) Remove all objects from the environment using <code>rm(list = ls())</code>.</li>
 </ul></li>
 <li><p>Read <code>death_note.csv</code> and save it as <code>death_note_raw</code>. Then create a new dataframe called <code>death_note_tidy</code> by converting <code>date</code> into a Date variable.</p></li>
-<li><p>Create a vector called <code>death_dates</code> that stores the four death dates. Then use <code>geom_line()</code> to draw the stock price trends over time and add red dashed vertical lines for the four deaths, and facet the plot by <code>company</code>. Which of the company looks the most suspicious?</p></li>
+<li><p>Create a vector called <code>death_dates</code> that stores the four death dates. Then use <code>geom_line()</code> to draw the stock price trends over time and add red dashed vertical lines for the four deaths, and facet the plot by <code>company</code> with the setting <code>scales = "free_y"</code>. Which of the company looks the most suspicious?</p></li>
 <li><p>Create four post-death dummy variables: <code>after_kamei_death</code>, <code>after_ogawa_death</code>, <code>after_arima_death</code>, and <code>after_takeda_death</code>. Each variable should be equal to <code>1</code> if the date is on or after the corresponding death date, and <code>0</code> otherwise.</p></li>
 <li><p>Create a vector called <code>companies</code> that stores the company names. Then create an empty dataframe called <code>suspect_results</code>.</p></li>
 <li><p>Use a <code>for</code> loop to run one TWFE regression for each company. For each loop, create a dummy variable called <code>target_company</code>, which equals <code>1</code> for the company currently being checked and <code>0</code> otherwise. Estimate the following model using <code>feols()</code>:</p></li>
@@ -688,25 +711,10 @@ u_{it}.
 \]</span></p>
 <p>After each regression, extract the four estimated coefficients and save the company name, event date, and coefficient estimate into <code>suspect_results</code>.</p>
 <ol start="6" type="1">
-<li>Add a column <code>mean_increase</code> that calculates the average estimated stock price increase for each company to <code>suspect_results</code>, and use <code>arrange()</code> to sort the companies in decreasing order of <code>mean_increase</code> (after arranging, there should be 12 rows in total). Create a variable <code>most_suspicious_company</code> that saves the company that has the highest value in <code>mean_increase</code>.</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Note">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>There are different ways to create <code>suspect_results</code> in this step, depending how you merge data in step 5.</p>
-</div>
-</div>
-<ol start="7" type="1">
+<li><p>Add a column called <code>mean_increase</code> to <code>suspect_results</code> that calculates the average estimated stock price increase for each company. Then use <code>arrange()</code> to sort the companies in decreasing order of <code>mean_increase</code>. Create a variable called <code>most_suspicious_company</code> that stores the company with the highest value of <code>mean_increase</code>.</p></li>
 <li><p>For <code>most_suspicious_company</code>, print the TWFE regression summary above twice:</p>
 <ul>
-<li>once without clustered standard errors,</li>
+<li>once with homoscedastic errors,</li>
 <li>once with standard errors clustered by company.</li>
 </ul></li>
 </ol>
@@ -800,11 +808,201 @@ u_{it}.
 <span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg_suspicious, <span class="at">vcov =</span> <span class="sc">~</span> company)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="ta-answer-code-shuhan-chen" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="ta-answer-code-shuhan-chen"><span class="header-section-number">2.1</span> TA Answer Code: Shuhan Chen</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fixest)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 1 clean</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>death_note_raw <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/death_note.csv"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>death_note_tidy <span class="ot">&lt;-</span> death_note_raw <span class="sc">%&gt;%</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(date))</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># plot</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>death_dates <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">"2026-04-06"</span>, <span class="st">"2026-04-13"</span>, <span class="st">"2026-04-20"</span>, <span class="st">"2026-04-27"</span>))</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(death_note_tidy, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> death_dates, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>company, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Stock Price Trends Around Death Events"</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>death_note_tidy <span class="ot">&lt;-</span> death_note_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">after_kamei_death =</span> <span class="fu">ifelse</span>(date <span class="sc">&gt;=</span> <span class="fu">as.Date</span>(<span class="st">"2026-04-06"</span>), <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">after_ogawa_death =</span> <span class="fu">ifelse</span>(date <span class="sc">&gt;=</span> <span class="fu">as.Date</span>(<span class="st">"2026-04-13"</span>), <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">after_arima_death =</span> <span class="fu">ifelse</span>(date <span class="sc">&gt;=</span> <span class="fu">as.Date</span>(<span class="st">"2026-04-20"</span>), <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">after_takeda_death =</span> <span class="fu">ifelse</span>(date <span class="sc">&gt;=</span> <span class="fu">as.Date</span>(<span class="st">"2026-04-27"</span>), <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>companies <span class="ot">&lt;-</span> <span class="fu">unique</span>(death_note_tidy<span class="sc">$</span>company)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>suspect_results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co"># reg</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (comp <span class="cf">in</span> companies) {</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  temp_data <span class="ot">&lt;-</span> death_note_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">target_company =</span> <span class="fu">ifelse</span>(company <span class="sc">==</span> comp, <span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>  reg_model <span class="ot">&lt;-</span> <span class="fu">feols</span>(</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    price <span class="sc">~</span> target_company<span class="sc">:</span>after_kamei_death <span class="sc">+</span> </span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>      target_company<span class="sc">:</span>after_ogawa_death <span class="sc">+</span> </span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>      target_company<span class="sc">:</span>after_arima_death <span class="sc">+</span> </span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>      target_company<span class="sc">:</span>after_takeda_death <span class="sc">|</span> company <span class="sc">+</span> date,</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> temp_data</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">company =</span> comp,</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">event_date =</span> <span class="fu">c</span>(<span class="st">"2026-04-06"</span>, <span class="st">"2026-04-13"</span>, <span class="st">"2026-04-20"</span>, <span class="st">"2026-04-27"</span>),</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">estimate =</span> <span class="fu">as.numeric</span>(reg_model<span class="sc">$</span>coefficients)</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>  suspect_results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(suspect_results, res)</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>suspect_results <span class="ot">&lt;-</span> suspect_results <span class="sc">%&gt;%</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(company) <span class="sc">%&gt;%</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mean_increase =</span> <span class="fu">mean</span>(estimate)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_increase))</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>most_suspicious_company <span class="ot">&lt;-</span> suspect_results<span class="sc">$</span>company[<span class="dv">1</span>]</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>final_check_data <span class="ot">&lt;-</span> death_note_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">target_company =</span> <span class="fu">ifelse</span>(company <span class="sc">==</span> most_suspicious_company, <span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>final_reg <span class="ot">&lt;-</span> <span class="fu">feols</span>(</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>  price <span class="sc">~</span> target_company<span class="sc">:</span>after_kamei_death <span class="sc">+</span> </span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>    target_company<span class="sc">:</span>after_ogawa_death <span class="sc">+</span> </span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>    target_company<span class="sc">:</span>after_arima_death <span class="sc">+</span> </span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>    target_company<span class="sc">:</span>after_takeda_death <span class="sc">|</span> company <span class="sc">+</span> date,</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> final_check_data</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(final_reg)</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(final_reg, <span class="at">cluster =</span> <span class="sc">~</span>company)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="ta-answer-code-tom" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="ta-answer-code-tom"><span class="header-section-number">2.2</span> TA Answer Code: Tom</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fixest)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>death_note_raw <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/death_note.csv"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>death_note_tidy <span class="ot">&lt;-</span> death_note_raw <span class="sc">%&gt;%</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(date))</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>death_dates <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"2026-04-06"</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"2026-04-13"</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"2026-04-20"</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"2026-04-27"</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(death_note_tidy, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">xintercept =</span> death_dates,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"red"</span>,</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">"dashed"</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> company, <span class="at">scales =</span> <span class="st">"free_y"</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>death_note_tidy <span class="ot">&lt;-</span> death_note_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">after_kamei_death =</span> <span class="fu">ifelse</span>(date <span class="sc">&gt;=</span> <span class="fu">as.Date</span>(<span class="st">"2026-04-06"</span>), <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">after_ogawa_death =</span> <span class="fu">ifelse</span>(date <span class="sc">&gt;=</span> <span class="fu">as.Date</span>(<span class="st">"2026-04-13"</span>), <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">after_arima_death =</span> <span class="fu">ifelse</span>(date <span class="sc">&gt;=</span> <span class="fu">as.Date</span>(<span class="st">"2026-04-20"</span>), <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">after_takeda_death =</span> <span class="fu">ifelse</span>(date <span class="sc">&gt;=</span> <span class="fu">as.Date</span>(<span class="st">"2026-04-27"</span>), <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>companies <span class="ot">&lt;-</span> <span class="fu">unique</span>(death_note_tidy<span class="sc">$</span>company)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>suspect_results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(companies)) {</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>  this_company <span class="ot">&lt;-</span> companies[i]</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>  death_note_loop <span class="ot">&lt;-</span> death_note_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>      <span class="at">target_company =</span> <span class="fu">ifelse</span>(company <span class="sc">==</span> this_company, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>      <span class="at">target_after_kamei =</span> target_company <span class="sc">*</span> after_kamei_death,</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>      <span class="at">target_after_ogawa =</span> target_company <span class="sc">*</span> after_ogawa_death,</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>      <span class="at">target_after_arima =</span> target_company <span class="sc">*</span> after_arima_death,</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>      <span class="at">target_after_takeda =</span> target_company <span class="sc">*</span> after_takeda_death</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>  model <span class="ot">&lt;-</span> <span class="fu">feols</span>(</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    price <span class="sc">~</span> target_after_kamei <span class="sc">+</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>      target_after_ogawa <span class="sc">+</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>      target_after_arima <span class="sc">+</span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>      target_after_takeda <span class="sc">|</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>      company <span class="sc">+</span> date,</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> death_note_loop</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>  result_this_company <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">company =</span> <span class="fu">c</span>(this_company, this_company, this_company, this_company),</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>    <span class="at">event_date =</span> death_dates,</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">estimate =</span> <span class="fu">c</span>(</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coef</span>(model)[<span class="st">"target_after_kamei"</span>],</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coef</span>(model)[<span class="st">"target_after_ogawa"</span>],</span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coef</span>(model)[<span class="st">"target_after_arima"</span>],</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coef</span>(model)[<span class="st">"target_after_takeda"</span>]</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>  suspect_results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(suspect_results, result_this_company)</span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>mean_results <span class="ot">&lt;-</span> suspect_results <span class="sc">%&gt;%</span></span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(company) <span class="sc">%&gt;%</span></span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mean_increase =</span> <span class="fu">mean</span>(estimate)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_increase))</span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mean_results)</span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>most_suspicious_company <span class="ot">&lt;-</span> mean_results<span class="sc">$</span>company[<span class="dv">1</span>]</span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(most_suspicious_company)</span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>death_note_final <span class="ot">&lt;-</span> death_note_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>    <span class="at">target_company =</span> <span class="fu">ifelse</span>(company <span class="sc">==</span> most_suspicious_company, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>    <span class="at">target_after_kamei =</span> target_company <span class="sc">*</span> after_kamei_death,</span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>    <span class="at">target_after_ogawa =</span> target_company <span class="sc">*</span> after_ogawa_death,</span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>    <span class="at">target_after_arima =</span> target_company <span class="sc">*</span> after_arima_death,</span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>    <span class="at">target_after_takeda =</span> target_company <span class="sc">*</span> after_takeda_death</span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>final_model <span class="ot">&lt;-</span> <span class="fu">feols</span>(</span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>  price <span class="sc">~</span> target_after_kamei <span class="sc">+</span></span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>    target_after_ogawa <span class="sc">+</span></span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>    target_after_arima <span class="sc">+</span></span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>    target_after_takeda <span class="sc">|</span></span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>    company <span class="sc">+</span> date,</span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> death_note_final</span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(final_model, <span class="at">vcov =</span> <span class="st">"iid"</span>)</span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(final_model, <span class="at">vcov =</span> <span class="sc">~</span> company)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell">
 <div class="cell-output-display">
 <div>
