@@ -88,8 +88,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -687,7 +701,7 @@ window.Quarto = {
 </ul></li>
 <li><p>Create a new variable called <code>high_yield_field</code>. Let <code>high_yield_field</code> be equal to <code>1</code> if <code>harvest_result</code> is larger than <code>50</code>, and <code>0</code> otherwise.</p></li>
 <li><p>Fit a logarithmic regression model called <code>reg_log_harvest</code> using <code>lm_robust()</code>. The response variable is <code>log(harvest_result)</code>, and the predictors are <code>field_size_m2</code>, <code>almighty_farming_tool</code>, and <code>crop</code>. Print the regression summary.</p></li>
-<li><p>Fit a logistic regression model called <code>logit_high_yield</code> using <code>glm()</code>. The response variable is <code>high_yield_field</code>, and the predictors are <code>field_size_m2</code>, <code>almighty_farming_tool</code>, and <code>crop</code>. Print the regression summary, and use <code>pR2()</code> to calculate the pseudo-<span class="math inline">\(R^2\)</span> of the logistic regression model.</p></li>
+<li><p>Fit a logistic regression model called <code>logit_high_yield</code> using <code>glm()</code>. The response variable is <code>high_yield_field</code>, and the predictors are <code>field_size_m2</code>, <code>almighty_farming_tool</code>, and <code>crop</code>. Print the regression summary, and use <code>pR2()</code> to calculate the pseudo-<span class="math inline">R^2</span> of the logistic regression model.</p></li>
 <li><p>Create a new dataframe called <code>new_tomato_fields</code> with two <code>tomato</code> fields of <code>3000</code> square meters: one cultivated with the Almighty Farming Tool and one cultivated without it. Use <code>logit_high_yield</code> and <code>predict()</code> to calculate the probability of each field to be a <code>high_yield_field</code>.</p></li>
 </ol>
 <section id="ta-answer-code-po-hsien-kang" class="level3" data-number="1.1">
@@ -927,7 +941,6 @@ Number of Fisher Scoring iterations: 8</code></pre>
 <p><img src="farming.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Animated welcome" width="960"></p>
 </figure>
 </div>
-
 
 
 </section>

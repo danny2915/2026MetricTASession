@@ -88,8 +88,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -674,27 +688,27 @@ window.Quarto = {
 <h2 data-number="1" class="anchored" data-anchor-id="textbook-exercises"><span class="header-section-number">1</span> Textbook Exercises</h2>
 <section id="exercise-6.1" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="exercise-6.1"><span class="header-section-number">1.1</span> Exercise 6.1</h3>
-<p>Denote <span class="math inline">\(\bar{R}_{(j)}^2\)</span> as the adjusted R-squared of estimation in column <span class="math inline">\(j \in \{1,2,3\}\)</span>. Note that</p>
-<p><span class="math display">\[
+<p>Denote <span class="math inline">\bar{R}_{(j)}^2</span> as the adjusted R-squared of estimation in column <span class="math inline">j \in \{1,2,3\}</span>. Note that</p>
+<p><span class="math display">
 1-R^2 = \frac{SSR}{TSS}
-\]</span></p>
+</span></p>
 <p>we can compute:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \bar{R}^2_{(1)}
 = 1 - \frac{n - 1}{n - k - 1} \frac{SSR}{TSS}
 = 1 - \frac{7178 - 1}{7178 - 2 - 1} (1 - 0.165)
 \approx 0.1648
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \bar{R}^2_{(2)}
 = 1 - \frac{n - 1}{n - k - 1} \frac{SSR}{TSS}
 = 1 - \frac{7178 - 1}{7178 - 3 - 1} (1 - 0.182) \approx 0.1817
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \bar{R}^2_{(3)}
 = 1 - \frac{n - 1}{n - k - 1} \frac{SSR}{TSS}
 = 1 - \frac{7178 - 1}{7178 - 6 - 1} (1 - 0.185) \approx 0.1843
-\]</span></p>
+</span></p>
 </section>
 <section id="exercise-6.2" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="exercise-6.2"><span class="header-section-number">1.2</span> Exercise 6.2</h3>
@@ -710,21 +724,21 @@ window.Quarto = {
 <li><p>Other things being equal, a worker earns $0.61/hour more for each additional year of age on average.</p></li>
 <li><p>Sally’s earnings prediction:</p></li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
     \begin{aligned}
     \widehat{AHE}
     &amp;= \hat{\beta}_0 + \hat{\beta}_1 X_1 + \hat{\beta}_2 X_2 + \hat{\beta}_3 X_3 \\
     &amp;= 0.11 + 10.44 \cdot 1 - 4.56 \cdot 1 + 0.61 \cdot 29 = 23.68 \text{ (dollars per hour)}
     \end{aligned}
-\]</span></p>
+</span></p>
 <p>Betsy’s earnings prediction:</p>
-<p><span class="math display">\[
+<p><span class="math display">
     \begin{aligned}
     \hat{AHE}
     &amp;= \hat{\beta}_0 + \hat{\beta}_1 X_1 + \hat{\beta}_2 X_2 + \hat{\beta}_3 X_3 \\
     &amp;= 0.11 + 10.44 \cdot 1 - 4.56 \cdot 1 + 0.61 \cdot 34 = 26.73 \text{ (dollars per hour)}
     \end{aligned}
-\]</span></p>
+</span></p>
 </section>
 <section id="exercise-6.4" class="level3" data-number="1.4">
 <h3 data-number="1.4" class="anchored" data-anchor-id="exercise-6.4"><span class="header-section-number">1.4</span> Exercise 6.4</h3>
@@ -737,73 +751,73 @@ window.Quarto = {
 <li><p>Other things being equal, workers in the South earn $0.44/hour less than workers in the West on average.</p></li>
 </ul>
 <ol start="2" type="a">
-<li><p>To avoid perfect multicollinearity, the variable <span class="math inline">\(\textit{West}\)</span> is omitted. If <span class="math inline">\(\textit{West}\)</span> were included, the intercept could be written as a perfect linear function of the four regional regressors.</p></li>
+<li><p>To avoid perfect multicollinearity, the variable <span class="math inline">\textit{West}</span> is omitted. If <span class="math inline">\textit{West}</span> were included, the intercept could be written as a perfect linear function of the four regional regressors.</p></li>
 <li><p>The expected difference in earnings between Juanita and Jennifer is:</p></li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
     \hat{\beta}_6 - \hat{\beta}_5 = -0.44 - (-1.54) = 1.1 \text{ (dollars per hour)}
-\]</span></p>
+</span></p>
 </section>
 <section id="exercise-7.2" class="level3" data-number="1.5">
 <h3 data-number="1.5" class="anchored" data-anchor-id="exercise-7.2"><span class="header-section-number">1.5</span> Exercise 7.2</h3>
 <ol type="a">
 <li><strong>Prepare</strong>:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
     \left\{\begin{aligned}
     &amp;H_0: \beta_1 = 0 \\
     &amp;H_1: \beta_1 \neq 0
     \end{aligned}\right.
-\]</span></p>
+</span></p>
 <p>Let the significance level be 5%.</p>
-<p><strong>Calculate</strong>: The 95% confidence interval for <span class="math inline">\(\beta_1\)</span> is</p>
-<p><span class="math display">\[
+<p><strong>Calculate</strong>: The 95% confidence interval for <span class="math inline">\beta_1</span> is</p>
+<p><span class="math display">
     \hat{\beta}_1 \pm Z_{0.025} \cdot SE(\hat{\beta}_1) = 0.352 \pm 1.96 \times 0.021 = [0.3108, 0.3932]
-\]</span></p>
+</span></p>
 <p><strong>Conclusion</strong>:</p>
-<p>Since 0 is not in the 95% confidence interval, we reject <span class="math inline">\(H_0\)</span>. There is significant evidence that high school earnings differences exist.</p>
+<p>Since 0 is not in the 95% confidence interval, we reject <span class="math inline">H_0</span>. There is significant evidence that high school earnings differences exist.</p>
 <ol start="2" type="a">
 <li><strong>Prepare</strong>:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
     \left\{\begin{aligned}
     &amp;H_0: \beta_2 = 0 \\
     &amp;H_1: \beta_2 \neq 0
     \end{aligned}\right.
-\]</span></p>
+</span></p>
 <p>Let the significance level be 5%.</p>
-<p><strong>Calculate</strong>: The 95% confidence interval for <span class="math inline">\(\beta_2\)</span> is</p>
-<p><span class="math display">\[
+<p><strong>Calculate</strong>: The 95% confidence interval for <span class="math inline">\beta_2</span> is</p>
+<p><span class="math display">
     \hat{\beta}_2 \pm Z_{0.025} \cdot SE(\hat{\beta}_2) = 0.458 \pm 1.96 \times 0.021 = [0.4168, 0.4992]
-\]</span></p>
-<p>Since 0 is not in the 95% confidence interval, we reject <span class="math inline">\(H_0\)</span>. There is significant evidence that male-female earnings differences exist.</p>
+</span></p>
+<p>Since 0 is not in the 95% confidence interval, we reject <span class="math inline">H_0</span>. There is significant evidence that male-female earnings differences exist.</p>
 </section>
 <section id="exercise-7.3" class="level3" data-number="1.6">
 <h3 data-number="1.6" class="anchored" data-anchor-id="exercise-7.3"><span class="header-section-number">1.6</span> Exercise 7.3</h3>
 <ol type="a">
 <li><strong>Prepare</strong>:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
     \left\{\begin{aligned}
     &amp;H_0: \beta_3 = 0 \\
     &amp;H_1: \beta_3 \neq 0
     \end{aligned}\right.
-\]</span></p>
+</span></p>
 <p>Let the significance level be 5%.</p>
-<p><strong>Calculate</strong>: The 95% confidence interval for <span class="math inline">\(\beta_3\)</span> is</p>
-<p><span class="math display">\[
+<p><strong>Calculate</strong>: The 95% confidence interval for <span class="math inline">\beta_3</span> is</p>
+<p><span class="math display">
     \hat{\beta}_3 \pm Z_{0.025} \cdot SE(\hat{\beta}_3) = 0.011 \pm 1.96 \times 0.001 = [0.0090, 0.0130]
-\]</span></p>
-<p>Since 0 is not in the 95% confidence interval, we reject <span class="math inline">\(H_0\)</span>. There is significant evidence that age is an important determinant of earnings.</p>
+</span></p>
+<p>Since 0 is not in the 95% confidence interval, we reject <span class="math inline">H_0</span>. There is significant evidence that age is an important determinant of earnings.</p>
 <ol start="2" type="a">
 <li>95% Confidence Interval for the expected earnings difference:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 \Delta X_3 \times \left(\hat{\beta}_3 \pm Z_{0.025} \cdot SE(\hat{\beta}_3)\right)
 = (40 - 30) \times (0.011 \pm 1.96 \times 0.001) = [0.0904, 0.1296]
 \end{aligned}
-\]</span></p>
+</span></p>
 </section>
 <section id="exercise-7.4" class="level3" data-number="1.7">
 <h3 data-number="1.7" class="anchored" data-anchor-id="exercise-7.4"><span class="header-section-number">1.7</span> Exercise 7.4</h3>
@@ -814,66 +828,66 @@ window.Quarto = {
 <ol type="1">
 <li>Claim the null hypothesis:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \left\{\begin{aligned}
 &amp;H_0: \beta_4 = \beta_5 = \beta_7 = 0 \\
 &amp;H_1: \text{Not all are zero}
 \end{aligned}\right.
-\]</span></p>
+</span></p>
 <p>In other words, we are testing if the difference between <em>restricted model</em> and <em>unrestricted model</em> is statistically significant.</p>
 <ul>
-<li>Restricted Model (<span class="math inline">\(\beta_4 = \beta_5 = \beta_7 = 0\)</span>)</li>
+<li>Restricted Model (<span class="math inline">\beta_4 = \beta_5 = \beta_7 = 0</span>)</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{AWE} = \beta_0 + \sum_{i=1}^3 \beta_i X_i + u
-\]</span></p>
+</span></p>
 <ul>
 <li>Unrestricted Model</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{AWE} = \beta_0 + \sum_{i=1}^3 \beta_i X_i + \beta_4 X_4 + \beta_5 X_5 + \beta_6 X_6 + v
-\]</span></p>
+</span></p>
 <ol start="2" type="1">
 <li>Next, we derive the pivotal quantity:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 \phi &amp;= \frac{(SSE_r - SSE_u) / q}{(SSE_u) / (n - k_u - 1)} \sim F(q, n - k_u - 1)
 \end{aligned}
-\]</span></p>
-<p>where <span class="math inline">\(SSE_r\)</span> is the SSE of the restricted model, and <span class="math inline">\(SSE_u\)</span> is the SSE of the unrestricted model. Besides, <span class="math inline">\(n\)</span> is the number of samples, <span class="math inline">\(k_u\)</span> is the number of independent variables used in the unrestricted model, and <span class="math inline">\(q\)</span> is the number of restricted variables.</p>
-<p>In this case, <span class="math inline">\(n=10,000\)</span>, <span class="math inline">\(k_u=6\)</span> and <span class="math inline">\(q=3\)</span>, therefore,</p>
-<p><span class="math display">\[
+</span></p>
+<p>where <span class="math inline">SSE_r</span> is the SSE of the restricted model, and <span class="math inline">SSE_u</span> is the SSE of the unrestricted model. Besides, <span class="math inline">n</span> is the number of samples, <span class="math inline">k_u</span> is the number of independent variables used in the unrestricted model, and <span class="math inline">q</span> is the number of restricted variables.</p>
+<p>In this case, <span class="math inline">n=10,000</span>, <span class="math inline">k_u=6</span> and <span class="math inline">q=3</span>, therefore,</p>
+<p><span class="math display">
 \phi \sim F(3, 10000-6-1) \sim F(3, 9993)
-\]</span></p>
+</span></p>
 <ol start="3" type="1">
-<li>Given <span class="math inline">\(\alpha = 0.05\)</span>, we can construct the rejection region (RR):</li>
+<li>Given <span class="math inline">\alpha = 0.05</span>, we can construct the rejection region (RR):</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 RR = \{\phi \mid \phi &gt; F_{0.05}(3, 9993) = 2.6058\}
-\]</span></p>
+</span></p>
 <ol start="4" type="1">
 <li>Finally, since</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \phi^* = 21.87 \in RR
-\]</span></p>
-<p>we reject <span class="math inline">\(H_0\)</span>. There is significant evidence that regional differences exist.</p>
+</span></p>
+<p>we reject <span class="math inline">H_0</span>. There is significant evidence that regional differences exist.</p>
 <ol start="2" type="a">
 <li><ol type="i">
-<li>Consider the model in column (3). The expected difference between Juan and Mel is <span class="math inline">\(\hat{\beta}_4\)</span>, hence the 95% confidence interval for the expected difference between Juan and Mel is:</li>
+<li>Consider the model in column (3). The expected difference between Juan and Mel is <span class="math inline">\hat{\beta}_4</span>, hence the 95% confidence interval for the expected difference between Juan and Mel is:</li>
 </ol></li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \hat{\beta}_4 \pm Z_{0.025} \cdot SE(\hat{\beta}_4) = 0.175 \pm 1.96 \times 0.037 = [0.1025, 0.2475]
-\]</span></p>
+</span></p>
 <ol start="2" type="i">
 <li>The expected difference between Juan and Ari is:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \beta_4 \times (X_{4,\text{Juan}} - X_{4,\text{Ari}}) + \beta_7 \times (X_{7,\text{Juan}} - X_{7,\text{Ari}}) = \beta_4 - \beta_7
-\]</span></p>
-<p>A 95% confidence interval could be constructed using the general methods. In this case, an easy way to do this is to omit East from the regression and replace it with <span class="math inline">\(X_6 = \textit{West}\)</span>. In this new regression, the coefficient on North measures the difference in wages between the North and East, and a 95% confidence interval can be computed directly.</p>
+</span></p>
+<p>A 95% confidence interval could be constructed using the general methods. In this case, an easy way to do this is to omit East from the regression and replace it with <span class="math inline">X_6 = \textit{West}</span>. In this new regression, the coefficient on North measures the difference in wages between the North and East, and a 95% confidence interval can be computed directly.</p>
 </section>
 </section>
 <section id="computer-exercises" class="level2" data-number="2">
@@ -934,15 +948,15 @@ F-statistic: 28.49 on 2 and 98 DF,  p-value: 1.764e-10</code></pre>
 </div>
 </div>
 <ol start="3" type="a">
-<li><p>Other things being equal, the estimated price increase in <span class="math inline">\(14.4160553\)</span> thousand for a house with one more bedroom on average.</p></li>
-<li><p><span class="math inline">\(62.8307451\%\)</span> of the variation in price is explained by square footage and the number of bedrooms.</p></li>
-<li><p>Definitely. Take variable <span class="math inline">\(\textit{bdrms}\)</span> for example, we can easily tell the following relationship in common sense:</p></li>
+<li><p>Other things being equal, the estimated price increase in <span class="math inline">14.4160553</span> thousand for a house with one more bedroom on average.</p></li>
+<li><p><span class="math inline">62.8307451\%</span> of the variation in price is explained by square footage and the number of bedrooms.</p></li>
+<li><p>Definitely. Take variable <span class="math inline">\textit{bdrms}</span> for example, we can easily tell the following relationship in common sense:</p></li>
 </ol>
 <ul>
-<li><p><span class="math inline">\(\text{Cov}(\textit{price}, \textit{bdrms}) &gt; 0\)</span></p></li>
-<li><p><span class="math inline">\(\text{Cov}(\textit{sqrt}, \textit{bdrms}) &gt; 0\)</span></p></li>
+<li><p><span class="math inline">\text{Cov}(\textit{price}, \textit{bdrms}) &gt; 0</span></p></li>
+<li><p><span class="math inline">\text{Cov}(\textit{sqrt}, \textit{bdrms}) &gt; 0</span></p></li>
 </ul>
-<p>as <span class="math inline">\(\textit{bdrms}\)</span> is omitted from the model, we would expect an upward bias (overestimates) in the estimated coefficient.</p>
+<p>as <span class="math inline">\textit{bdrms}</span> is omitted from the model, we would expect an upward bias (overestimates) in the estimated coefficient.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>reg_1e <span class="ot">&lt;-</span> <span class="fu">lm_robust</span>(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> price <span class="sc">~</span> sqrft,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> house</span>
@@ -976,7 +990,7 @@ RMSE           60.2151              60.7561
 </div>
 <p>The regression result matches our interpretation, that is, omitting variable will lead to overestimates (0.1393 &gt; 0.1281).</p>
 <ol start="6" type="a">
-<li>From the correlation matrix in (a), we have <span class="math inline">\(\text{Corr}(\textit{lotsize}, \textit{sqrft}) \neq 1\)</span>, so there will be no perfect multicollinearity if we add <span class="math inline">\(\textit{lotsize}\)</span> into the regression in question (b).</li>
+<li>From the correlation matrix in (a), we have <span class="math inline">\text{Corr}(\textit{lotsize}, \textit{sqrft}) \neq 1</span>, so there will be no perfect multicollinearity if we add <span class="math inline">\textit{lotsize}</span> into the regression in question (b).</li>
 </ol>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>reg_1f <span class="ot">&lt;-</span> <span class="fu">lm_robust</span>(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> price <span class="sc">~</span> sqrft <span class="sc">+</span> bdrms <span class="sc">+</span> lotsize,</span>
@@ -1004,7 +1018,7 @@ Multiple R-squared:  0.6702 ,   Adjusted R-squared:   0.66
 F-statistic: 25.23 on 3 and 97 DF,  p-value: 3.78e-12</code></pre>
 </div>
 </div>
-<p>Other things being equal, the estimated price increase in <span class="math inline">\(0.0021293\)</span> thousand for a house with one more square feet about the size of the lot on average.</p>
+<p>Other things being equal, the estimated price increase in <span class="math inline">0.0021293</span> thousand for a house with one more square feet about the size of the lot on average.</p>
 </section>
 <section id="question-2-wage" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="question-2-wage"><span class="header-section-number">2.2</span> Question 2: Wage</h3>
@@ -1038,16 +1052,16 @@ Multiple R-squared:  0.1743 ,   Adjusted R-squared:  0.1738
 F-statistic: 390.7 on 4 and 6758 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
-<p>The estimates are all positive, which match our intuition. The estimated hourly wages increase in <span class="math inline">\(0.4093446\)</span> with 10 more work experience on average. On average, the hourly wage for a worker with no experience, no college degree of any sort and with 0 standardized score is <span class="math inline">\(4.0299005\)</span>.</p>
+<p>The estimates are all positive, which match our intuition. The estimated hourly wages increase in <span class="math inline">0.4093446</span> with 10 more work experience on average. On average, the hourly wage for a worker with no experience, no college degree of any sort and with 0 standardized score is <span class="math inline">4.0299005</span>.</p>
 <ol start="2" type="a">
 <li>We want to test the following hypothesis:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 &amp;H_0: \beta_3 = \beta_4 = 0 \\
 &amp;H_1: \text{Not all are zero}
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>See the testing result below:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">linearHypothesis</span>(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  reg_2a,</span>
@@ -1071,7 +1085,7 @@ Model 2: wage ~ exper + stotal + jc + univ
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
-<p>From the testing result, we have its <span class="math inline">\(p\)</span>-value is very small (<span class="math inline">\(&lt;5\%\)</span>). There is significant evidence that the effects of attending two-year or four-year college are different.</p>
+<p>From the testing result, we have its <span class="math inline">p</span>-value is very small (<span class="math inline">&lt;5\%</span>). There is significant evidence that the effects of attending two-year or four-year college are different.</p>
 <ol start="3" type="a">
 <li>See the estimation results below:</li>
 </ol>
@@ -1107,15 +1121,15 @@ F-statistic: 262.7 on 6 and 6756 DF,  p-value: &lt; 2.2e-16</code></pre>
 <ol start="4" type="a">
 <li><ol type="i">
 <li><p><strong>Individual significance</strong></p>
-<p>From the preceding estimation result, we have both <span class="math inline">\(\textit{AA}\)</span> and <span class="math inline">\(\textit{BA}\)</span> not individually significant under <span class="math inline">\(5\%\)</span> significance level because both <span class="math inline">\(p\)</span>-values are greater than 0.05.</p></li>
+<p>From the preceding estimation result, we have both <span class="math inline">\textit{AA}</span> and <span class="math inline">\textit{BA}</span> not individually significant under <span class="math inline">5\%</span> significance level because both <span class="math inline">p</span>-values are greater than 0.05.</p></li>
 <li><p><strong>Joint significance</strong></p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">linearHypothesis</span>(</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  reg_2c,</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"AA = 0"</span>, <span class="st">"BA = 0"</span>),</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">test =</span> <span class="st">"F"</span></span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Since <span class="math inline">\(p\)</span>-value is greater than <span class="math inline">\(0.05\)</span>, we can’t reject the null hypothesis that both coefficients are equal to <span class="math inline">\(0\)</span>. There is no evidence that the effects of college degree exist.</p></li>
-<li><p><strong>Change in</strong> <span class="math inline">\(R^2\)</span></p></li>
+<p>Since <span class="math inline">p</span>-value is greater than <span class="math inline">0.05</span>, we can’t reject the null hypothesis that both coefficients are equal to <span class="math inline">0</span>. There is no evidence that the effects of college degree exist.</p></li>
+<li><p><strong>Change in</strong> <span class="math inline">R^2</span></p></li>
 </ol>
 <pre><code>  By comparing the estimation results in question (a), (c), we have the
   adjusted $R^2$ from specification (1) is greater than (2). In other
@@ -1125,7 +1139,6 @@ F-statistic: 262.7 on 6 and 6756 DF,  p-value: &lt; 2.2e-16</code></pre>
   In conclusion, we suggest that the two dummy variables $AA$ and $BA$
   should not be kept in the regression specification.</code></pre></li>
 </ol>
-
 
 
 </section>

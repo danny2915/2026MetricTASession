@@ -88,8 +88,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -681,81 +695,81 @@ window.Quarto = {
 <ol type="a">
 <li>Given the simultaneous equations,</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \left\{\begin{aligned}
     &amp;Q^s_i = \beta_0 + \beta_1 P_i + u^s_i \\
     &amp;Q^d_i = \gamma_0 + u^d_i
     \end{aligned}\right.
-\]</span></p>
-<p>by equilibrium condition <span class="math inline">\(Q^s_i = Q^d_i \overset{\Delta}{=} Q_i\)</span>, we get:</p>
-<p><span class="math display">\[
+</span></p>
+<p>by equilibrium condition <span class="math inline">Q^s_i = Q^d_i \overset{\Delta}{=} Q_i</span>, we get:</p>
+<p><span class="math display">
 \beta_0 + \beta_1 P_i + u^s_i = \gamma_0 + u^d_i
-\]</span></p>
-<p>Solving for <span class="math inline">\(P_i\)</span> and <span class="math inline">\(Q_i\)</span>:</p>
-<p><span class="math display">\[
+</span></p>
+<p>Solving for <span class="math inline">P_i</span> and <span class="math inline">Q_i</span>:</p>
+<p><span class="math display">
 \begin{aligned}
     &amp;P_i = \frac{\gamma_0 + u^d_i - \beta_0 - u^s_i}{\beta_1} \\
     &amp;Q_i = \gamma_0 + u^d_i
     \end{aligned}
-\]</span></p>
+</span></p>
 <p>Since:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{Cov}(P, u^s)
     = \text{Cov}\left(\frac{\gamma_0 + u^d - \beta_0 - u^s}{\beta_1}, u^s\right)
     = \text{Cov}\left(\frac{-u^s}{\beta_1}, u^s\right)
     = -\frac{1}{\beta_1}\text{Var}(u^s)
-\]</span></p>
-<p>We have <span class="math inline">\(\text{Corr}(P, u^s) \neq 0\)</span> and conclude that the price variable is endogenous.</p>
+</span></p>
+<p>We have <span class="math inline">\text{Corr}(P, u^s) \neq 0</span> and conclude that the price variable is endogenous.</p>
 <ol start="2" type="a">
 <li>We can take the probability limit on the OLS estimator:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \hat{\beta}_1
     = \frac{\sum_{i=1}^{n} (P_i - \bar{P})(Q_i - \bar{Q})}{\sum_{i=1}^{n} (P_i - \bar{P})^2}
     = \frac{\frac1n \sum_{i=1}^{n} (P_i - \bar{P})(Q_i - \bar{Q})}{\frac1n \sum_{i=1}^{n} (P_i - \bar{P})^2}
     \overset{p}{\to} \frac{\text{Cov}(P, Q)}{\text{Var}(P)}
-\]</span></p>
+</span></p>
 <p>and note that:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{\text{Cov}(P, Q)}{\text{Var}(P)}
     = \frac{\text{Cov}(P, \beta_0 + \beta_1P + u^s)}{\text{Var}(P)}
     = \beta_1 + \frac{\text{Cov}(P, u^s)}{\text{Var}(P)}
-\]</span></p>
-<p>Since <span class="math inline">\(\text{Cov}(P, u^s) \neq 0\)</span>, we conclude that <span class="math inline">\(\hat{\beta}_1\)</span> is inconsistent.</p>
+</span></p>
+<p>Since <span class="math inline">\text{Cov}(P, u^s) \neq 0</span>, we conclude that <span class="math inline">\hat{\beta}_1</span> is inconsistent.</p>
 <ol start="3" type="a">
-<li><span class="math inline">\(\gamma_0\)</span> can be estimated by OLS easily since it’s equivalent to the sample mean of <span class="math inline">\(Q\)</span>.</li>
+<li><span class="math inline">\gamma_0</span> can be estimated by OLS easily since it’s equivalent to the sample mean of <span class="math inline">Q</span>.</li>
 </ol>
-<p>However, to estimate <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>, we need an instrumental variable, which should be correlated with <span class="math inline">\(P\)</span> but uncorrelated with <span class="math inline">\(u^s\)</span>. In this case, <span class="math inline">\(Q\)</span> can serve as the instrument because demand is completely inelastic (so that <span class="math inline">\(Q\)</span> is not affected by shifts in supply).</p>
+<p>However, to estimate <span class="math inline">\beta_0</span> and <span class="math inline">\beta_1</span>, we need an instrumental variable, which should be correlated with <span class="math inline">P</span> but uncorrelated with <span class="math inline">u^s</span>. In this case, <span class="math inline">Q</span> can serve as the instrument because demand is completely inelastic (so that <span class="math inline">Q</span> is not affected by shifts in supply).</p>
 </section>
 <section id="exercise-12.9" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="exercise-12.9"><span class="header-section-number">1.2</span> Exercise 12.9</h3>
 <ol type="a">
 <li><p>While it is plausible that having more secure property rights affects a country’s level of income, it is also plausible that richer countries can afford institutions that protect property rights. Thus, there is a problem of simultaneous causality bias. According to this theory, as richer countries can afford secure property rights, OLS estimates might be overestimated.</p></li>
-<li><p>Denote the instrumental variable settler mortality as <span class="math inline">\(z\)</span>. We need to check the following conditions:</p></li>
+<li><p>Denote the instrumental variable settler mortality as <span class="math inline">z</span>. We need to check the following conditions:</p></li>
 </ol>
 <ul>
-<li><strong>Exogeneity</strong>: settler mortality (<span class="math inline">\(z\)</span>) is not directly related to a country’s recent income (<span class="math inline">\(u\)</span>). Thus, <span class="math inline">\(z\)</span> satisfies <span class="math inline">\(\text{Cov}(z, u) = 0\)</span>.</li>
-<li><strong>Relevance</strong>: settler mortality (<span class="math inline">\(z\)</span>) affected European settlement, and subsequently led to the establishment of early institutions for securing property rights(<span class="math inline">\(x\)</span>), which have persisted until the present day. Hence, <span class="math inline">\(z\)</span> satisfies <span class="math inline">\(\text{Cov}(z, x) \neq 0\)</span>.</li>
+<li><strong>Exogeneity</strong>: settler mortality (<span class="math inline">z</span>) is not directly related to a country’s recent income (<span class="math inline">u</span>). Thus, <span class="math inline">z</span> satisfies <span class="math inline">\text{Cov}(z, u) = 0</span>.</li>
+<li><strong>Relevance</strong>: settler mortality (<span class="math inline">z</span>) affected European settlement, and subsequently led to the establishment of early institutions for securing property rights(<span class="math inline">x</span>), which have persisted until the present day. Hence, <span class="math inline">z</span> satisfies <span class="math inline">\text{Cov}(z, x) \neq 0</span>.</li>
 </ul>
 </section>
 <section id="exercise-12.10" class="level3" data-number="1.3">
 <h3 data-number="1.3" class="anchored" data-anchor-id="exercise-12.10"><span class="header-section-number">1.3</span> Exercise 12.10</h3>
 <p>By taking probability limit on the TSLS estimator:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \hat{\beta}^{TSLS}_1
 = \frac{\sum_{i=1}^{n} (Z_i - \bar{Z}) (Y_i - \bar{Y})}{\sum_{i=1}^{n} (Z_i - \bar{Z}) (X_i - \bar{X})}
 = \frac{\frac1n \sum_{i=1}^{n} (Z_i - \bar{Z}) (Y_i - \bar{Y})}{\frac1n \sum_{i=1}^{n} (Z_i - \bar{Z}) (X_i - \bar{X})}
 = \overset{p}{\to} \frac{\text{Cov}(Z, Y)}{\text{Cov}(Z, X)}
-\]</span></p>
+</span></p>
 <p>and note that:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{\text{Cov}(Z, Y)}{\text{Cov}(Z, X)}
 = \frac{\text{Cov}(Z, \beta_0 + \beta_1 X + \beta_2 W + u)}{\text{Cov}(Z, X)}
 = \beta_1 + \frac{\beta_2 \text{Cov}(Z, W)}{\text{Cov}(Z, X)}
-\]</span></p>
+</span></p>
 <ol type="a">
-<li><p>If <span class="math inline">\(\text{Cov}(Z, W) \neq 0\)</span>, the IV estimator is not consistent. The first student is correct.</p></li>
-<li><p>If <span class="math inline">\(\text{Cov}(Z, W) = 0\)</span>, the IV estimator is consistent. The second student is correct.</p></li>
+<li><p>If <span class="math inline">\text{Cov}(Z, W) \neq 0</span>, the IV estimator is not consistent. The first student is correct.</p></li>
+<li><p>If <span class="math inline">\text{Cov}(Z, W) = 0</span>, the IV estimator is consistent. The second student is correct.</p></li>
 </ol>
 </section>
 <section id="exercise-13.3" class="level3" data-number="1.4">
@@ -763,45 +777,45 @@ window.Quarto = {
 <ol type="a">
 <li>The average treatment effect on test scores is</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \bar{X}_{\text{treatment}} - \bar{X}_{\text{control}} = 1348 - 1395 = -47
-\]</span></p>
+</span></p>
 <ol start="2" type="a">
 <li><strong>Prepare</strong>:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \left\{\begin{aligned}
     &amp;H_0: p^{\text{treatment}}_{\text{men}} = 0.5 \\
     &amp;H_1: p^{\text{treatment}}_{\text{men}} \neq 0.5
     \end{aligned}\right.
-\]</span></p>
+</span></p>
 <p>Let the significance level be 5%.</p>
 <p><strong>Calculate</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 t^* = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{n}}} = \frac{0.6 - 0.5}{\sqrt{\frac{0.5 (1 - 0.5)}{100}}} = 2
-\]</span></p>
+</span></p>
 <p><strong>Conclude</strong>:</p>
-<p>Since <span class="math inline">\(|t^*| &gt; Z_{0.025} = 1.96\)</span>, we reject <span class="math inline">\(H_0\)</span>. There is a significant evidence of nonrandom assignment.</p>
+<p>Since <span class="math inline">|t^*| &gt; Z_{0.025} = 1.96</span>, we reject <span class="math inline">H_0</span>. There is a significant evidence of nonrandom assignment.</p>
 </section>
 <section id="exercise-13.7" class="level3" data-number="1.5">
 <h3 data-number="1.5" class="anchored" data-anchor-id="exercise-13.7"><span class="header-section-number">1.5</span> Exercise 13.7</h3>
 <p>From the population regression, we know that:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 Y_{i2} &amp;= \alpha_i + \beta_1 X_{i2} + \beta_2 W_i + \beta_0 + v_{i2} \\
 Y_{i1} &amp;= \alpha_i + \beta_1 X_{i1} + v_{i1}
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>By taking differences, we can obtain:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \underbrace{Y_{i2} - Y_{i1}}_{\Delta Y_i}
 = \beta_0 + \beta_1 \underbrace{(X_{i2} - X_{i1})}_{\Delta X_i} + \beta_2 W_i + \underbrace{(\nu_{i2} - \nu_{i1})}_{\Delta \nu_i}
-\]</span></p>
-<p>This eliminates the individual fixed effects (<span class="math inline">\(\alpha_i\)</span>), allowing for consistent estimation of <span class="math inline">\(\beta_1\)</span>. Additionally, note that we can define <span class="math inline">\(X_i \equiv \Delta X_i\)</span> since it’s actually binary, so this can be rewritten as:</p>
-<p><span class="math display">\[
+</span></p>
+<p>This eliminates the individual fixed effects (<span class="math inline">\alpha_i</span>), allowing for consistent estimation of <span class="math inline">\beta_1</span>. Additionally, note that we can define <span class="math inline">X_i \equiv \Delta X_i</span> since it’s actually binary, so this can be rewritten as:</p>
+<p><span class="math display">
 \Delta Y_i = \beta_0 + \beta_1 X_i + \beta_2 W_i + \Delta \nu_i
-\]</span></p>
-<p>which is equation (13.6) in the case of single <span class="math inline">\(W\)</span> regressor.</p>
+</span></p>
+<p>which is equation (13.6) in the case of single <span class="math inline">W</span> regressor.</p>
 </section>
 </section>
 <section id="computer-exercises" class="level2" data-number="2">
@@ -942,7 +956,7 @@ Model 2: educ ~ south + married + exper + I(exper^2) + nearc4
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
-<p>From the testing result, since F value is greater than 10, <span class="math inline">\(\textit{nearc4}\)</span> is not a weak instrument.</p>
+<p>From the testing result, since F value is greater than 10, <span class="math inline">\textit{nearc4}</span> is not a weak instrument.</p>
 </section>
 <section id="iv-manually-2sls" class="level3" data-number="2.4">
 <h3 data-number="2.4" class="anchored" data-anchor-id="iv-manually-2sls"><span class="header-section-number">2.4</span> IV: Manually 2SLS</h3>
@@ -1031,8 +1045,8 @@ Num. obs.    979           979
 <h3 data-number="2.6" class="anchored" data-anchor-id="iv-conditions"><span class="header-section-number">2.6</span> IV: Conditions</h3>
 <p>There are two conditions:</p>
 <ul>
-<li><p>Relevance: <span class="math inline">\(\textit{motheduc}\)</span> and <span class="math inline">\(\textit{fatheduc}\)</span> should be correlated with <span class="math inline">\(\textit{educ}\)</span>.</p></li>
-<li><p>Exogeneity: <span class="math inline">\(\textit{motheduc}\)</span> and <span class="math inline">\(\textit{fatheduc}\)</span> should be uncorrelated with the error term.</p></li>
+<li><p>Relevance: <span class="math inline">\textit{motheduc}</span> and <span class="math inline">\textit{fatheduc}</span> should be correlated with <span class="math inline">\textit{educ}</span>.</p></li>
+<li><p>Exogeneity: <span class="math inline">\textit{motheduc}</span> and <span class="math inline">\textit{fatheduc}</span> should be uncorrelated with the error term.</p></li>
 </ul>
 </section>
 <section id="iv-estimation" class="level3" data-number="2.7">
@@ -1067,8 +1081,7 @@ Num. obs.    979           979
 <pre><code>[1] 0.5151249</code></pre>
 </div>
 </div>
-<p>Because the <span class="math inline">\(p\)</span>-value is greater than 0.05, under the 5% significance level, we do not reject <span class="math inline">\(H_0\)</span>. So we conclude that all instruments are exogenous.</p>
-
+<p>Because the <span class="math inline">p</span>-value is greater than 0.05, under the 5% significance level, we do not reject <span class="math inline">H_0</span>. So we conclude that all instruments are exogenous.</p>
 
 
 </section>

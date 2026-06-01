@@ -88,8 +88,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -679,42 +693,42 @@ window.Quarto = {
 <ol type="a">
 <li></li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \widehat{\text{TestScore}} = 640.3 - 4.93 \times 25 = 517.05
-\]</span></p>
+</span></p>
 <ol start="2" type="a">
 <li></li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 \Delta \widehat{\text{TestScore}}
 &amp;= (640.3 - 4.93 \times 24) - (640.3 - 4.93 \times 21) \\
 &amp;= -4.93 \times (24 - 21) \\
 &amp;= -14.79
 \end{aligned}
-\]</span></p>
+</span></p>
 <ol start="3" type="a">
 <li></li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 \overline{\text{TestScore}}
 &amp;= \hat{\beta}_0 + \hat{\beta}_1 \times \overline{\text{CS}} \\
 &amp;= 640.3 - 4.93 \times 22.8 \\
 &amp;= 527.896
 \end{aligned}
-\]</span></p>
+</span></p>
 <ol start="4" type="a">
 <li></li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 s_Y = \sqrt{\frac{1}{n - 1} TSS}
 &amp;= \sqrt{\frac{1}{n - 1} \cdot \frac{SSR}{1 - R^2}} \\
 &amp;= \sqrt{\frac{1}{n - 1} \cdot \frac{(n-2)SER^2}{1 - R^2}} \\
 &amp;= \sqrt{\frac{1}{50 - 1} \cdot \frac{(50 - 2) \cdot (8.7)^2}{1 - 0.11}} \approx 9.1274
 \end{aligned}
-\]</span></p>
+</span></p>
 </section>
 <section id="exercise-4.3" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="exercise-4.3"><span class="header-section-number">1.2</span> Exercise 4.3</h3>
@@ -727,15 +741,15 @@ s_Y = \sqrt{\frac{1}{n - 1} TSS}
 </ul>
 <ol start="2" type="a">
 <li><p>SER is in the same units as the dependent variable. That is, SER is measured in euros (or dollars) per month.</p></li>
-<li><p><span class="math inline">\(R^2\)</span> is unit free.</p></li>
-<li><p>If <span class="math inline">\(AMI = 100\)</span>, then</p></li>
+<li><p><span class="math inline">R^2</span> is unit free.</p></li>
+<li><p>If <span class="math inline">AMI = 100</span>, then</p></li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 AME = 710.7 + 8.8 \times 100 = 1590.7
-\]</span> If <span class="math inline">\(AMI = 200\)</span>, then</p>
-<p><span class="math display">\[
+</span> If <span class="math inline">AMI = 200</span>, then</p>
+<p><span class="math display">
 AME = 710.7 + 8.8 \times 200 = 2470.7
-\]</span></p>
+</span></p>
 <ol start="5" type="a">
 <li><p>No.&nbsp;The highest income in the sample is €1.5 million, and €2 million is far outside the range of the sample data.</p></li>
 <li><p>No.&nbsp;The distribution of earnings is positively skewed.</p></li>
@@ -743,7 +757,7 @@ AME = 710.7 + 8.8 \times 200 = 2470.7
 </section>
 <section id="exercise-4.7" class="level3" data-number="1.3">
 <h3 data-number="1.3" class="anchored" data-anchor-id="exercise-4.7"><span class="header-section-number">1.3</span> Exercise 4.7</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 E\left(\hat{\beta}_0\right)
 &amp;= E\left(\overline{Y} - \hat{\beta}_1 \overline{X}_1\right) \\
@@ -753,14 +767,14 @@ E\left(\hat{\beta}_0\right)
 &amp;= \beta_0 + E \left[ \overline{X}_1 \underbrace{E \left(\beta_1 - \hat{\beta}_1 \mid X_1\right)}_{=0} \right] + \frac{1}{n} \sum_{i=1}^{n} \underbrace{E(u_i)}_{=0} \\
 &amp;= \beta_0
 \end{aligned}
-\]</span></p>
+</span></p>
 </section>
 <section id="exercise-4.12" class="level3" data-number="1.4">
 <h3 data-number="1.4" class="anchored" data-anchor-id="exercise-4.12"><span class="header-section-number">1.4</span> Exercise 4.12</h3>
 <ol type="a">
 <li>Note that</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
     ESS
     &amp;= \sum_{i=1}^{n} (Y_i - \bar{Y})^2 \\
@@ -768,8 +782,8 @@ E\left(\hat{\beta}_0\right)
     &amp;= \sum_{i=1}^{n} [\hat{\beta}_1 (X_i - \bar{X})]^2 \\
     &amp;= \hat{\beta}_1^2 \sum_{i=1}^{n} (X_i - \bar{X})^2
     \end{aligned}
-\]</span> Then</p>
-<p><span class="math display">\[
+</span> Then</p>
+<p><span class="math display">
 \begin{aligned}
     R^2 &amp;= \frac{ESS}{TSS} \\
     &amp;= \frac{\hat{\beta}_1^2 \sum_{i=1}^{n} (X_i - \overline{X})^2}{\sum_{i=1}^{n} (Y_i - \overline{Y})^2} \\
@@ -785,12 +799,12 @@ E\left(\hat{\beta}_0\right)
     &amp;= \left[ \frac{s_{XY}}{s_X \cdot s_Y} \right]^2 \\
     &amp;= r_{XY}^2
     \end{aligned}
-\]</span></p>
+</span></p>
 <ol start="2" type="a">
-<li><p>Since <span class="math inline">\(r_{XY} = r_{YX}\)</span>, the statement is true.</p></li>
+<li><p>Since <span class="math inline">r_{XY} = r_{YX}</span>, the statement is true.</p></li>
 <li></li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 r_{XY} \cdot \frac{s_Y}{s_X} &amp;= \frac{s_{XY}}{s_X \cdot s_Y} \cdot \frac{s_Y}{s_X} \\
 &amp;= \frac{\frac{1}{n-1} \sum_{i=1}^{n} (X_i - \overline{X}) (Y_i - \overline{Y})}
@@ -798,7 +812,7 @@ r_{XY} \cdot \frac{s_Y}{s_X} &amp;= \frac{s_{XY}}{s_X \cdot s_Y} \cdot \frac{s_Y
 &amp;= \frac{\sum_{i=1}^{n} (X_i - \overline{X}) (Y_i - \overline{Y})}
 {\sum_{i=1}^{n} (X_i - \overline{X})^2} = \hat{\beta}_1.
 \end{aligned}
-\]</span></p>
+</span></p>
 </section>
 <section id="exercise-5.2" class="level3" data-number="1.5">
 <h3 data-number="1.5" class="anchored" data-anchor-id="exercise-5.2"><span class="header-section-number">1.5</span> Exercise 5.2</h3>
@@ -806,44 +820,44 @@ r_{XY} \cdot \frac{s_Y}{s_X} &amp;= \frac{s_{XY}}{s_X \cdot s_Y} \cdot \frac{s_Y
 <li><p>The estimated gender wage gap is <strong>$1.78</strong> per hour.</p></li>
 <li><p><strong>Prepare</strong>:</p></li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \left\{\begin{aligned}
     &amp;H_0: \beta_{\text{Male}} = 0 \\
     &amp;H_1: \beta_{\text{Male}} \neq 0
     \end{aligned}\right.
-\]</span> Let the significance level be <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+</span> Let the significance level be <span class="math inline">\alpha = 0.05</span>.</p>
 <p><strong>Calculate</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 t^* = \frac{1.78 - 0}{0.29} \approx 6.14
-\]</span> <span class="math display">\[
+</span> <span class="math display">
 p\text{-value} = 2 \Phi(-t^*) \approx 2 \Phi(-6.14) \approx 0
-\]</span> <strong>Conclude</strong>:</p>
+</span> <strong>Conclude</strong>:</p>
 <pre><code>Since $p$-value &lt; 0.05, we reject $H_0$. There is significant evidence that the gender wage gap is different from 0.</code></pre>
 <ol start="3" type="a">
 <li>Confidence Interval:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \hat{\beta}_{\text{Male}} \pm Z_{0.025} SE(\hat{\beta}_{\text{Male}}) = 1.78 \pm 1.96 \times 0.29 = [1.21, 2.35]
-\]</span></p>
+</span></p>
 <ol start="4" type="a">
 <li>The sample average wage of women is</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \hat{\beta}_0 = 10.73 \quad \text{(in dollars per hour)}
-\]</span> The sample average wage of men is</p>
-<p><span class="math display">\[
+</span> The sample average wage of men is</p>
+<p><span class="math display">
 \hat{\beta}_0 + \hat{\beta}_{\text{Male}} = 10.73 + 1.78 = 12.51 \quad \text{(in dollars per hour)}
-\]</span></p>
+</span></p>
 <ol start="5" type="a">
 <li>Regression equation:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
     \text{Wage}
     &amp;= (\hat{\beta}_0 + \hat{\beta}_{\text{Male}}) + (-\hat{\beta}_{\text{Male}}) \times \text{Female} \\
     &amp;= 12.51 - 1.78 \times \text{Female}, \quad R^2 = 0.09, \quad SER = 3.8
     \end{aligned}
-\]</span></p>
+</span></p>
 </section>
 <section id="exercise-5.5" class="level3" data-number="1.6">
 <h3 data-number="1.6" class="anchored" data-anchor-id="exercise-5.5"><span class="header-section-number">1.6</span> Exercise 5.5</h3>
@@ -851,25 +865,25 @@ p\text{-value} = 2 \Phi(-t^*) \approx 2 \Phi(-6.14) \approx 0
 <li><p>The estimated gain from being in a small class is <strong>13.9</strong> points. This is approximately 20% of the standard deviation in test scores, representing a moderate increase.</p></li>
 <li><p><strong>Prepare</strong>:</p></li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \left\{\begin{aligned}
     &amp;H_0: \beta_{\text{SmallClass}} = 0 \\
     &amp;H_1: \beta_{\text{SmallClass}} \neq 0
     \end{aligned}\right.
-\]</span> Let the significance level be <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+</span> Let the significance level be <span class="math inline">\alpha = 0.05</span>.</p>
 <p><strong>Calculate</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 t^* = \frac{13.9 - 0}{2.5} \approx 5.56
-\]</span> <strong>Conclude</strong>:</p>
+</span> <strong>Conclude</strong>:</p>
 <pre><code>Since $t^* &gt; Z_{0.025} = 1.96$, we reject $H_0$. There is significant evidence that the estimated effect of class size on test scores is different from 0.</code></pre>
 <ol start="3" type="a">
 <li>Confidence Interval:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \hat{\beta}_{\text{SmallClass}} \pm Z_{0.005} \cdot SE(\hat{\beta}_{\text{SmallClass}}) = 13.9 \pm 2.576 \times 2.5 = [7.46, 20.34]
-\]</span></p>
+</span></p>
 <ol start="4" type="a">
-<li>Yes. Students were randomly assigned to small or regular classes, so that <span class="math inline">\(\text{SmallClass}\)</span> is independent of characteristics of the student, including those affecting <span class="math inline">\(\text{TestScore}\)</span>, that is <span class="math inline">\(u\)</span>.</li>
+<li>Yes. Students were randomly assigned to small or regular classes, so that <span class="math inline">\text{SmallClass}</span> is independent of characteristics of the student, including those affecting <span class="math inline">\text{TestScore}</span>, that is <span class="math inline">u</span>.</li>
 </ol>
 </section>
 </section>
@@ -951,20 +965,20 @@ attr(,"conf.level")
 <pre><code>[1] 0.7859626</code></pre>
 </div>
 </div>
-<p>Because <span class="math inline">\(\text{Corr}(price, \textit{sqrft}) &gt; 0.7\)</span>, the strength of the relationship is strong. Also by inspecting the scatter plot, we can conclude that fitting a linear model would be reasonable.</p>
+<p>Because <span class="math inline">\text{Corr}(price, \textit{sqrft}) &gt; 0.7</span>, the strength of the relationship is strong. Also by inspecting the scatter plot, we can conclude that fitting a linear model would be reasonable.</p>
 </section>
 <section id="house-price-regression-1" class="level3" data-number="2.4">
 <h3 data-number="2.4" class="anchored" data-anchor-id="house-price-regression-1"><span class="header-section-number">2.4</span> House Price: Regression (1)</h3>
 <p>Given the following specification:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \textit{price}_i = \beta_0 + \beta_1 \textit{sqrft}_i + u_i
-\]</span> we propose the hypothesis:</p>
-<p><span class="math display">\[
+</span> we propose the hypothesis:</p>
+<p><span class="math display">
 \left\{\begin{aligned}
 &amp;H_0: \beta_1 = 0 \\
 &amp;H_1: \beta_1 \neq 0
 \end{aligned}\right.
-\]</span></p>
+</span></p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>reg1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> price <span class="sc">~</span> sqrft,</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> house</span>
@@ -992,7 +1006,7 @@ Multiple R-squared:  0.6177,    Adjusted R-squared:  0.6139
 F-statistic:   160 on 1 and 99 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
-<p>From the regression result, we have the <span class="math inline">\(p\)</span>-value of the coefficient of house size (<span class="math inline">\(\textit{sqrft}\)</span>) is very small (<span class="math inline">\(&lt;5\%\)</span>), hence we reject the null hypothesis. There is significant evidence that the coefficient on house size is different from zero.</p>
+<p>From the regression result, we have the <span class="math inline">p</span>-value of the coefficient of house size (<span class="math inline">\textit{sqrft}</span>) is very small (<span class="math inline">&lt;5\%</span>), hence we reject the null hypothesis. There is significant evidence that the coefficient on house size is different from zero.</p>
 </section>
 <section id="house-price-regression-2" class="level3" data-number="2.5">
 <h3 data-number="2.5" class="anchored" data-anchor-id="house-price-regression-2"><span class="header-section-number">2.5</span> House Price: Regression (2)</h3>
@@ -1007,8 +1021,7 @@ F-statistic:   160 on 1 and 99 DF,  p-value: &lt; 2.2e-16</code></pre>
   271.66667    23.67277 </code></pre>
 </div>
 </div>
-<p>From the regression result, we have the estimated coefficients of <span class="math inline">\(\textit{colonial}\)</span> is same as colonial gap, which is the gap between two means in question (b).</p>
-
+<p>From the regression result, we have the estimated coefficients of <span class="math inline">\textit{colonial}</span> is same as colonial gap, which is the gap between two means in question (b).</p>
 
 
 </section>

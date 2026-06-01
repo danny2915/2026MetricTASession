@@ -88,8 +88,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -678,257 +692,257 @@ window.Quarto = {
 <section id="exercise-2.6" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="exercise-2.6"><span class="header-section-number">1.1</span> Exercise 2.6</h3>
 <ol type="a">
-<li><p><span class="math display">\[
+<li><p><span class="math display">
 E(Y)=0\cdot 0.12 + 1\cdot 0.88 = 0.88
-\]</span></p></li>
-<li><p><span class="math display">\[
+</span></p></li>
+<li><p><span class="math display">
 \Pr(Y=0)=1-\Pr(Y=1)
    =1-E(Y)
    =1-0.88=0.12
-\]</span></p></li>
+</span></p></li>
 <li><p>We first compute the conditional probabilities respectively:</p></li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \Pr(Y=0\mid X=0)=\frac{\Pr(X=0,Y=0)}{\Pr(X=0)}
 =\frac{0.078}{0.751}=\frac{78}{751}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \Pr(Y=1\mid X=0)=\frac{\Pr(X=0,Y=1)}{\Pr(X=0)}
 =\frac{0.673}{0.751}=\frac{673}{751}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \Pr(Y=0\mid X=1)=\frac{\Pr(X=1,Y=0)}{\Pr(X=1)}
 =\frac{0.042}{0.249}=\frac{14}{83}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \Pr(Y=1\mid X=1)=\frac{\Pr(X=1,Y=1)}{\Pr(X=1)}
 =\frac{0.207}{0.249}=\frac{69}{83}
-\]</span></p>
+</span></p>
 <p>and the conditional expectations are:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 E(Y\mid X=1)=0\cdot\frac{14}{83}+1\cdot\frac{69}{83}
 =\frac{69}{83}\approx 0.8313
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 E(Y\mid X=0)=0\cdot\frac{78}{751}+1\cdot\frac{673}{751}
 =\frac{673}{751}\approx 0.8961
-\]</span></p>
+</span></p>
 <ol start="4" type="a">
 <li>Unemployment rate for college graduates:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \Pr(Y=0\mid X=1)=1-E(Y\mid X=1)=1-\frac{69}{83}=\frac{14}{83}\approx 0.1687
-\]</span></p>
+</span></p>
 <p>and for non-college graduates:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \Pr(Y=0\mid X=0)=1-E(Y\mid X=0)=1-\frac{673}{751}=\frac{78}{751}\approx 0.1039
-\]</span></p>
+</span></p>
 <ol start="5" type="a">
 <li>Probability that a randomly selected unemployed worker is a college graduate:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \Pr(X=1\mid Y=0)=\frac{\Pr(X=1,Y=0)}{\Pr(Y=0)}=\frac{0.042}{0.12}=0.35
-\]</span></p>
+</span></p>
 <p>Probability that a randomly selected unemployed worker is a non-college graduate:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \Pr(X=0\mid Y=0)=\frac{\Pr(X=0,Y=0)}{\Pr(Y=0)}=\frac{0.078}{0.12}=0.65
-\]</span></p>
+</span></p>
 <ol start="6" type="a">
-<li>If <span class="math inline">\(X\)</span> is independent of <span class="math inline">\(Y\)</span>, then <span class="math inline">\(P(X\mid Y)=P(X)\)</span>.</li>
+<li>If <span class="math inline">X</span> is independent of <span class="math inline">Y</span>, then <span class="math inline">P(X\mid Y)=P(X)</span>.</li>
 </ol>
-<p>Because <span class="math inline">\(\Pr(X=0\mid Y=0)=\frac{78}{751}\neq \Pr(X=0)=0.751\)</span>, educational achievement and employment status are not independent.</p>
+<p>Because <span class="math inline">\Pr(X=0\mid Y=0)=\frac{78}{751}\neq \Pr(X=0)=0.751</span>, educational achievement and employment status are not independent.</p>
 </section>
 <section id="exercise-2.8" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="exercise-2.8"><span class="header-section-number">1.2</span> Exercise 2.8</h3>
-<p>We know that <span class="math inline">\(E(Y)=4\)</span> and <span class="math inline">\(\mathrm{Var}(Y)=\frac{1}{9}\)</span>, hence the expectation and variance of <span class="math inline">\(Z\)</span> can be computed respectively:</p>
-<p><span class="math display">\[
+<p>We know that <span class="math inline">E(Y)=4</span> and <span class="math inline">\mathrm{Var}(Y)=\frac{1}{9}</span>, hence the expectation and variance of <span class="math inline">Z</span> can be computed respectively:</p>
+<p><span class="math display">
 E(Z)=E[3(Y-4)]=3E(Y-4)=3E(Y)-12=3\cdot 4-12=0
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \mathrm{Var}(Z)=\mathrm{Var}[3(Y-4)]=3^2\cdot \mathrm{Var}(Y)=9\cdot\frac{1}{9}=1
-\]</span></p>
+</span></p>
 </section>
 <section id="exercise-2.14" class="level3" data-number="1.3">
 <h3 data-number="1.3" class="anchored" data-anchor-id="exercise-2.14"><span class="header-section-number">1.3</span> Exercise 2.14</h3>
 <p>By CLT, we have</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \bar{Y}\overset{A}{\sim}N\!\left(\mu_Y,\frac{\sigma_Y^2}{n}\right)
-\]</span></p>
+</span></p>
 <p>By the properties of normal distribution, we have</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{\bar{Y}-\mu_Y}{\sqrt{\sigma_Y^2/n}}\overset{A}{\sim}N(0,1)
-\]</span></p>
+</span></p>
 <ol type="a">
-<li><p><span class="math display">\[
+<li><p><span class="math display">
 \Pr(\bar{Y}\le 51)
 =\Pr\left(\frac{\bar{Y}-50}{\sqrt{21/50}}\le \frac{51-50}{\sqrt{21/50}}\right)
 \approx 0.9386
-\]</span></p></li>
-<li><p><span class="math display">\[
+</span></p></li>
+<li><p><span class="math display">
 \Pr(\bar{Y}&gt;49)
 =\Pr\left(\frac{\bar{Y}-50}{\sqrt{21/150}}&gt;\frac{49-50}{\sqrt{21/150}}\right)
 \approx 0.9962
-\]</span></p></li>
-<li><p><span class="math display">\[
+</span></p></li>
+<li><p><span class="math display">
 \Pr(50.5\le \bar{Y}\le 51)
 =\Pr\left(\frac{50.5-50}{\sqrt{21/45}}\le \frac{\bar{Y}-50}{\sqrt{21/45}}\le \frac{51-50}{\sqrt{21/45}}\right)
 \approx 0.1605
-\]</span></p></li>
+</span></p></li>
 </ol>
 </section>
 <section id="exercise-2.25" class="level3" data-number="1.4">
 <h3 data-number="1.4" class="anchored" data-anchor-id="exercise-2.25"><span class="header-section-number">1.4</span> Exercise 2.25</h3>
 <ol type="a">
-<li><p><span class="math display">\[
+<li><p><span class="math display">
 \sum_{i=1}^n a x_i = a x_1 + a x_2 + \cdots + a x_n = a\sum_{i=1}^n x_i
-\]</span></p></li>
-<li><p><span class="math display">\[
+</span></p></li>
+<li><p><span class="math display">
 \sum_{i=1}^n (x_i+y_i)
 =(x_1+y_1)+(x_2+y_2)+\cdots+(x_n+y_n)
 =\sum_{i=1}^n x_i + \sum_{i=1}^n y_i
-\]</span></p></li>
-<li><p><span class="math display">\[
+</span></p></li>
+<li><p><span class="math display">
 \sum_{i=1}^n a=\underbrace{a+a+\cdots+a}_{n\ \text{times}}=n\cdot a
-\]</span></p></li>
-<li><p><span class="math display">\[
+</span></p></li>
+<li><p><span class="math display">
 \sum_{i=1}^n (a+bx_i+cy_i)^2
 =\sum_{i=1}^n\left(a^2+b^2x_i^2+c^2y_i^2+2abx_i+2acy_i+2bcx_i y_i\right)
-\]</span></p></li>
+</span></p></li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 =na^2+b^2\sum_{i=1}^n x_i^2+c^2\sum_{i=1}^n y_i^2
 +2ab\sum_{i=1}^n x_i+2ac\sum_{i=1}^n y_i+2bc\sum_{i=1}^n x_i y_i
-\]</span></p>
+</span></p>
 </section>
 <section id="exercise-3.2" class="level3" data-number="1.5">
 <h3 data-number="1.5" class="anchored" data-anchor-id="exercise-3.2"><span class="header-section-number">1.5</span> Exercise 3.2</h3>
 <ol type="a">
-<li><p><span class="math display">\[
+<li><p><span class="math display">
 \hat p=\frac{1}{n}\sum_{i=1}^n Y_i=\bar Y
-\]</span></p></li>
-<li><p><span class="math display">\[
+</span></p></li>
+<li><p><span class="math display">
 E(\hat p)=E(\bar Y)=E\!\left(\frac{1}{n}\sum_{i=1}^n Y_i\right)
 =\frac{1}{n}\sum_{i=1}^n E(Y_i)
 =\frac{1}{n}\cdot np=p
-\]</span></p></li>
-<li><p><span class="math display">\[
+</span></p></li>
+<li><p><span class="math display">
 \mathrm{Var}(\hat p)=\mathrm{Var}(\bar Y)
 =\mathrm{Var}\!\left(\frac{1}{n}\sum_{i=1}^n Y_i\right)
 =\frac{1}{n^2}\mathrm{Var}\!\left(\sum_{i=1}^n Y_i\right)
-\]</span></p></li>
+</span></p></li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 =\frac{1}{n^2}\bigl[n\cdot \mathrm{Var}(Y_i)\bigr]
 =\frac{1}{n^2}\cdot np(1-p)=\frac{p(1-p)}{n}
-\]</span></p>
+</span></p>
 </section>
 <section id="exercise-3.3" class="level3" data-number="1.6">
 <h3 data-number="1.6" class="anchored" data-anchor-id="exercise-3.3"><span class="header-section-number">1.6</span> Exercise 3.3</h3>
 <ol type="a">
-<li><p><span class="math display">\[
+<li><p><span class="math display">
 \hat p=\frac{270}{500}=0.54
-\]</span></p></li>
-<li><p>The estimated variance of <span class="math inline">\(\hat p\)</span> is: <span class="math display">\[
+</span></p></li>
+<li><p>The estimated variance of <span class="math inline">\hat p</span> is: <span class="math display">
 \mathrm{Var}(\hat p)=\frac{\hat p(1-\hat p)}{n}
 =\frac{0.54(1-0.54)}{500}=0.0004968
-\]</span></p></li>
+</span></p></li>
 </ol>
-<p>and the standard error is: <span class="math display">\[
+<p>and the standard error is: <span class="math display">
 SE(\hat p)=\sqrt{\mathrm{Var}(\hat p)}\approx 0.0223
-\]</span></p>
+</span></p>
 <ol start="3" type="a">
-<li>First derive the pivotal quantity: <span class="math display">\[
+<li>First derive the pivotal quantity: <span class="math display">
 z=\frac{\hat p-p_0}{\sqrt{p_0(1-p_0)/n}}
 \;\overset{A}{\sim}\; N(0,1)
-\]</span></li>
+</span></li>
 </ol>
-<p>then, calculate the <span class="math inline">\(z\)</span>-statistic: <span class="math display">\[
+<p>then, calculate the <span class="math inline">z</span>-statistic: <span class="math display">
 z^*=\frac{0.54-0.5}{\sqrt{0.5(1-0.5)/500}}\approx 1.7889
-\]</span></p>
-<p>The <span class="math inline">\(p\)</span>-value is: <span class="math display">\[
+</span></p>
+<p>The <span class="math inline">p</span>-value is: <span class="math display">
 p\text{-value}=2\cdot \Phi(-z^*)\approx 2\cdot \Phi(-1.7889)\approx 0.0736
-\]</span></p>
+</span></p>
 <ol start="4" type="a">
-<li><p>For a one-sided test: <span class="math display">\[
+<li><p>For a one-sided test: <span class="math display">
 p\text{-value}=1-\Phi(z^*)\approx 1-\Phi(1.7889)\approx 0.0368
-\]</span></p></li>
-<li><p>Part (c) is a two-sided test, where the <span class="math inline">\(p\)</span>-value is the area in the tails of the standard normal distribution outside <span class="math inline">\(\pm z^*\)</span>.<br>
-Part (d) is a one-sided test, where the <span class="math inline">\(p\)</span>-value is the area under the standard normal distribution to the right of the calculated <span class="math inline">\(z^*\)</span>.</p></li>
-<li><p>For the test <span class="math inline">\(H_0:p=0.5\)</span> vs.&nbsp;<span class="math inline">\(H_1:p&gt;0.5\)</span> at <span class="math inline">\(\alpha=0.05\)</span>, we reject <span class="math inline">\(H_0\)</span> because the <span class="math inline">\(p\)</span>-value is less than the significance level. There is statistically significant evidence that the democratic candidate was ahead of the republican candidate at the time of conducting the poll.</p></li>
+</span></p></li>
+<li><p>Part (c) is a two-sided test, where the <span class="math inline">p</span>-value is the area in the tails of the standard normal distribution outside <span class="math inline">\pm z^*</span>.<br>
+Part (d) is a one-sided test, where the <span class="math inline">p</span>-value is the area under the standard normal distribution to the right of the calculated <span class="math inline">z^*</span>.</p></li>
+<li><p>For the test <span class="math inline">H_0:p=0.5</span> vs.&nbsp;<span class="math inline">H_1:p&gt;0.5</span> at <span class="math inline">\alpha=0.05</span>, we reject <span class="math inline">H_0</span> because the <span class="math inline">p</span>-value is less than the significance level. There is statistically significant evidence that the democratic candidate was ahead of the republican candidate at the time of conducting the poll.</p></li>
 </ol>
 </section>
 <section id="exercise-3.4" class="level3" data-number="1.7">
 <h3 data-number="1.7" class="anchored" data-anchor-id="exercise-3.4"><span class="header-section-number">1.7</span> Exercise 3.4</h3>
 <ol type="a">
-<li><p><span class="math display">\[
+<li><p><span class="math display">
 \hat p \pm Z_{0.025}\cdot SE(\hat p)
 =0.54 \pm 1.96\cdot 0.0223
 =[0.4963,\,0.5837]
-\]</span></p></li>
-<li><p><span class="math display">\[
+</span></p></li>
+<li><p><span class="math display">
 \hat p \pm Z_{0.005}\cdot SE(\hat p)
 =0.54 \pm 2.576\cdot 0.0223
 =[0.4826,\,0.5974]
-\]</span></p></li>
-<li><p>Mechanically, the interval in part (b) is wider because of a larger critical value. Substantively, a 99% confidence interval is wider than a 95% confidence interval because a 99% confidence interval must contain the true value of <span class="math inline">\(p\)</span> in 99% of all possible samples, while a 95% confidence interval must contain the true value of <span class="math inline">\(p\)</span> in only 95% of all possible samples.</p></li>
-<li><p>Because <span class="math inline">\(0.5\in\)</span> C.I., we do not reject <span class="math inline">\(H_0\)</span> at a 5% significance level.</p></li>
+</span></p></li>
+<li><p>Mechanically, the interval in part (b) is wider because of a larger critical value. Substantively, a 99% confidence interval is wider than a 95% confidence interval because a 99% confidence interval must contain the true value of <span class="math inline">p</span> in 99% of all possible samples, while a 95% confidence interval must contain the true value of <span class="math inline">p</span> in only 95% of all possible samples.</p></li>
+<li><p>Because <span class="math inline">0.5\in</span> C.I., we do not reject <span class="math inline">H_0</span> at a 5% significance level.</p></li>
 </ol>
 </section>
 <section id="exercise-3.9" class="level3" data-number="1.8">
 <h3 data-number="1.8" class="anchored" data-anchor-id="exercise-3.9"><span class="header-section-number">1.8</span> Exercise 3.9</h3>
 <ol type="a">
-<li>The size of a test is the probability of erroneously rejecting a null hypothesis when it is valid. We know: <span class="math display">\[
+<li>The size of a test is the probability of erroneously rejecting a null hypothesis when it is valid. We know: <span class="math display">
 E(Y)=1000,\quad \sigma_Y=100,\quad n=50.
-\]</span></li>
+</span></li>
 </ol>
-<p>Then, <span class="math display">\[
+<p>Then, <span class="math display">
 E(\bar Y)=1000,\qquad \sigma_{\bar Y}=\frac{\sigma_Y}{\sqrt{n}}=\frac{100}{\sqrt{50}}=10\sqrt{2}.
-\]</span></p>
-<p>Now, <span class="math display">\[
+</span></p>
+<p>Now, <span class="math display">
 \text{size}=\Pr(\bar Y&gt;1100\mid \mu=1000)
 =\Pr\left(\frac{\bar Y-1000}{\sigma_{\bar Y}}&gt;\frac{1100-1000}{\sigma_{\bar Y}}\right)\approx 0.
-\]</span></p>
+</span></p>
 <ol start="2" type="a">
-<li>The power of a test is the probability of correctly rejecting a null hypothesis when it is invalid. First, we calculate the probability of a Type II error: <span class="math display">\[
+<li>The power of a test is the probability of correctly rejecting a null hypothesis when it is invalid. First, we calculate the probability of a Type II error: <span class="math display">
 \beta=\Pr(\bar Y\le 1100\mid \mu=1150)
 =\Pr\left(\frac{\bar Y-1150}{\sigma_{\bar Y}}\le \frac{1100-1150}{\sigma_{\bar Y}}\right)\approx 0.0002.
-\]</span></li>
+</span></li>
 </ol>
-<p>Then, the power of the test is: <span class="math display">\[
+<p>Then, the power of the test is: <span class="math display">
 1-\beta \approx 0.9998.
-\]</span></p>
+</span></p>
 <ol start="3" type="a">
-<li>For a test with size 1%, the rejection region for <span class="math inline">\(H_0\)</span> contains values of the <span class="math inline">\(z\)</span>-statistic exceeding <span class="math inline">\(Z_{0.01}\)</span>. That is, <span class="math display">\[
+<li>For a test with size 1%, the rejection region for <span class="math inline">H_0</span> contains values of the <span class="math inline">z</span>-statistic exceeding <span class="math inline">Z_{0.01}</span>. That is, <span class="math display">
 t^*=\frac{\bar Y-1000}{10\sqrt{2}} &gt; Z_{0.01}=2.326.
-\]</span></li>
+</span></li>
 </ol>
-<p>Thus, <span class="math display">\[
+<p>Thus, <span class="math display">
 \bar Y &gt; 1000+10\sqrt{2}\cdot 2.326 \approx 1032.89.
-\]</span></p>
+</span></p>
 <p>So, the manager should believe the inventor’s claim if the sample mean life of the new product is greater than 1032.89 hours to maintain a test size of 1%.</p>
 </section>
 <section id="exercise-3.13" class="level3" data-number="1.9">
 <h3 data-number="1.9" class="anchored" data-anchor-id="exercise-3.13"><span class="header-section-number">1.9</span> Exercise 3.13</h3>
 <ol type="a">
-<li><p><span class="math display">\[
+<li><p><span class="math display">
 \bar Y \pm Z_{0.05}\cdot \frac{\sigma_Y}{\sqrt{n}}
 =712.1 \pm 1.645\cdot \frac{23.2}{\sqrt{400}}
 =[710.19,\,714.01]
-\]</span></p></li>
-<li><p>Prepare: <span class="math display">\[
+</span></p></li>
+<li><p>Prepare: <span class="math display">
 \begin{cases}
 H_0:\ \mu_1-\mu_2=0\\
 H_A:\ \mu_1-\mu_2\neq 0
 \end{cases}
-\]</span></p></li>
+</span></p></li>
 </ol>
-<p>where <span class="math inline">\(\mu_1\)</span> is the average salary in small class districts, and <span class="math inline">\(\mu_2\)</span> is the average salary in large class districts. Let the significance level be <span class="math inline">\(\alpha=0.05\)</span>.</p>
-<p>Calculate: <span class="math display">\[
+<p>where <span class="math inline">\mu_1</span> is the average salary in small class districts, and <span class="math inline">\mu_2</span> is the average salary in large class districts. Let the significance level be <span class="math inline">\alpha=0.05</span>.</p>
+<p>Calculate: <span class="math display">
 t^*=\frac{(\bar Y_1-\bar Y_2)-0}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}
 =\frac{721.8-710.9}{\sqrt{\frac{21.4^2}{110}+\frac{20.6^2}{250}}}
 \approx 4.5790
-\]</span></p>
-<p>Conclude: Since <span class="math inline">\(t^*&gt;Z_{0.025}=1.96\)</span>, we reject <span class="math inline">\(H_0\)</span>. There is statistically significant evidence that districts with smaller class sizes have higher average test scores.</p>
+</span></p>
+<p>Conclude: Since <span class="math inline">t^*&gt;Z_{0.025}=1.96</span>, we reject <span class="math inline">H_0</span>. There is statistically significant evidence that districts with smaller class sizes have higher average test scores.</p>
 </section>
 </section>
 <section id="computer-exercises" class="level2" data-number="2">
@@ -945,31 +959,31 @@ t^*=\frac{(\bar Y_1-\bar Y_2)-0}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}
 <ol type="i">
 <li>A person will trade if she received good A but prefers good B or she received good B and prefers good A. 50% received good A, of these 0% prefer good B. 50% receive good B, of these 100% prefer good A. Thus, the expected fraction traded is:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 0.5 \times 0 + 0.5 \times 1 = 0.5
-\]</span></p>
+</span></p>
 <ol start="2" type="i">
 <li>A person will trade if she received good A but prefers good B or she received good B and prefers good A. 50% received good A, of these 50% prefer good B; 50% receive good B, of these 50% prefer good A. Thus, the expected fraction traded is:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 0.5 \times 0.5 + 0.5 \times 0.5 = 0.5
-\]</span></p>
+</span></p>
 <ol start="3" type="i">
-<li>A person will trade if she received good A but prefers good B or she received good B and prefers good A. 50% received good A, of these <span class="math inline">\((100 - X)\%\)</span> prefer good B; 50% receive good B, of these <span class="math inline">\(X\%\)</span> prefer good A. Thus, the expected fraction traded is:</li>
+<li>A person will trade if she received good A but prefers good B or she received good B and prefers good A. 50% received good A, of these <span class="math inline">(100 - X)\%</span> prefer good B; 50% receive good B, of these <span class="math inline">X\%</span> prefer good A. Thus, the expected fraction traded is:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 0.5 \times (100 - X)\% + 0.5 \times X\% = 0.5
-\]</span></p>
+</span></p>
 </section>
 <section id="empirical-trade-result" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="empirical-trade-result"><span class="header-section-number">2.2</span> Empirical Trade Result</h3>
-<p>Denote the probability of subjects trading their goods as <span class="math inline">\(p\)</span>. We propose the following hypothesis:</p>
-<p><span class="math display">\[
+<p>Denote the probability of subjects trading their goods as <span class="math inline">p</span>. We propose the following hypothesis:</p>
+<p><span class="math display">
 \begin{cases}
 H_0: p = 0.5 &amp; \text{(no endowment effect)} \\
 H_A: p \ne 0.5 &amp; \text{(endowment effect)}
 \end{cases}
-\]</span></p>
+</span></p>
 <p>and perform the t-test:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  card<span class="sc">$</span>trade,</span>
@@ -991,19 +1005,19 @@ mean of x
 0.3378378 </code></pre>
 </div>
 </div>
-<p>According to the testing result (p-value <span class="math inline">\(&lt; 0.05\)</span>), we reject the null hypothesis at 5% significance level. Hence there is statistically significant evidence of an endowment effect.</p>
+<p>According to the testing result (p-value <span class="math inline">&lt; 0.05</span>), we reject the null hypothesis at 5% significance level. Hence there is statistically significant evidence of an endowment effect.</p>
 </section>
 <section id="empirical-trade-result-subgroup" class="level3" data-number="2.3">
 <h3 data-number="2.3" class="anchored" data-anchor-id="empirical-trade-result-subgroup"><span class="header-section-number">2.3</span> Empirical Trade Result: Subgroup</h3>
 <section id="dealers" class="level4" data-number="2.3.1">
 <h4 data-number="2.3.1" class="anchored" data-anchor-id="dealers"><span class="header-section-number">2.3.1</span> Dealers</h4>
-<p>Denote the probability of dealer subjects trading their goods as <span class="math inline">\(p_d\)</span>. We propose the following hypothesis and perform the same testing again:</p>
-<p><span class="math display">\[
+<p>Denote the probability of dealer subjects trading their goods as <span class="math inline">p_d</span>. We propose the following hypothesis and perform the same testing again:</p>
+<p><span class="math display">
 \begin{cases}
 H_0: p_d = 0.5 &amp; \text{(no endowment effect for dealer)} \\
 H_A: p_d \ne 0.5 &amp; \text{(endowment effect for dealer)}
 \end{cases}
-\]</span></p>
+</span></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>card_dealer <span class="ot">&lt;-</span> card <span class="sc">%&gt;%</span> <span class="fu">filter</span>(dealer <span class="sc">==</span> <span class="dv">1</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  card_dealer<span class="sc">$</span>trade, </span>
@@ -1029,13 +1043,13 @@ mean of x
 </section>
 <section id="non-dealers" class="level4" data-number="2.3.2">
 <h4 data-number="2.3.2" class="anchored" data-anchor-id="non-dealers"><span class="header-section-number">2.3.2</span> Non-dealers</h4>
-<p>Denote the probability of non-dealer subjects trading their goods as <span class="math inline">\(p_n\)</span>. We propose the following hypothesis and perform the same testing again:</p>
-<p><span class="math display">\[
+<p>Denote the probability of non-dealer subjects trading their goods as <span class="math inline">p_n</span>. We propose the following hypothesis and perform the same testing again:</p>
+<p><span class="math display">
 \begin{cases}
 H_0: p_n = 0.5 &amp; \text{(no endowment effect for non-dealer)} \\
 H_A: p_n \ne 0.5 &amp; \text{(endowment effect for non-dealer)}
 \end{cases}
-\]</span></p>
+</span></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>card_nondealer <span class="ot">&lt;-</span> card <span class="sc">%&gt;%</span> <span class="fu">filter</span>(dealer <span class="sc">==</span> <span class="dv">0</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  card_nondealer<span class="sc">$</span>trade, </span>
@@ -1057,18 +1071,18 @@ mean of x
 0.2297297 </code></pre>
 </div>
 </div>
-<p>According to the testing result (p-value <span class="math inline">\(&lt; 0.05\)</span>), we reject the null hypothesis at 5% significance level. Hence there is statistically significant evidence of an endowment effect on non-dealer subjects.</p>
+<p>According to the testing result (p-value <span class="math inline">&lt; 0.05</span>), we reject the null hypothesis at 5% significance level. Hence there is statistically significant evidence of an endowment effect on non-dealer subjects.</p>
 </section>
 <section id="group-difference" class="level4" data-number="2.3.3">
 <h4 data-number="2.3.3" class="anchored" data-anchor-id="group-difference"><span class="header-section-number">2.3.3</span> Group difference</h4>
 <p>To investigate into the group difference in behavior, we propose the following hypothesis:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{cases}
 H_0: p_d - p_n = 0 &amp; \text{(no group difference in behavior)} \\
 H_A: p_d - p_n \ne 0 &amp; \text{(group difference in behavior)}
 \end{cases}
-\]</span></p>
-<p>Since we can’t determine the distribution of <span class="math inline">\(p_d - p_n\)</span>, we utilize the CLT and perform the t-test:</p>
+</span></p>
+<p>Since we can’t determine the distribution of <span class="math inline">p_d - p_n</span>, we utilize the CLT and perform the t-test:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  card<span class="sc">$</span>trade <span class="sc">~</span> card<span class="sc">$</span>dealer,</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">conf.level =</span> <span class="fl">0.95</span>,</span>
@@ -1089,8 +1103,7 @@ mean in group 0 mean in group 1
       0.2297297       0.4459459 </code></pre>
 </div>
 </div>
-<p>According to the testing result (p-value <span class="math inline">\(&lt; 0.05\)</span>), we reject the null hypothesis at 5% significance level. Hence there is statistically significant difference in the behavior between dealer and non-dealer.</p>
-
+<p>According to the testing result (p-value <span class="math inline">&lt; 0.05</span>), we reject the null hypothesis at 5% significance level. Hence there is statistically significant difference in the behavior between dealer and non-dealer.</p>
 
 
 </section>

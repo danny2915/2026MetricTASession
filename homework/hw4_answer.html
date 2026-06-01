@@ -88,8 +88,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -678,108 +692,108 @@ window.Quarto = {
 <ol type="a">
 <li>The expected change in price of building a 1500-square-foot addition to a house is:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 1500 \times (0.00042 \times 100\%) = 63\%
-\]</span></p>
+</span></p>
 <p>and the 99% confidence interval for the percentage change in price:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 1500 \times (0.00042 \pm 2.576 \times 0.000038) \times 100\% = [48.32\%, 77.68\%]
-\]</span></p>
+</span></p>
 <ol start="2" type="a">
-<li><p>The coefficient in a log-log regression is interpreted as the percentage increase in the dependent variable with a <span class="math inline">\(1\%\)</span> increase in the independent variable.</p>
-<p>Hence a 1% change in <span class="math inline">\(\textit{size}\)</span> is associated with a <span class="math inline">\(0.69\%\)</span> change in <span class="math inline">\(\textit{price}\)</span>; when the house doubles in size, the house price is expected to increase by:</p></li>
+<li><p>The coefficient in a log-log regression is interpreted as the percentage increase in the dependent variable with a <span class="math inline">1\%</span> increase in the independent variable.</p>
+<p>Hence a 1% change in <span class="math inline">\textit{size}</span> is associated with a <span class="math inline">0.69\%</span> change in <span class="math inline">\textit{price}</span>; when the house doubles in size, the house price is expected to increase by:</p></li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 0.69\% \times 100 = 69\%
-\]</span></p>
+</span></p>
 <ol start="3" type="a">
 <li>The house price is expected to increase by:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 0.027 \times 100\% = 2.7\%
-\]</span></p>
+</span></p>
 <p><strong>Prepare</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \left\{\begin{aligned} &amp;H_0: \beta_{\textit{view}} = 0 \\ &amp;H_1: \beta_{\textit{view}} \neq 0 \end{aligned}\right.
-\]</span></p>
-<p>Let the significance level be <span class="math inline">\(\alpha = 0.01\)</span>.</p>
-<p><strong>Calculate</strong>: the <span class="math inline">\(99\%\)</span> confidence interval for <span class="math inline">\(\beta_{\text{view}}\)</span>:</p>
-<p><span class="math display">\[
+</span></p>
+<p>Let the significance level be <span class="math inline">\alpha = 0.01</span>.</p>
+<p><strong>Calculate</strong>: the <span class="math inline">99\%</span> confidence interval for <span class="math inline">\beta_{\text{view}}</span>:</p>
+<p><span class="math display">
 \hat{\beta}_{\text{view}} \pm Z_{0.005} \times SE(\hat{\beta}_{\text{view}}) = 0.027 \pm 2.576 \times 0.028 = [-4.51\%, 9.91\%]
-\]</span></p>
+</span></p>
 <p><strong>Conclusion</strong>:</p>
-<p>Since 0 is in the confidence interval, we do <strong>not</strong> reject <span class="math inline">\(H_0\)</span>. here is no evidence that view has a significant effect on price.</p>
+<p>Since 0 is in the confidence interval, we do <strong>not</strong> reject <span class="math inline">H_0</span>. here is no evidence that view has a significant effect on price.</p>
 <ol start="4" type="a">
 <li>The expected change in price for adding two bedrooms:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 2 \times (0.0036 \times 100\%) = 0.72\%
-\]</span></p>
+</span></p>
 <p><strong>Prepare</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \left\{\begin{aligned} &amp;H_0: \beta_{\textit{bedroom}} = 0 \\ &amp;H_1: \beta_{\textit{bedroom}} \neq 0 \end{aligned}\right.
-\]</span></p>
-<p>Let the significance level be <span class="math inline">\(\alpha = 0.01\)</span>.</p>
+</span></p>
+<p>Let the significance level be <span class="math inline">\alpha = 0.01</span>.</p>
 <p><strong>Calculate</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 t^* = \frac{0.0036}{0.037} \approx 0.0973
-\]</span></p>
+</span></p>
 <p><strong>Conclusion</strong>:</p>
-<p>Since <span class="math inline">\(t^* &lt; Z_{0.005} = 2.576\)</span>, we do not reject <span class="math inline">\(H_0\)</span>. There is no evidence that bedrooms have a significant effect on price. Because size and bedrooms are likely correlated, assessing the relative significance of each is difficult.</p>
+<p>Since <span class="math inline">t^* &lt; Z_{0.005} = 2.576</span>, we do not reject <span class="math inline">H_0</span>. There is no evidence that bedrooms have a significant effect on price. Because size and bedrooms are likely correlated, assessing the relative significance of each is difficult.</p>
 <ol start="5" type="a">
 <li><strong>Prepare</strong>:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \left\{\begin{aligned} &amp;H_0: \beta_{\textit{condition}} = 0 \\ &amp;H_1: \beta_{\textit{condition}} \neq 0 \end{aligned}\right.
-\]</span></p>
-<p>Let the significance level be <span class="math inline">\(\alpha = 0.01\)</span>.</p>
+</span></p>
+<p>Let the significance level be <span class="math inline">\alpha = 0.01</span>.</p>
 <p><strong>Calculate</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 t^* = \frac{0.12}{0.036} \approx 3.3333
-\]</span></p>
+</span></p>
 <p><strong>Conclusion</strong>:</p>
-<p>Since <span class="math inline">\(t^* &gt; Z_{0.005} = 2.576\)</span>, we reject <span class="math inline">\(H_0\)</span>. There is significant evidence that condition affects house prices.</p>
+<p>Since <span class="math inline">t^* &gt; Z_{0.005} = 2.576</span>, we reject <span class="math inline">H_0</span>. There is significant evidence that condition affects house prices.</p>
 <ol start="6" type="a">
 <li><strong>Prepare</strong>:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \left\{\begin{aligned} &amp;H_0: \beta_{\textit{pool} \times \textit{view}} = 0 \\ &amp;H_1: \beta_{\textit{pool} \times \textit{view}} \neq 0 \end{aligned}\right.
-\]</span></p>
-<p>Let the significance level be <span class="math inline">\(\alpha = 0.01\)</span>.</p>
+</span></p>
+<p>Let the significance level be <span class="math inline">\alpha = 0.01</span>.</p>
 <p><strong>Calculate</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 t^* = \frac{0.0022}{0.10} = 0.022
-\]</span></p>
+</span></p>
 <p><strong>Conclusion</strong>:</p>
-<p>Since <span class="math inline">\(t^* &lt; Z_{0.005} = 2.576\)</span>, we do not reject <span class="math inline">\(H_0\)</span>. There is no evidence that the interaction effect is significant.</p>
+<p>Since <span class="math inline">t^* &lt; Z_{0.005} = 2.576</span>, we do not reject <span class="math inline">H_0</span>. There is no evidence that the interaction effect is significant.</p>
 <p>Now, when other thing being equal, the change of expected price when adding a view to a house with a pool is:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 (0.027 + 0.0022) \times 100\% = 2.92\%
-\]</span></p>
+</span></p>
 <p>while for a house without a pool is:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 0.027 \times 100\% = 2.7\%
-\]</span></p>
+</span></p>
 </section>
 <section id="exercise-8.7" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="exercise-8.7"><span class="header-section-number">1.2</span> Exercise 8.7</h3>
 <ol type="a">
 <li><ol type="i">
-<li>On average, <span class="math inline">\(\ln(\text{Earnings})\)</span> for women is 0.44 lower than for men.<br>
+<li>On average, <span class="math inline">\ln(\text{Earnings})</span> for women is 0.44 lower than for men.<br>
 </li>
 </ol></li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 E[\ln(\text{Earnings}) | \text{Female} = 0] - E[\ln(\text{Earnings}) | \text{Female} = 1] = 0.44
-\]</span></p>
+</span></p>
 <p>This implies:<br>
 </p>
-<p><span class="math display">\[
+<p><span class="math display">
 \ln \left( \frac{\text{Men's avg earnings}}{\text{Women's avg earnings}} \right) = 0.44
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \frac{\text{Men's avg earnings}}{\text{Women's avg earnings}} = e^{0.44} \approx 1.553
-\]</span> Thus, on average, men earn 55.3% more than women.</p>
+</span> Thus, on average, men earn 55.3% more than women.</p>
 <pre><code>ii. The error term has a standard deviation of 2.65 (measured in
     log-points).
 
@@ -793,9 +807,9 @@ iv. No, because gender discrimination means that identical workers
 <ol start="2" type="a">
 <li><ol type="i">
 <li><p>Holding other factors constant, a 1% increase in Market Value is associated with a 0.37% increase in earnings.</p></li>
-<li><p>Female is correlated with Market Value and Return, which are important for explaining <span class="math inline">\(\ln(\text{Earnings})\)</span>. Thus, the regression in (a) suffers from omitted variable bias.</p></li>
+<li><p>Female is correlated with Market Value and Return, which are important for explaining <span class="math inline">\ln(\text{Earnings})</span>. Thus, the regression in (a) suffers from omitted variable bias.</p></li>
 </ol></li>
-<li>No, the coefficients are not stable. Ignoring the effect of Return, the omitted variable bias formula suggests that Female is negatively correlated with <span class="math inline">\(\ln(\text{Market Value})\)</span>.</li>
+<li>No, the coefficients are not stable. Ignoring the effect of Return, the omitted variable bias formula suggests that Female is negatively correlated with <span class="math inline">\ln(\text{Market Value})</span>.</li>
 </ol>
 <hr>
 </section>
@@ -804,44 +818,44 @@ iv. No, because gender discrimination means that identical workers
 <ol type="a">
 <li>First note the following equalities:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \bar{Y}_{\text{new}} = \frac{\sum_{i=1}^{100} Y_i}{100} = \frac{2 \sum_{i=1}^{50} Y_i}{100} = \bar{Y}_{\text{old}}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \bar{X}_{\text{new}} = \frac{\sum_{i=1}^{100} X_i}{100} = \frac{2 \sum_{i=1}^{50} X_i}{100} = \bar{X}_{\text{old}}
-\]</span></p>
-<p>and by the formula of <span class="math inline">\(\hat{\beta}_1\)</span>, we have:</p>
-<p><span class="math display">\[
+</span></p>
+<p>and by the formula of <span class="math inline">\hat{\beta}_1</span>, we have:</p>
+<p><span class="math display">
 \begin{aligned} \hat{\beta}_1^{new} &amp;= \frac{\sum_{i=1}^{100} (X_i - \overline{X}_{new}) (Y_i - \overline{Y}_{new})}{\sum_{i=1}^{100} (X_i - \overline{X}_{new})^2} \\ &amp;= \frac{2\sum_{i=1}^{50} (X_i - \overline{X}_{old}) (Y_i - \overline{Y}_{old})}{2\sum_{i=1}^{50} (X_i - \overline{X}_{old})^2} = \hat{\beta}_1^{old} = 73.9 \end{aligned}
-\]</span></p>
-<p>and it’s clear that <span class="math inline">\(\hat{\beta}_0^{new} = \hat{\beta}_0^{old}\)</span> since:</p>
-<p><span class="math display">\[
+</span></p>
+<p>and it’s clear that <span class="math inline">\hat{\beta}_0^{new} = \hat{\beta}_0^{old}</span> since:</p>
+<p><span class="math display">
 \begin{aligned} \hat{\beta}_0^{new} &amp;= \overline{Y}_{new} - \hat{\beta}_1^{new} \overline{X}_{new} \\ &amp;= \overline{Y}_{old} - \hat{\beta}_1^{old} \overline{X}_{old} = \hat{\beta}_0^{old} = 49.2 \end{aligned}
-\]</span></p>
+</span></p>
 <p>Moreover,</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned} SSR_{old} &amp;= (50 - 2) \cdot SER_{old}^2 \\ &amp;= (50 - 2) \cdot 13.4^2 = 8618.88 \end{aligned}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \begin{aligned} SSR_{new} &amp;= 2 \times SSR_{old} \\ &amp;= 2 \times 8618.88 = 17237.76 \end{aligned}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \begin{aligned} SER_{new} &amp;= \sqrt{\frac{1}{100 - 2} \cdot SSR_{new}} \\ &amp;= \sqrt{\frac{1}{100 - 2} \cdot 17237.76} \approx 13.2626 \end{aligned}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \begin{aligned} R^2_{new} &amp;= \frac{\sum_{i=1}^{100} (\hat{Y}_i^{new} - \overline{Y}_{new})^2}{\sum_{i=1}^{100} (Y_i^{new} - \overline{Y}_{new})^2} \\ &amp;= \frac{2 \sum_{i=1}^{50} (\hat{Y}_i^{old} - \overline{Y}_{old})^2}{2 \sum_{i=1}^{50} (Y_i^{old} - \overline{Y}_{old})^2} = R^2_{old} = 0.78. \end{aligned}
-\]</span></p>
+</span></p>
 <p>Besides,</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned} SE\left(\hat{\beta}_1^{new}\right) &amp;= \sqrt{ \frac{1}{100} \times \frac{ \frac{1}{100-2} \sum_{i=1}^{100} (X_i - \overline{X}_{new})^2 \hat{u}_{i,new}^2 }{ \left[\frac{1}{100} \sum_{i=1}^{100} (X_i - \overline{X}_{new})^2\right]^2 } } \\ &amp;= \sqrt{ \frac{1}{100} \times \frac{ \frac{2}{100-2} \sum_{i=1}^{50} (X_i - \overline{X}_{old})^2 \hat{u}_{i,old}^2 }{ \left[\frac{2}{100} \sum_{i=1}^{50} (X_i - \overline{X}_{old})^2\right]^2 } } \\ &amp;= \sqrt{ \hat{\sigma}_{\beta_1,old}^2 \times \frac{50-2}{100-2} } \\ &amp;= \sqrt{ 16.4^2 \times \frac{50-2}{100-2} } \approx 11.4776 \end{aligned}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \begin{aligned} SE\left(\hat{\beta}_0^{new}\right) &amp;= \sqrt{ \frac{1}{100} \times \frac{ \frac{1}{100-2} \sum_{i=1}^{100} \left(1 - \frac{\overline{X}_{new}}{\sum_{i=1}^{100} X_i^2}X_i\right) \hat{u}_{i,new}^2 }{ \left[\frac{1}{100} \sum_{i=1}^{100} \left(1 - \frac{\overline{X}_{new}}{\sum_{i=1}^{100} X_i^2}X_i\right)\right]^2 } } \\ &amp;= \sqrt{ \frac{1}{100} \times \frac{ \frac{2}{100-2} \sum_{i=1}^{50} \left(1 - \frac{\overline{X}_{old}}{2\sum_{i=1}^{50} X_i^2}X_i\right) \hat{u}_{i,old}^2 }{ \left[\frac{2}{100} \sum_{i=1}^{50} \left(1 - \frac{\overline{X}_{old}}{2\sum_{i=1}^{50} X_i^2}X_i\right)\right]^2 } } \\ &amp;\approx \sqrt{ \hat{\sigma}_{\hat{\beta}_0,old}^2 \times \frac{50-2}{100-2} } \\ &amp;= \sqrt{ 23.5^2 \times \frac{50-2}{100-2} } \approx 16.4466 \end{aligned}
-\]</span></p>
+</span></p>
 <p>In conclusion, we can determin the regression statistics:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \hat{Y} = \underset{(16.4466)}{49.2} + \underset{11.4776}{73.9} X, \quad SER = 13.2626, \quad R^2 = 0.78
-\]</span></p>
+</span></p>
 <ol start="2" type="a">
 <li>Because half of the observations are identical to the other half, the data are not independent. Thus, the observations are not i.i.d..</li>
 </ol>
@@ -1134,10 +1148,10 @@ F-statistic:   273 on 5 and 5905 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 <p>According to the estimation results, we can answer the following question:</p>
 <ul>
-<li><p><strong>Coefficient on interaction term</strong>: The extra effect of <span class="math inline">\(\textit{bachelor}\)</span> on <span class="math inline">\(\ln(\textit{ATE})\)</span> for woman relative to man.</p></li>
-<li><p><span class="math inline">\(\widehat{\ln(\textit{ATE})}\)</span> <strong>for 30-year-old woman with a bachelor’s degree</strong>: <span class="math inline">\(2.677\)</span>.</p></li>
-<li><p><span class="math inline">\(\widehat{\ln(\textit{ATE})}\)</span> <strong>for 30-year-old woman without a bachelor’s degree</strong>: <span class="math inline">\(2.246\)</span>.</p></li>
-<li><p><strong>Predicted difference</strong>: <span class="math inline">\(0.431\)</span>.</p></li>
+<li><p><strong>Coefficient on interaction term</strong>: The extra effect of <span class="math inline">\textit{bachelor}</span> on <span class="math inline">\ln(\textit{ATE})</span> for woman relative to man.</p></li>
+<li><p><span class="math inline">\widehat{\ln(\textit{ATE})}</span> <strong>for 30-year-old woman with a bachelor’s degree</strong>: <span class="math inline">2.677</span>.</p></li>
+<li><p><span class="math inline">\widehat{\ln(\textit{ATE})}</span> <strong>for 30-year-old woman without a bachelor’s degree</strong>: <span class="math inline">2.246</span>.</p></li>
+<li><p><strong>Predicted difference</strong>: <span class="math inline">0.431</span>.</p></li>
 </ul>
 </section>
 <section id="wage-model-5-man" class="level3" data-number="2.6">
@@ -1174,17 +1188,17 @@ F-statistic:   273 on 5 and 5905 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <ul>
-<li><p><span class="math inline">\(\widehat{\ln(\textit{ATE})}\)</span> <strong>for 30-year-old man with a bachelor’s degree</strong>: <span class="math inline">\(2.810\)</span>.</p></li>
-<li><p><span class="math inline">\(\widehat{\ln(\textit{ATE})}\)</span> <strong>for 30-year-old man without a bachelor’s degree</strong>: <span class="math inline">\(2.464\)</span>.</p></li>
-<li><p><strong>Predicted difference</strong>: <span class="math inline">\(0.346\)</span>.</p></li>
+<li><p><span class="math inline">\widehat{\ln(\textit{ATE})}</span> <strong>for 30-year-old man with a bachelor’s degree</strong>: <span class="math inline">2.810</span>.</p></li>
+<li><p><span class="math inline">\widehat{\ln(\textit{ATE})}</span> <strong>for 30-year-old man without a bachelor’s degree</strong>: <span class="math inline">2.464</span>.</p></li>
+<li><p><strong>Predicted difference</strong>: <span class="math inline">0.346</span>.</p></li>
 </ul>
 </section>
 <section id="wage-model-6-testing" class="level3" data-number="2.7">
 <h3 data-number="2.7" class="anchored" data-anchor-id="wage-model-6-testing"><span class="header-section-number">2.7</span> Wage: Model 6 (testing)</h3>
 <p>We want to test the following hypothesis:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \left\{\begin{aligned} &amp;H_0: \beta_{\textit{age} \times \textit{bachelor}} = \beta_{\textit{age}^2 \times \textit{bachelor}} = 0 \\ &amp;H_1: \text{Not all are zero} \end{aligned}\right.
-\]</span></p>
+</span></p>
 <p>See the testing result below:</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>reg_1g <span class="ot">&lt;-</span> <span class="fu">lm_robust</span>(</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> <span class="fu">log</span>(ahe) <span class="sc">~</span> age <span class="sc">+</span> <span class="fu">I</span>(age<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> female <span class="sc">+</span> bachelor</span>
@@ -1213,8 +1227,7 @@ Model 2: log(ahe) ~ age + I(age^2) + female + bachelor + female * bachelor +
 2   5903  2 0.3221 0.7247</code></pre>
 </div>
 </div>
-<p>Because <span class="math inline">\(p\)</span>-value is greater than <span class="math inline">\(0.05\)</span>, we can’t reject the null hypothesis. There is no evidence that the effect of age on earnings is different between high school graduates and college graduates.</p>
-
+<p>Because <span class="math inline">p</span>-value is greater than <span class="math inline">0.05</span>, we can’t reject the null hypothesis. There is no evidence that the effect of age on earnings is different between high school graduates and college graduates.</p>
 
 
 </section>

@@ -88,8 +88,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -678,33 +692,33 @@ window.Quarto = {
 <ol type="a">
 <li>Other things being equal, if the tax on a case of beer increases by $2, the number of lives saved is:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 2 \times 0.69 \times 885 = 1221.3
-\]</span></p>
+</span></p>
 <p>and the 99% confidence interval for the number of lives saved is:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 [0.69 \pm Z_{0.005} \times 0.35] \times 2 \times 885 = [-374.53, 2817.13]
-\]</span></p>
+</span></p>
 <ol start="2" type="a">
 <li>If New Jersey lowers its drinking age to 19, the predicted decrease in traffic fatalities is:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 0.08 \times 885 = 70.8
-\]</span></p>
+</span></p>
 <p>and the 95% confidence interval for the number of traffic fatalities is:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 [0.08 \pm Z_{0.025} \times 0.07] \times 885 = [-50.62, 192.22]
-\]</span></p>
+</span></p>
 <ol start="3" type="a">
 <li>If real income per capita in New Jersey increases by 3%, the predicted increase in traffic fatalities is:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 3 \times 0.01 \times 1.79 \times 885 = 47.52
-\]</span></p>
+</span></p>
 <p>and the 95% confidence interval for the number of traffic fatalities is:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 [1.79 \pm Z_{0.025} \times 0.64] \times 0.01 \times 3 \times 885 = [14.22, 80.83]
-\]</span></p>
+</span></p>
 <ol start="4" type="a">
 <li><p>Standard errors should be clustered into groups within which the values of the dependent variable are likely to be correlated with one another. In this case, the natural candidate group is to cluster by state.</p></li>
 <li><p>If we believe that drinking age affects the number of fatalities due to alcohol through a linear function, then age should be entered as a continuous variable. If we allow for nonlinearities in this relationship, we should allow for separate intercepts for each age.</p></li>
@@ -712,7 +726,7 @@ window.Quarto = {
 </section>
 <section id="exercise-10.5" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="exercise-10.5"><span class="header-section-number">1.2</span> Exercise 10.5</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 Y_{11} &amp;= \beta_1 X_{11} + \alpha_1 + \lambda_1 + u_{11} \\
 &amp;= \beta_0 + \beta_1 X_{11} + u_{11} \\
@@ -721,9 +735,9 @@ Y_{i1} &amp;= \beta_1 X_{i1} + \alpha_i + \lambda_1 + u_{i1} \\
 Y_{1t} &amp;= \beta_1 X_{1t} + \alpha_1 + \lambda_t + u_{1t} \\
 &amp;= \beta_0 + \beta_1 X_{1t} + \delta_t + u_{1t}, \quad t = 2, \dots, T
 \end{aligned}
-\]</span></p>
+</span></p>
 <p>We have</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{aligned}
 \beta_0 &amp;= \alpha_1 + \lambda_1 \\
 \gamma_i &amp;= \alpha_i + \lambda_1 - \beta_0 \\
@@ -731,44 +745,44 @@ Y_{1t} &amp;= \beta_1 X_{1t} + \alpha_1 + \lambda_t + u_{1t} \\
 \delta_t &amp;= \alpha_1 + \lambda_t - \beta_0 \\
 &amp;= \lambda_t - \lambda_1, \quad t = 2, \dots, T.
 \end{aligned}
-\]</span></p>
+</span></p>
 </section>
 <section id="exercise-11.1" class="level3" data-number="1.3">
 <h3 data-number="1.3" class="anchored" data-anchor-id="exercise-11.1"><span class="header-section-number">1.3</span> Exercise 11.1</h3>
 <ol type="a">
 <li><strong>Prepare</strong>:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \left\{\begin{aligned}
     &amp;H_0: \beta_{\text{schooling}} = 0 \\
     &amp;H_1: \beta_{\text{schooling}} \neq 0
     \end{aligned}\right.
-\]</span></p>
-<p>Let the significance level be <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+</span></p>
+<p>Let the significance level be <span class="math inline">\alpha = 0.05</span>.</p>
 <p><strong>Calculate</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 t^* = \frac{0.272 - 0}{0.029} \approx 9.379
-\]</span></p>
+</span></p>
 <p><strong>Conclude</strong>:</p>
-<p>Since <span class="math inline">\(|t^*| &gt; Z_{0.05} = 1.96\)</span>, we reject <span class="math inline">\(H_0\)</span>. There is significant evidence that schooling affects the probability of working for the government.</p>
+<p>Since <span class="math inline">|t^*| &gt; Z_{0.05} = 1.96</span>, we reject <span class="math inline">H_0</span>. There is significant evidence that schooling affects the probability of working for the government.</p>
 <ol start="2" type="a">
 <li>The predicted probability that Friedrich will be employed by the government is:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \Phi(-4.107 + 0.272 \times 16) \approx 0.5968
-\]</span></p>
+</span></p>
 <ol start="3" type="a">
 <li>The predicted probability that Hans will get a government job:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \Phi(-4.107 + 0.272 \times 12) \approx 0.1996
-\]</span></p>
+</span></p>
 <ol start="4" type="a">
 <li>The predicted probability that Günter will be employed by the government:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \Phi(-4.107 + 0.272 \times 24) \approx 0.9923
-\]</span></p>
+</span></p>
 <p>This prediction is likely inaccurate, as the sample did not include individuals with more than 24 years of schooling.</p>
 </section>
 <section id="exercise-11.4" class="level3" data-number="1.4">
@@ -779,43 +793,43 @@ t^* = \frac{0.272 - 0}{0.029} \approx 9.379
 <ul>
 <li>For men:</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \Phi(-1.027 - 0.242) \approx 0.1022
-\]</span></p>
+</span></p>
 <ul>
 <li>For women:</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \Phi(-1.027) \approx 0.1522
-\]</span></p>
+</span></p>
 <p>In column (5), the estimated probability:</p>
 <ul>
 <li>For men:</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{1}{1 + \exp[-(-1.717 - 0.455)]} \approx 0.1023
-\]</span></p>
+</span></p>
 <ul>
 <li>For women:</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \frac{1}{1 + \exp[-(-1.717)]} \approx 0.1523
-\]</span></p>
+</span></p>
 <p>In column (6), the estimated probability:</p>
 <ul>
 <li>For men:</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 0.152 - 0.050 = 0.102
-\]</span></p>
+</span></p>
 <ul>
 <li>For women:</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 0.152
-\]</span></p>
+</span></p>
 <ol start="2" type="a">
-<li>Because there is only a regressor and it is binary (<span class="math inline">\(\textit{Male}\)</span>), estimates for each model show the fraction of males and females who get employed by the government. Hence the results are close to each other.</li>
+<li>Because there is only a regressor and it is binary (<span class="math inline">\textit{Male}</span>), estimates for each model show the fraction of males and females who get employed by the government. Hence the results are close to each other.</li>
 </ol>
 </section>
 <section id="exercise-11.5" class="level3" data-number="1.5">
@@ -823,31 +837,31 @@ t^* = \frac{0.272 - 0}{0.029} \approx 9.379
 <ol type="a">
 <li>The predicted probability that Liam will be employed by the government is:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \Phi(-7.702 + 0.548 \times 10 + 4.352 - 0.344 \times 10) \approx 0.0951
-\]</span></p>
+</span></p>
 <ol start="2" type="a">
 <li>The predicted probability that Anneli will be employed by the government is:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \Phi(-7.702 + 0.548 \times 12) \approx 0.1301
-\]</span></p>
+</span></p>
 <ol start="3" type="a">
 <li><strong>Prepare</strong>:</li>
 </ol>
-<p><span class="math display">\[
+<p><span class="math display">
 \left\{\begin{aligned}
     &amp;H_0: \beta_{\textit{male} \times \textit{schooling}} = 0 \\
     &amp;H_1: \beta_{\textit{male} \times \textit{schooling}} \neq 0
     \end{aligned}\right.
-\]</span></p>
-<p>Let the significance level be <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+</span></p>
+<p>Let the significance level be <span class="math inline">\alpha = 0.05</span>.</p>
 <p><strong>Calculate</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 t^* = \frac{-0.344 - 0}{0.096} \approx -3.583
-\]</span></p>
+</span></p>
 <p><strong>Conclude</strong>:</p>
-<p>Since <span class="math inline">\(|t^*| &gt; Z_{0.05} = 1.96\)</span>, we reject <span class="math inline">\(H_0\)</span>. There is significant evidence that the effect of schooling on government employment depends on gender.</p>
+<p>Since <span class="math inline">|t^*| &gt; Z_{0.05} = 1.96</span>, we reject <span class="math inline">H_0</span>. There is significant evidence that the effect of schooling on government employment depends on gender.</p>
 </section>
 </section>
 <section id="computer-exercises" class="level2" data-number="2">
@@ -865,16 +879,16 @@ t^* = \frac{-0.344 - 0}{0.096} \approx -3.583
 <section id="linear-model" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="linear-model"><span class="header-section-number">2.1</span> Linear Model</h3>
 <p>Consider the following specification:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \textit{insured}_i = \beta_0 + \beta_1 \textit{selfemp}_i + u_i
-\]</span></p>
+</span></p>
 <p>we propose the hypothesis:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \left\{\begin{aligned}
 &amp;H_0: \beta_1 = 0 \\
 &amp;H_1: \beta_1 \neq 0
 \end{aligned}\right.
-\]</span></p>
+</span></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>reg_1a <span class="ot">&lt;-</span> <span class="fu">lm_robust</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> insured <span class="sc">~</span> selfemp,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> insurance,</span>
@@ -898,21 +912,21 @@ Multiple R-squared:  0.01093 ,  Adjusted R-squared:  0.01082
 F-statistic: 74.23 on 1 and 8800 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
-<p>From the testing result, we have its <span class="math inline">\(p\)</span>-value is very small (<span class="math inline">\(&lt;5\%\)</span>). There is significant evidence that the self-employed are less likely to have health insurance than wage earners.</p>
+<p>From the testing result, we have its <span class="math inline">p</span>-value is very small (<span class="math inline">&lt;5\%</span>). There is significant evidence that the self-employed are less likely to have health insurance than wage earners.</p>
 </section>
 <section id="non-linear-models-comparison" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="non-linear-models-comparison"><span class="header-section-number">2.2</span> Non-Linear Models Comparison</h3>
 <p>Consider the following specification:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \textit{insured}_i = \beta_0 + \beta_1 \textit{selfemp}_i + \sum_{k\in\mathcal{I}}\beta_k x_k + u_i
-\]</span></p>
-<p>where <span class="math inline">\(\mathcal{I}\)</span> denotes the set of control variables. We propose the hypothesis:</p>
-<p><span class="math display">\[
+</span></p>
+<p>where <span class="math inline">\mathcal{I}</span> denotes the set of control variables. We propose the hypothesis:</p>
+<p><span class="math display">
 \left\{\begin{aligned}
 &amp;H_0: \beta_1 = 0 \\
 &amp;H_1: \beta_1 \neq 0
 \end{aligned}\right.
-\]</span></p>
+</span></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># complete specification</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>formula_1b <span class="ot">&lt;-</span> insured <span class="sc">~</span> selfemp <span class="sc">+</span> age <span class="sc">+</span> deg_nd <span class="sc">+</span> deg_ged <span class="sc">+</span> deg_hs <span class="sc">+</span> deg_ba <span class="sc">+</span> deg_ma <span class="sc">+</span> deg_phd <span class="sc">+</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  familysz <span class="sc">+</span> race_bl <span class="sc">+</span> race_wht <span class="sc">+</span> male <span class="sc">+</span> married</span>
@@ -988,7 +1002,7 @@ Deviance                        7558.2640       7552.4476
 *** p &lt; 0.001; ** p &lt; 0.01; * p &lt; 0.05</code></pre>
 </div>
 </div>
-<p>From the testing result, we have the <span class="math inline">\(p\)</span>-value is very small (<span class="math inline">\(&lt;5\%\)</span>) and reject the null hypothesis. There is significant evidence that the self-employed are less likely to have health insurance than wage earners.</p>
+<p>From the testing result, we have the <span class="math inline">p</span>-value is very small (<span class="math inline">&lt;5\%</span>) and reject the null hypothesis. There is significant evidence that the self-employed are less likely to have health insurance than wage earners.</p>
 </section>
 <section id="prediction-lpm" class="level3" data-number="2.3">
 <h3 data-number="2.3" class="anchored" data-anchor-id="prediction-lpm"><span class="header-section-number">2.3</span> Prediction: LPM</h3>
@@ -1008,7 +1022,7 @@ Deviance                        7558.2640       7552.4476
 1.107059 </code></pre>
 </div>
 </div>
-<p>From LPM, the predicted probability of having health insurance for a 50 year old white female, with a phd degree, family size of 1, married and wage earner is <span class="math inline">\(1.107\)</span>, which does not make sense because the probability must be between 0 and 1 by definition.</p>
+<p>From LPM, the predicted probability of having health insurance for a 50 year old white female, with a phd degree, family size of 1, married and wage earner is <span class="math inline">1.107</span>, which does not make sense because the probability must be between 0 and 1 by definition.</p>
 </section>
 <section id="prediction-logit-probit" class="level3" data-number="2.4">
 <h3 data-number="2.4" class="anchored" data-anchor-id="prediction-logit-probit"><span class="header-section-number">2.4</span> Prediction: Logit &amp; Probit</h3>
@@ -1031,12 +1045,12 @@ Deviance                        7558.2640       7552.4476
 <section id="hypothesis-testing" class="level3" data-number="2.5">
 <h3 data-number="2.5" class="anchored" data-anchor-id="hypothesis-testing"><span class="header-section-number">2.5</span> Hypothesis Testing</h3>
 <p>We propose the following hypothesis:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \left\{\begin{aligned}
 &amp;H_0: \beta_{\textit{race\_bl}} = \beta_{\textit{race\_wht}} = 0 \\
 &amp;H_1: \text{Not all coefficients are zero}
 \end{aligned}\right.
-\]</span></p>
+</span></p>
 <p>and perform the F-test:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">linearHypothesis</span>(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  Logit_1b,</span>
@@ -1066,8 +1080,7 @@ Note: Coefficient covariance matrix supplied.
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
-<p>From the testing result, we have the <span class="math inline">\(p\)</span>-value is very small (<span class="math inline">\(&lt;5\%\)</span>) and reject the null hypothesis. There is significant evidence that black, white and others are not equally likely to be insured.</p>
-
+<p>From the testing result, we have the <span class="math inline">p</span>-value is very small (<span class="math inline">&lt;5\%</span>) and reject the null hypothesis. There is significant evidence that black, white and others are not equally likely to be insured.</p>
 
 
 </section>
